@@ -49,20 +49,20 @@
         $nbr_loisirs = $sql->rowCount();
     ?>
     <div class="">
-        <table border="1">
+        <table class="table">
         <caption>La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
             <thead>
                 <tr>
-                    <th>Loisirs</th>
-                    <th>Modification</th>
-                    <th>Suppression</th>
+                    <th class="table-dark">Loisirs</th>
+                    <th class="table-dark">Modification</th>
+                    <th class="table-dark">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_loisir=$sql->fetch())
                     {
                 ?>
-                <tr>
+                <tr class="table-dark">
                     <td><?php echo $ligne_loisir['loisir']; ?></td>
                     <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">modif</a></td>
                     <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">suppr</a></td>
@@ -76,12 +76,12 @@
 
 <hr>
 <form action="loisirs.php" method="post">
-    <div class="">
+    <div class="form-group">
         <label for="loisir">Loisir</label>
         <input type="text" name="loisir" placeholder="Nouveau loisir" required>
     </div>
     <div class="">
-        <button type="submit">Insérer un loisir</button>
+        <button type="submit" class="btn btn-primary">Insérer un loisir</button>
     </div>
 </form>
 

@@ -85,35 +85,35 @@
     ?>
 
     <div class="">
-        <table border="1">
+        <table class="table">
         <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
             <thead>
                 <tr> 
-                    <th>Compétences 
+                    <th class="table-dark">Compétences 
                     <a href="competences.php?column=competence&order=asc">A</a> | 
                     <a href="competences.php?column=competence&order=desc">Z</a>
                     </th>
-                    <th>Niveau
+                    <th class="table-dark">Niveau
                     <a href="competences.php?column=niveau&order=asc">1</a> |
                     <a href="competences.php?column=niveau&order=desc">10</a>
                     </th>
-                    <th>Catégorie
+                    <th class="table-dark">Catégorie
                     <a href="competences.php?column=categorie&order=desc">A</a> |
                     <a href="competences.php?column=categorie&order=asc">Z  </a>
                     </th>
-                    <th>Modification</th>
-                    <th>Suppression</th>
+                    <th class="table-dark">Modification</th>
+                    <th class="table-dark">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_competence=$sql->fetch())
                     {
                 ?>
-                <tr>
+                <tr class="table-dark">
                     <td><?php echo $ligne_competence['competence']; ?></td>
-                    <td><?php echo $ligne_competence['niveau']; ?></td>
+                    <td ><?php echo $ligne_competence['niveau']; ?></td>
                     <td><?php echo $ligne_competence['categorie']; ?></td>
-                    <td><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modif</a></td>
+                    <td ><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modif</a></td>
                     <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">suppr</a></td>
                 </tr>
                 <?php
@@ -126,15 +126,15 @@
     <hr>
     <!-- insertion d'une nouvelle compétence formulaire -->
     <form action="competences.php" method="post">
-        <div class="">
+        <div class="form-group">
             <label for="competence">Compétence</label>
             <input type="text" name="competence" placeholder="Nouveau compétence" required>
         </div>
-        <div class="">
+        <div class="form-group">
             <label for="niveau">Niveau</label>
             <input type="text" name="niveau" placeholder="niveau en chiffre" required>
         </div>
-        <div class="">
+        <div class="form-group">
             <label for="categorie">Catégorie</label>
             <select name="categorie">
                 <option value="Développement">Développement</option>
@@ -144,7 +144,7 @@
             </select>
         </div>
         <div class="">
-            <button type="submit">Insérer une compétence</button>
+            <button type="submit" class="btn btn-primary">Insérer une compétence</button>
         </div>
     </form>
 
