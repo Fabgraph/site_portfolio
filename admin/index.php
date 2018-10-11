@@ -9,16 +9,22 @@
     <!-- lien Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <!-- lien feuille de style CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <title>Accueil</title>
 </head>
 <body>
 
 <?php require 'inc/navigation.php'; ?>
 
-<div class="container">
+<div class="container-fluid bg-primary">
 
-    <h1>coucou</h1>
+    <h1 class="text-center text-white">coucou</h1>
+    <?php
+        // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+        $sql = $pdoCV->prepare(" SELECT * FROM t_competences ");
+        $sql->execute();
+        $nbr_competences = $sql->rowCount();
+    ?>
 
     <div class="row">
         <div class="col-sm-12">
@@ -57,15 +63,55 @@
         </div>
 
 
+    </div> <!-- fin de la div row -->
+
+    <div class="row">
+        <div class="col-sm-9">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cupiditate! Animi mollitia ut nihil id illo! Repellat illum earum voluptate laboriosam cupiditate neque impedit incidunt, soluta dolores, voluptatum laborum? Adipisci?</p>
+        </div>
+
+        <div class="col-sm-3">
+
+            <div class="">
+                <table class="table">
+                <caption>La liste des compétences : <?php echo $nbr_competences; ?></caption>
+                    <thead>
+                        <tr>
+                            <th class="table-dark">Compétences</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                            while($ligne_competence=$sql->fetch()) 
+                            {
+                        ?>
+                        <tr class="table-dark">
+                            <td>
+                                <?php echo $ligne_competence['competence']; ?>
+                            </td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+
+            
+
+
+        
+
+        </div>
+
     </div>
 
 
 
 
-</div>    
-
-
+</div>
 <?php require 'inc/footer.php'; ?>
+
 
 <!-- lien js Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

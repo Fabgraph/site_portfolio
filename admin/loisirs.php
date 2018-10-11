@@ -24,6 +24,28 @@
 
         header("location: ../admin/loisirs.php");
     }  // ferme le if isset pour la suppression
+
+
+    // pour classer par ordre
+    $order = '';
+    if(isset($_GET['order']) && isset($_GET['column'])){
+
+	    if($_GET['column'] == 'loisir'){
+		    $order = ' ORDER BY loisir';
+	    }
+	
+
+        //----------------
+    
+	    if($_GET['order'] == 'asc'){
+		    $order.= ' ASC';
+	    }
+	        elseif($_GET['order'] == 'desc'){
+		    $order.= ' DESC';
+            }
+    }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -40,11 +62,12 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <h1>Les loisirs et insertion de nouveaux loisirs</h1>
+    <div class="container-fluid bg-primary">
+    <h1 class="text-center text-white">Les loisirs et insertion de nouveaux loisirs</h1>
 
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_loisirs  ");
+        $sql = $pdoCV->prepare(" SELECT * FROM t_loisirs $order  ");
         $sql->execute();
         $nbr_loisirs = $sql->rowCount();
     ?>
@@ -53,7 +76,10 @@
         <caption>La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
             <thead>
                 <tr>
-                    <th class="table-dark">Loisirs</th>
+                    <th class="table-dark">Loisirs
+                    <a href="loisirs.php?column=loisir&order=asc">A</a> | 
+                    <a href="loisirs.php?column=loisir&order=desc">Z</a>
+                    </th>
                     <th class="table-dark">Modification</th>
                     <th class="table-dark">Suppression</th>
                 </tr>
@@ -74,16 +100,17 @@
         </table>
     </div>
 
-<hr>
-<form action="loisirs.php" method="post">
-    <div class="form-group">
-        <label for="loisir">Loisir</label>
-        <input type="text" name="loisir" placeholder="Nouveau loisir" required>
-    </div>
-    <div class="">
-        <button type="submit" class="btn btn-primary">Insérer un loisir</button>
-    </div>
-</form>
+    <hr>
+    <form action="loisirs.php" method="post">
+        <div class="form-group">
+            <label for="loisir">Loisir</label>
+            <input type="text" name="loisir" placeholder="Nouveau loisir" required>
+        </div>
+        <div class="">
+            <button type="submit" class="btn btn-info">Insérer un loisir</button>
+        </div>
+    </form>
+</div>
 
 
 <?php require 'inc/footer.php'; ?>

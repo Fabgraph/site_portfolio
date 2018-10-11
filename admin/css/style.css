@@ -1,7 +1,11 @@
-footer .page-footer div .footer-copyright {
+.text-white-50 {
     color: white;
 }
 
-div .container h1 {
-    text-align: center;
+.carousel-control.left {
+    margin-left: 30%;
+}
+
+.carousel-control.right {
+    margin-right: 30%;
 }

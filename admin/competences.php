@@ -30,34 +30,34 @@
     $order = '';
     if(isset($_GET['order']) && isset($_GET['column'])){
 
-	if($_GET['column'] == 'competence'){
-		$order = ' ORDER BY competence';
-	}
-	elseif($_GET['column'] = 'niveau'){
-		$order = ' ORDER BY niveau';
-	}
-	elseif($_GET['column'] == 'categorie'){
-		$order = ' ORDER BY categorie';
-	}
+	    if($_GET['column'] == 'competence'){
+		    $order = ' ORDER BY competence';
+	    }
+	        elseif($_GET['column'] = 'niveau'){
+		        $order = ' ORDER BY niveau';
+	        }
+	        elseif($_GET['column'] == 'categorie'){
+		        $order = ' ORDER BY categorie';
+	        }
 
 	//----------------
 
-	if($_GET['order'] == 'asc'){
-		$order.= ' ASC';
-	}
-	elseif($_GET['order'] == 'desc'){
-		$order.= ' DESC';
+	    if($_GET['order'] == 'asc'){
+		    $order.= ' ASC';
+	    }
+	        elseif($_GET['order'] == 'desc'){
+		        $order.= ' DESC';
+            }
     }
-    }
 
-    //je préprare la requete puis je l'execute (tri en fonction de ce qu'il y a dans l'url)
+    // //je préprare la requete puis je l'execute (tri en fonction de ce qu'il y a dans l'url)
 
-    $queryUsers = $pdoCV -> prepare('SELECT * FROM t_competences');
+    // $queryUsers = $pdoCV -> prepare('SELECT * FROM t_competences');
 
-    if($queryUsers->execute()){	
+    // if($queryUsers->execute()){	
 
-	    $users = $queryUsers ->fetchAll(PDO::FETCH_ASSOC);   
-    }
+	//     $users = $queryUsers ->fetchAll(PDO::FETCH_ASSOC);   
+    // }
 
 ?>
 
@@ -75,11 +75,12 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <h1>Les compétences et insertion de nouvelles compétences</h1>
+    <div class="container-fluid bg-primary">
+    <h1 class="text-center text-white">Les compétences et insertion de nouvelles compétences</h1>
   
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_competences ".$order);
+        $sql = $pdoCV->prepare(" SELECT * FROM t_competences $order ");
         $sql->execute();
         $nbr_competences = $sql->rowCount();
     ?>
@@ -144,11 +145,11 @@
             </select>
         </div>
         <div class="">
-            <button type="submit" class="btn btn-primary">Insérer une compétence</button>
+            <button type="submit" class="btn btn-info">Insérer une compétence</button>
         </div>
     </form>
 
-
+</div>
 
 
 <?php require 'inc/footer.php'; ?> 
