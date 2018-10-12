@@ -28,62 +28,67 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 </head>
 <body>
+    <?php require 'inc/navigation.php'; ?>
     <h1>Mise à jour d'une compétence</h1>
 
-    <!-- mise à jour formulaire -->
-    <form action="modif_competence.php" method="post">
-    <div class="">
-        <div>
-            <label for="competence">Compétence</label>
-            <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" required>
-        </div>
-        <div>
-            <label for="niveau">Niveau</label>
-            <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" required>
-        </div>
+        <!-- mise à jour formulaire -->
+        <form action="modif_competence.php" method="post">
         <div class="">
-            <label for="categorie">Catégorie</label>
-            <select name="categorie">
-                <option value="Développement"
-                <?php // pour ajouter selected="selected" à la balise option si c'est la categorie de la compétence.
+            <div>
+                <label for="competence">Compétence</label>
+                <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" required>
+            </div>
+            <div>
+                <label for="niveau">Niveau</label>
+                <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" required>
+            </div>
+            <div class="">
+                <label for="categorie">Catégorie</label>
+                <select name="categorie">
+                    <option value="Développement"
+                    <?php // pour ajouter selected="selected" à la balise option si c'est la categorie de la compétence.
                     
-                    if (!(strcmp("Développement", $ligne_competence['categorie']))) {// strcmp compare deux chaînes de caractères
-                        echo "selected=\"selected\"";
-                    }
+                        if (!(strcmp("Développement", $ligne_competence['categorie']))) {// strcmp compare deux chaînes de caractères
+                            echo "selected=\"selected\"";
+                        }
                     
-                    ?>>Developpement</option>
-                <option value="Infographie"
-                <?php 
+                        ?>>Developpement</option>
+                    <option value="Infographie"
+                    <?php 
                     
-                    if (!(strcmp("Infographie", $ligne_competence['categorie']))) {
-                        echo "selected=\"selected\"";
-                    }
-                ?>
-                >Infographie</option>
-                <option value="Front"
-                <?php
+                        if (!(strcmp("Infographie", $ligne_competence['categorie']))) {
+                            echo "selected=\"selected\"";
+                        }
+                    ?>
+                    >Infographie</option>
+                    <option value="Front"
+                    <?php
                     
-                    if (!(strcmp("Front", $ligne_competence['categorie']))) {
-                        echo "selected=\"selected\"";
-                    }
-                ?>
-                >Front</option>
-                <option value="Back"
-                <?php
+                        if (!(strcmp("Front", $ligne_competence['categorie']))) {
+                            echo "selected=\"selected\"";
+                        }
+                    ?>
+                    >Front</option>
+                    <option value="Back"
+                    <?php
                     
-                    if (!(strcmp("Back", $ligne_competence['categorie']))) {
-                        echo "selected=\"selected\"";
-                    }
-                ?>
-                >Back</option>
-            </select>
-        </div>
+                        if (!(strcmp("Back", $ligne_competence['categorie']))) {
+                            echo "selected=\"selected\"";
+                        }
+                    ?>
+                    >Back</option>
+                </select>
+            </div>
         
-    </div>
+        </div>
     <div>
     <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
         <button type="submit">MAJ</button>
     </div>
 </form>
+
+
+
+<?php require 'inc/footer.php'; ?>
 </body>
 </html>
