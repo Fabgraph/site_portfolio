@@ -111,7 +111,9 @@
         </div>
         <div class="form-group">
             <label for="accroche">Accroche</label>
-            <input type="text" name="accroche" placeholder="Nouvelle accroche" required>
+            <div>
+                <textarea name="accroche" cols="30" rows="10"></textarea>
+            </div>
         </div>
         <div class="">
             <button type="submit" class="btn btn-info">Insérer un Titre</button>

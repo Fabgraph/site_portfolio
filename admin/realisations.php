@@ -1,9 +1,8 @@
 <?php require 'connexion.php'; 
     // insertion d'un élément dans la base
-    if(isset($_POST['titre_real'])){// si on a reçu un nouvelle compétence
+    if(isset($_POST['titre_real'])){// si on a reçu un nouvelle réalisation
         if($_POST['titre_real']!='' && $_POST['stitre_real']!='' && $_POST['dates_real']!='' && $_POST['description_real']!=''){
 
-            // $experience = addslashes ($_POST['experience']);
             $titre_real = addslashes ($_POST['titre_real']);
             $stitre_real = addslashes ($_POST['stitre_real']);
             $dates_real = addslashes ($_POST['dates_real']);
@@ -18,7 +17,7 @@
     }// fermeture du if isset
 
     // suppression d'un élément de la BDD
-    if(isset($_GET['id_realisation'])){  // on récupère la compétence dans l'url par son id
+    if(isset($_GET['id_realisation'])){  // on récupère la réalisation dans l'url par son id
 
         $efface = $_GET[id_realisation];  // je passe l'id dans une variable $efface
 

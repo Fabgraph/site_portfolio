@@ -18,7 +18,7 @@
 
 <div class="container-fluid bg-primary">
 
-    <h1 class="text-center text-white">coucou</h1>
+    <h1 class="text-center text-white">Fabgraph</h1>
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
         $sql = $pdoCV->prepare(" SELECT * FROM t_competences ");

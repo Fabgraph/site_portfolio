@@ -1,6 +1,6 @@
 <?php require 'connexion.php'; 
     // insertion d'un élément dans la base
-    if(isset($_POST['titre_exp'])){// si on a reçu un nouvelle compétence
+    if(isset($_POST['titre_exp'])){// si on a reçu un nouvelle expérience
         if($_POST['titre_exp']!='' && $_POST['stitre_exp']!='' && $_POST['dates_exp']!='' && $_POST['description_exp']!=''){
 
             // $experience = addslashes ($_POST['experience']);
@@ -18,7 +18,7 @@
     }// fermeture du if isset
 
     // suppression d'un élément de la BDD
-    if(isset($_GET['id_experience'])){  // on récupère la compétence dans l'url par son id
+    if(isset($_GET['id_experience'])){  // on récupère l'expérience dans l'url par son id
 
         $efface = $_GET[id_experience];  // je passe l'id dans une variable $efface
 
