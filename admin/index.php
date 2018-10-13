@@ -40,10 +40,10 @@
                     <!-- The slideshow -->
                     <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="img/code2.png" alt="Los Angeles">
+                        <img src="img/img_code.jpg" alt="Los Angeles">
                     </div>
                     <div class="carousel-item">
-                        <img src="img/div.png" alt="Chicago">
+                        <img src="img/img_resultat.jpg" alt="Chicago">
                     </div>
                     <div class="carousel-item">
                         <img src="img/dessin.jpg" alt="New York">
