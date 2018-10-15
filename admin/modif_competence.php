@@ -1,4 +1,4 @@
-<?php require 'connexion.php';
+<?php require 'inc/connexion.php';
     // gestion mise à jour d'une information
     if(isset($_POST['competence'])){
         $competence = addslashes($_POST['competence']);
@@ -29,18 +29,20 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <h1>Mise à jour d'une compétence</h1>
 
+    <div class="container-fluid bg-info">
+
+        <h1 class="text-dark">Mise à jour d'une compétence</h1>
         <!-- mise à jour formulaire -->
         <form action="modif_competence.php" method="post">
         <div class="">
             <div>
                 <label for="competence">Compétence</label>
-                <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" required>
+                <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
             </div>
             <div>
                 <label for="niveau">Niveau</label>
-                <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" required>
+                <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
             </div>
             <div class="">
                 <label for="categorie">Catégorie</label>
@@ -80,12 +82,13 @@
                 </select>
             </div>
         
-        </div>
-    <div>
-    <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
-        <button type="submit">MAJ</button>
+            </div>
+            <div>
+            <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
+                <button type="submit" class="btn btn-success">MAJ</button>
+            </div>
+        </form>
     </div>
-</form>
 
 
 

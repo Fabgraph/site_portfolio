@@ -1,4 +1,4 @@
-<?php require 'connexion.php';
+<?php require 'inc/connexion.php';
     // gestion mise à jour d'une information
     if(isset($_POST['titre_form'])){
         $titre = addslashes($_POST['titre_form']);
@@ -30,35 +30,42 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    <div class="container-fluid bg-info">
     <h1>Mise à jour d'une formation</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_formation.php" method="post">
-    <div class="form-group">
-        <div>
-            <label for="titre">Titre</label>
-            <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" required>
-        </div>
-        <div>
-            <label for="stitre">Sous-titre</label>
-            <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" required>
-        </div>
-        <div>
-            <label for="dates">Dates</label>
-            <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" required>
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <textarea name="description_form" value="<?php echo $ligne_formation['description_form']; ?>" cols="30" rows="10"></textarea>
-        </div>
+        <div class="form-group">
+            <div>
+                <label for="titre">Titre</label>
+                <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <label for="stitre">Sous-titre</label>
+                <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <label for="dates">Dates</label>
+                <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <div>
+                    <label for="description">Description</label>
+                </div>
+                <div>
+                    <textarea name="description_form" value="<?php echo $ligne_formation['description_form']; ?>" cols="30" rows="10"></textarea>
+                </div>
+            </div>
         
         
+        </div>
+        <div>
+            <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
+            <button type="submit" class="btn btn-success">MAJ</button>
+        </div>
+    </form>
+
     </div>
-    <div>
-    <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
-        <button type="submit">MAJ</button>
-    </div>
-</form>
 
 
 <?php require 'inc/footer.php'; ?>

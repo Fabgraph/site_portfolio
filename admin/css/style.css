@@ -1,11 +1,28 @@
-.text-white-50 {
-    color: white;
+
+/* Taille du jumbotron */
+.container-fluid .jumbo .jumbotron{
+    width: 60%;
+    height: 750px;
 }
 
-.carousel-control.left {
-    margin-left: 30%;
+
+/* Taille du SLIDER */
+#demo{
+    width: 70%;
+    height: 45%;
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 
-.carousel-control.right {
-    margin-right: 30%;
+.container-fluid .jumbo .jumbotron .container .row #a{
+    margin-left: 20%;
 }
+
+/* Taille des images */
+.container .row .carousel-item img {
+    width: 130%;
+    margin-right: 60%;
+    margin-bottom: 500px;
+}
+

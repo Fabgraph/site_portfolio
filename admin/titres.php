@@ -1,4 +1,4 @@
-<?php require 'connexion.php';
+<?php require 'inc/connexion.php';
 
     // insertion d'un titre
     if(isset($_POST['titre'])){// si on a reçu un nouveau titre
@@ -60,11 +60,13 @@
     <title>Admin : les  titres</title>
     <!-- lien Bootstarp -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <!-- lien Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les titres et insertion de nouveaux titres</h1>
+    <div class="container-fluid bg-info">
+    <h1 class="text-center text-dark">Les titres et insertion de nouveaux titres</h1>
 
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -74,23 +76,23 @@
     ?>
     <div class="">
         <table class="table">
-        <caption>La liste des titres : <?php echo $nbr_titres; ?></caption>
+        <caption class="text-white">La liste des titres : <?php echo $nbr_titres; ?></caption>
             <thead>
                 <tr>
-                    <th class="table-dark">Titre
-                    <a href="titres.php?column=titre&order=asc">A</a> | 
-                    <a href="titres.php?column=titre&order=desc">Z</a>
+                    <th class="table-primary text-dark">Titre
+                    <a href="titres.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
+                    <a href="titres.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-dark">Accroche</th>
-                    <th class="table-dark">Modification</th>
-                    <th class="table-dark">Suppression</th>
+                    <th class="table-primary text-dark">Accroche</th>
+                    <th class="table-primary text-dark">Modification</th>
+                    <th class="table-primary text-dark">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_titre=$sql->fetch())
                     {
                 ?>
-                <tr class="table-dark">
+                <tr class="table-info">
                     <td><?php echo $ligne_titre['titre']; ?></td>
                     <td><?php echo $ligne_titre['accroche']; ?></td>
                     <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>">modif</a></td>
@@ -103,22 +105,24 @@
         </table>
     </div>
 
-    <hr>
-    <form action="titres.php" method="post">
-        <div class="form-group">
-            <label for="titre">Titre</label>
-            <input type="text" name="titre" placeholder="Nouveau titre" required>
-        </div>
-        <div class="form-group">
-            <label for="accroche">Accroche</label>
-            <div>
-                <textarea name="accroche" cols="30" rows="10"></textarea>
+    <hr class="bg-dark">
+    <div class="">
+        <form action="titres.php" method="post">
+            <div class="form-group">
+                <label for="titre">Titre</label>
+                <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
             </div>
-        </div>
-        <div class="">
-            <button type="submit" class="btn btn-info">Insérer un Titre</button>
-        </div>
-    </form>
+            <div class="form-group">
+                <label for="accroche">Accroche</label>
+                <div>
+                    <textarea name="accroche" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-success">Insérer un Titre</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 

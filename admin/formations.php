@@ -1,4 +1,4 @@
-<?php require 'connexion.php'; 
+<?php require 'inc/connexion.php'; 
     // insertion d'un élément dans la base
     if(isset($_POST['titre_form'])){// si on a reçu un nouvelle formation
         if($_POST['titre_form']!='' && $_POST['stitre_form']!='' && $_POST['dates_form']!='' && $_POST['description_form']!=''){
@@ -78,13 +78,15 @@
     <title>Admin : les  formations</title>
     <!-- lien Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <!-- lien Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <!-- lien feuille de style CSS -->
     <link type="text/css" rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les formations et insertion de nouvelles formations</h1>
+    <div class="container-fluid bg-info">
+    <h1 class="text-center text-dark">Les formations et insertion de nouvelles formations</h1>
   
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -95,25 +97,25 @@
 
     <div class="">
         <table class="table">
-        <caption>La liste des expériences : <?php echo $nbr_formations; ?></caption>
+        <caption class="text-white">La liste des expériences : <?php echo $nbr_formations; ?></caption>
             <thead>
                 <tr> 
-                    <th class="table-dark">Titre
-                    <a href="formations.php?column=titre&order=asc">A</a> |
-                    <a href="formations.php?column=titre&order=desc">Z  </a>
+                    <th class="table-primary text-dark">Titre
+                    <a href="formations.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                    <a href="formations.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-dark">Sous-titre</th>
-                    <th class="table-dark">Dates</th>
-                    <th class="table-dark">Description</th>
-                    <th class="table-dark">Modification</th>
-                    <th class="table-dark">Suppression</th>
+                    <th class="table-primary text-dark">Sous-titre</th>
+                    <th class="table-primary text-dark">Dates</th>
+                    <th class="table-primary text-dark">Description</th>
+                    <th class="table-primary text-dark">Modification</th>
+                    <th class="table-primary text-dark">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_formation=$sql->fetch())
                     {
                 ?>
-                <tr class="table-dark">
+                <tr class="table-info">
                     <td ><?php echo $ligne_formation['titre_form']; ?></td>
                     <td><?php echo $ligne_formation['stitre_form']; ?></td>
                     <td><?php echo $ligne_formation['dates_form']; ?></td>
@@ -128,33 +130,34 @@
         </table>
     </div>
 
-    <hr>
-    <!-- insertion d'une nouvelle compétence formulaire -->
-    <form action="formations.php" method="post">
-        <div class="form-group">
-            <label for="titre">Titre</label>
-            <input type="text" name="titre_form" placeholder="Titre de la formation" required>
-        </div>
-        <div class="form-group">
-            <label for="stitre">Sous-titre</label>
-            <input type="text" name="stitre_form" placeholder="Sous-titre de la formation" required>
-        </div>
-        <div class="form-group">
-            <label for="dates">Dates</label>
-            <input type="text" name="dates_form" placeholder="dates de la formation" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <div>
-                <textarea name="description_form" cols="30" rows="10"></textarea>
+    <hr class="bg-dark">
+    <div class="">
+        <!-- insertion d'une nouvelle compétence formulaire -->
+        <form action="formations.php" method="post">
+            <div class="form-group">
+                <label for="titre" class="text-white">Titre</label>
+                <input type="text" name="titre_form" placeholder="Titre de la formation" class="form-control" required>
             </div>
-        </div>
+            <div class="form-group">
+                <label for="stitre" class="text-white">Sous-titre</label>
+                <input type="text" name="stitre_form" placeholder="Sous-titre de la formation" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="dates" class="text-white">Dates</label>
+                <input type="text" name="dates_form" placeholder="dates de la formation" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="description" class="text-white">Description</label>
+                <div>
+                    <textarea name="description_form" cols="30" rows="10"></textarea>
+                </div>
+            </div>
          
-        <div class="">
-            <button type="submit" class="btn btn-info">Insérer une expérience</button>
-        </div>
-    </form>
-
+            <div class="">
+                <button type="submit" class="btn btn-success">Insérer une expérience</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 

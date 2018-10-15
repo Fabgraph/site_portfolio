@@ -1,4 +1,4 @@
-<?php require 'connexion.php';
+<?php require 'inc/connexion.php';
 
     // insertion d'un loisir
     if(isset($_POST['loisir'])){// si on a reçu un nouveau loisir
@@ -59,11 +59,13 @@
     <title>Admin : les  loisirs</title>
     <!-- lien Bootstarp -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <!-- lien Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les loisirs et insertion de nouveaux loisirs</h1>
+    <div class="container-fluid bg-info">
+    <h1 class="text-center text-dark">Les loisirs et insertion de nouveaux loisirs</h1>
 
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -73,22 +75,22 @@
     ?>
     <div class="">
         <table class="table">
-        <caption>La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
+        <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
             <thead>
                 <tr>
-                    <th class="table-dark">Loisirs
-                    <a href="loisirs.php?column=loisir&order=asc">A</a> | 
-                    <a href="loisirs.php?column=loisir&order=desc">Z</a>
+                    <th class="table-primary text-dark">Loisirs
+                    <a href="loisirs.php?column=loisir&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
+                    <a href="loisirs.php?column=loisir&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-dark">Modification</th>
-                    <th class="table-dark">Suppression</th>
+                    <th class="table-primary text-dark">Modification</th>
+                    <th class="table-primary text-dark">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_loisir=$sql->fetch())
                     {
                 ?>
-                <tr class="table-dark">
+                <tr class="table-info">
                     <td><?php echo $ligne_loisir['loisir']; ?></td>
                     <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">modif</a></td>
                     <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">suppr</a></td>
@@ -100,16 +102,18 @@
         </table>
     </div>
 
-    <hr>
-    <form action="loisirs.php" method="post">
-        <div class="form-group">
-            <label for="loisir">Loisir</label>
-            <input type="text" name="loisir" placeholder="Nouveau loisir" required>
-        </div>
-        <div class="">
-            <button type="submit" class="btn btn-info">Insérer un loisir</button>
-        </div>
-    </form>
+    <hr class="bg-dark">
+    <div class="">
+        <form action="loisirs.php" method="post">
+            <div class="form-group">
+                <label for="loisir" class="text-white">Loisir</label>
+                <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
+            </div>
+            <div class="">
+                <button type="submit" class="btn btn-success">Insérer un loisir</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 

@@ -1,4 +1,4 @@
-<?php require 'connexion.php';
+<?php require 'inc/connexion.php';
     // gestion mise à jour d'une information
     if(isset($_POST['titre_real'])){
         $titre = addslashes($_POST['titre_real']);
@@ -30,35 +30,42 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+
+    <div class="container-fluid bg-info">
     <h1>Mise à jour d'une réalisation</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_realisation.php" method="post">
-    <div class="form-group">
-        <div>
-            <label for="titre">Titre</label>
-            <input type="text" name="titre_real" value="<?php echo $ligne_realisation['titre_real']; ?>" required>
-        </div>
-        <div>
-            <label for="stitre">Sous-titre</label>
-            <input type="text" name="stitre_real" value="<?php echo $ligne_realisation['stitre_real']; ?>" required>
-        </div>
-        <div>
-            <label for="dates">Dates</label>
-            <input type="text" name="dates_real" value="<?php echo $ligne_realisation['dates_real']; ?>" required>
-        </div>
-        <div>
-            <label for="description">Description</label>
-            <textarea name="description_real" value="<?php echo $ligne_realisation['description_real']; ?>" cols="30" rows="10"></textarea>
-        </div>
+        <div class="form-group">
+            <div>
+                <label for="titre">Titre</label>
+                <input type="text" name="titre_real" value="<?php echo $ligne_realisation['titre_real']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <label for="stitre">Sous-titre</label>
+                <input type="text" name="stitre_real" value="<?php echo $ligne_realisation['stitre_real']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <label for="dates">Dates</label>
+                <input type="text" name="dates_real" value="<?php echo $ligne_realisation['dates_real']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <div>
+                    <label for="description">Description</label>
+                </div>
+                <div>
+                    <textarea name="description_real" value="<?php echo $ligne_realisation['description_real']; ?>" cols="30" rows="10"></textarea>
+                </div>
+            </div>
         
         
+        </div>
+        <div>
+            <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
+            <button type="submit" class="btn btn-success">MAJ</button>
+        </div>
+    </form>
     </div>
-    <div>
-    <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
-        <button type="submit">MAJ</button>
-    </div>
-</form>
 
 
 <?php require 'inc/footer.php'; ?>
