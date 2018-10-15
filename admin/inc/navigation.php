@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <!-- Grey with black text -->
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
   <ul class="navbar-nav">
     <li class="nav-item active">
       <a class="nav-link" href="index.php">Accueil</a>
