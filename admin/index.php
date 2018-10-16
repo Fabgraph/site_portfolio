@@ -3,12 +3,29 @@
 session_start();// à mettre dans toutes les pages de l'admin
 
 if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+    $id_utilisateur=$_SESSION['id_utilisateur'];
     $email=$_SESSION['email'];
     $mdp=$_SESSION['mdp'];
     $nom=$_SESSION['nom'];
-    // echo $nom;
+
+    // echo $id_utilisateur;
 } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
     header('location:authentification.php');
+}
+
+// pour vider les variables de session on destroy
+if(isset($_GET['quitter'])){
+
+    $_SESSION['connexion_admin']='';
+    $_SESSION['id_utilisateur']='';
+    $_SESSION['email']='';
+    $_SESSION['nom']='';
+    $_SESSION['mdp']='';
+
+        unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
+        session_destroy(); // on détruit la session
+
+        header('location:../admin/authentification.php');
 }
 ?>
 
@@ -22,16 +39,22 @@ if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <!-- lien feuille de style CSS -->
     <link rel="stylesheet" href="css/style.css" />
-    <title>Accueil</title>
+
+    <?php 
+        // requête pour une seule info
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $ligne_utilisateur = $sql->fetch();
+    ?>
+    <title>Accueil : <?php echo $ligne_utilisateur['prenom'] ?></title>
 </head>
 <body>
 
 <?php require 'inc/navigation.php'; ?>
 
-<div class="container-fluid bg-info">
+
     <div class="jumbo">
         <div class="jumbotron jumbotron-fluid bg-secondary pb-5">
-            <h1 class="text-center text-white">Fabgraph</h1>
+            <h1 class="text-center text-white">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
                 $sql = $pdoCV->prepare(" SELECT * FROM t_competences ");
@@ -80,10 +103,10 @@ if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les
 
 
                 </div> <!-- fin de la div row -->
-            </div> <!-- fin de la div row -->
-        </div> <!-- fin jumbotron -->
-    </div>
-
+            </div> <!-- fin de la div container -->
+        </div> 
+    </div> <!-- fin jumbotron -->
+<div class="container-fluid bg-primary">
     <div class="row">
         <div class="col-sm-9">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cupiditate! Animi mollitia ut nihil id illo! Repellat illum earum voluptate laboriosam cupiditate neque impedit incidunt, soluta dolores, voluptatum laborum? Adipisci?</p>
@@ -128,7 +151,7 @@ if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les
 
 
 
-</div>
+</div> <!-- fin de la div container -->
 <?php require 'inc/footer.php'; ?>
 
 

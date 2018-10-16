@@ -21,6 +21,7 @@ if(isset($_POST['connexion'])){// connexion est la name du button
 
         $_SESSION['connexion_admin'] = 'connecté'; // connexion pour l'admin
 
+        $_SESSION['id_utilisateur'] = $ligne_utilisateur['id_utilisateur'];
         $_SESSION['email'] = $ligne_utilisateur['email'];
         $_SESSION['nom'] = $ligne_utilisateur['nom'];
         $_SESSION['mdp'] = $ligne_utilisateur['mdp'];
@@ -49,6 +50,8 @@ if(isset($_POST['connexion'])){// connexion est la name du button
     <title>Admin : authentification</title>
 </head>
 <body>
+
+    
     <form action="authentification.php" method="post">
 
     <h1>Admin : authentification</h1>

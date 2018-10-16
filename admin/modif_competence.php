@@ -30,7 +30,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
 
-    <div class="container-fluid bg-info">
+    <div class="container-fluid bg-primary">
 
         <h1 class="text-dark">Mise à jour d'une compétence</h1>
         <!-- mise à jour formulaire -->

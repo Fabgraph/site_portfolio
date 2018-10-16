@@ -45,6 +45,21 @@
             }
     }
 
+
+
+    session_start();// à mettre dans toutes les pages de l'admin
+
+    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+        $id_utilisateur=$_SESSION['id_utilisateur'];
+        $email=$_SESSION['email'];
+        $mdp=$_SESSION['mdp'];
+        $nom=$_SESSION['nom'];
+
+        // echo $id_utilisateur;
+    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
+        header('location:authentification.php');
+    }
+
     
 ?>
 
@@ -56,7 +71,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- lien feuille de style CSS -->
     <link type="text/css" rel="stylesheet" href="../css/style.css" />
-    <title>Admin : les  loisirs</title>
+    <?php 
+        // requête pour une seule info
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $ligne_utilisateur = $sql->fetch();
+    ?>
+    <title>Admin : les  loisirs <?php echo $ligne_utilisateur['prenom'] ?></title>
     <!-- lien Bootstarp -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <!-- lien Font Awesome -->
@@ -64,7 +84,7 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-info">
+    <div class="container-fluid bg-primary">
     <h1 class="text-center text-dark">Les loisirs et insertion de nouveaux loisirs</h1>
 
     <?php
@@ -78,12 +98,12 @@
         <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
             <thead>
                 <tr>
-                    <th class="table-primary text-dark">Loisirs
+                    <th class="table-primary text-info">Loisirs
                     <a href="loisirs.php?column=loisir&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                     <a href="loisirs.php?column=loisir&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-dark">Modification</th>
-                    <th class="table-primary text-dark">Suppression</th>
+                    <th class="table-primary text-info">Modification</th>
+                    <th class="table-primary text-info">Suppression</th>
                 </tr>
             </thead>
             <tbody>

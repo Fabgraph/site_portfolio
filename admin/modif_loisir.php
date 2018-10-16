@@ -27,7 +27,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
 
-    <div class="container-fluid bg-info">
+    <div class="container-fluid bg-primary">
     <h1>Mise à jour d'un loisir</h1>
 
     <!-- mise à jour formulaire -->

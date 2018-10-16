@@ -30,7 +30,7 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-info">
+    <div class="container-fluid bg-primary">
     <h1>Mise à jour d'une formation</h1>
 
     <!-- mise à jour formulaire -->

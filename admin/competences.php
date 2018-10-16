@@ -59,6 +59,19 @@
 	//     $users = $queryUsers ->fetchAll(PDO::FETCH_ASSOC);   
     // }
 
+    session_start();// à mettre dans toutes les pages de l'admin
+
+    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+        $id_utilisateur=$_SESSION['id_utilisateur'];
+        $email=$_SESSION['email'];
+        $mdp=$_SESSION['mdp'];
+        $nom=$_SESSION['nom'];
+
+        // echo $id_utilisateur;
+    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
+        header('location:authentification.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +80,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin : les  compétences</title>
+    <?php 
+        // requête pour une seule info
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $ligne_utilisateur = $sql->fetch();
+    ?>
+    <title>Admin : les  compétences <?php echo $ligne_utilisateur['prenom'] ?></title>
     <!-- lien Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <!-- lien Font Awesome -->
@@ -77,7 +95,7 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-info">
+    <div class="container-fluid bg-primary">
     <h1 class="text-center text-white">Les compétences et insertion de nouvelles compétences</h1>
   
     <?php
@@ -92,20 +110,20 @@
         <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
             <thead>
                 <tr> 
-                    <th class="table-primary text-dark">Compétences 
+                    <th class="table-primary text-info">Compétences 
                     <a href="competences.php?column=competence&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                     <a href="competences.php?column=competence&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-dark">Niveau
+                    <th class="table-primary text-info">Niveau
                     <a href="competences.php?column=niveau&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                     <a href="competences.php?column=niveau&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-dark">Catégorie
+                    <th class="table-primary text-info">Catégorie
                     <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                     <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-dark">Modification</th>
-                    <th class="table-primary text-dark">Suppression</th>
+                    <th class="table-primary text-info">Modification</th>
+                    <th class="table-primary text-info">Suppression</th>
                 </tr>
             </thead>
             <tbody>
