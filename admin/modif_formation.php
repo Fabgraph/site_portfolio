@@ -31,26 +31,26 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1>Mise à jour d'une formation</h1>
+    <h1 class="text-center text-white">Mise à jour d'une formation</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_formation.php" method="post">
         <div class="form-group">
             <div>
-                <label for="titre">Titre</label>
+                <label for="titre" class="text-white">Titre</label>
                 <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="stitre">Sous-titre</label>
+                <label for="stitre" class="text-white">Sous-titre</label>
                 <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="dates">Dates</label>
+                <label for="dates" class="text-white">Dates</label>
                 <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
             </div>
             <div>
                 <div>
-                    <label for="description">Description</label>
+                    <label for="description" class="text-white">Description</label>
                 </div>
                 <div>
                     <textarea name="description_form" value="<?php echo $ligne_formation['description_form']; ?>" cols="30" rows="10"></textarea>
@@ -61,7 +61,7 @@
         </div>
         <div>
             <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
-            <button type="submit" class="btn btn-success">MAJ</button>
+            <button type="submit" class="btn btn-info">MAJ</button>
         </div>
     </form>
 

@@ -29,7 +29,7 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container-fluid bg-primary">
-    <h1>Mise à jour d'un titre</h1>
+    <h1 class="text-center text-info">Mise à jour d'un titre</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_titre.php" method="post">

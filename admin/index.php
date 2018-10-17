@@ -53,11 +53,11 @@ if(isset($_GET['quitter'])){
 
 
     <div class="jumbo">
-        <div class="jumbotron jumbotron-fluid bg-secondary pb-5">
+        <div class="jumbotron jumbotron-fluid bg-info pb-5">
             <h1 class="text-center text-white">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-                $sql = $pdoCV->prepare(" SELECT * FROM t_competences ");
+                $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' ");
                 $sql->execute();
                 $nbr_competences = $sql->rowCount();
             ?>
@@ -107,9 +107,10 @@ if(isset($_GET['quitter'])){
         </div> 
     </div> <!-- fin jumbotron -->
 <div class="container-fluid bg-primary">
+    <br>
     <div class="row">
         <div class="col-sm-9">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cupiditate! Animi mollitia ut nihil id illo! Repellat illum earum voluptate laboriosam cupiditate neque impedit incidunt, soluta dolores, voluptatum laborum? Adipisci?</p>
+            <p class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cupiditate! Animi mollitia ut nihil id illo! Repellat illum earum voluptate laboriosam cupiditate neque impedit incidunt, soluta dolores, voluptatum laborum? Adipisci?</p>
         </div>
 
         <div class="col-sm-3">
@@ -119,7 +120,7 @@ if(isset($_GET['quitter'])){
                 <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
                     <thead>
                         <tr>
-                            <th class="table-primary">Compétences</th>
+                            <th class="table-dark text-info">Compétences</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -127,8 +128,8 @@ if(isset($_GET['quitter'])){
                             while($ligne_competence=$sql->fetch()) 
                             {
                         ?>
-                        <tr class="table-info">
-                            <td>
+                        <tr class="table-primary">
+                            <td class="text-info">
                                 <?php echo $ligne_competence['competence']; ?>
                             </td>
                         </tr>

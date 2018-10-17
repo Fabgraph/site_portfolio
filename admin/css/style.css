@@ -3,7 +3,7 @@
 .jumbo .jumbotron {
     width: 100%;
     height: 600px;
-    background: url('../img/ciel-etoile.jpg') no-repeat center center;
+    background: url('../img/fond5.jpg') no-repeat center center;
 }
 
 
@@ -32,14 +32,4 @@
     margin-top: -32px;
 }
 
-#fond {
-    background: rgb(187, 145, 29);
-}
-
-#nav {
-    background: rgb(4, 4, 39);
-}
-
-#footer {
-    background: rgb(4, 4, 39);
-}
+/* PAGE AUTHENTIFICATION */

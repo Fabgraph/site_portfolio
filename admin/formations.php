@@ -1,4 +1,39 @@
 <?php require 'inc/connexion.php'; 
+
+    session_start();// à mettre dans toutes les pages de l'admin
+
+        if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+            $id_utilisateur=$_SESSION['id_utilisateur'];
+            $email=$_SESSION['email'];
+            $mdp=$_SESSION['mdp'];
+            $nom=$_SESSION['nom'];
+
+            // echo $id_utilisateur;
+        } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
+            header('location:authentification.php');
+        }
+
+
+        // pour vider les variables de session on destroy
+        if(isset($_GET['quitter'])){
+
+            $_SESSION['connexion_admin']='';
+            $_SESSION['id_utilisateur']='';
+            $_SESSION['email']='';
+            $_SESSION['nom']='';
+            $_SESSION['mdp']='';
+    
+                unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
+                session_destroy(); // on détruit la session
+    
+                header('location:../admin/authentification.php');
+        }
+
+
+
+
+
+
     // insertion d'un élément dans la base
     if(isset($_POST['titre_form'])){// si on a reçu un nouvelle formation
         if($_POST['titre_form']!='' && $_POST['stitre_form']!='' && $_POST['dates_form']!='' && $_POST['description_form']!=''){
@@ -8,7 +43,7 @@
             $stitre_form = addslashes ($_POST['stitre_form']);
             $dates_form = addslashes ($_POST['dates_form']);
             $description_form = addslashes ($_POST['description_form']);
-            $pdoCV->exec(" INSERT INTO t_formations VALUES (NULL, '$titre_form', '$stitre_form', '$dates_form', '$description_form', '1') ");
+            $pdoCV->exec(" INSERT INTO t_formations VALUES (NULL, '$titre_form', '$stitre_form', '$dates_form', '$description_form', '$id_utilisateur') ");
 
             header("location: ../admin/formations.php");
                 exit();
@@ -67,18 +102,7 @@
 	//     $users = $queryUsers ->fetchAll(PDO::FETCH_ASSOC);   
     // }
 
-    session_start();// à mettre dans toutes les pages de l'admin
-
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -103,11 +127,11 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-dark">Les formations et insertion de nouvelles formations</h1>
+    <h1 class="text-center text-white">Les formations et insertion de nouvelles formations</h1>
   
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_formations $order ");
+        $sql = $pdoCV->prepare(" SELECT * FROM t_formations WHERE id_utilisateur = '$id_utilisateur' $order ");
         $sql->execute();
         $nbr_formations = $sql->rowCount();
     ?>
@@ -117,22 +141,22 @@
         <caption class="text-white">La liste des expériences : <?php echo $nbr_formations; ?></caption>
             <thead>
                 <tr> 
-                    <th class="table-primary text-info">Titre
+                    <th class="table-dark text-info">Titre
                     <a href="formations.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                     <a href="formations.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-info">Sous-titre</th>
-                    <th class="table-primary text-info">Dates</th>
-                    <th class="table-primary text-info">Description</th>
-                    <th class="table-primary text-info">Modification</th>
-                    <th class="table-primary text-info">Suppression</th>
+                    <th class="table-dark text-info">Sous-titre</th>
+                    <th class="table-dark text-info">Dates</th>
+                    <th class="table-dark text-info">Description</th>
+                    <th class="table-dark text-info">Modification</th>
+                    <th class="table-dark text-info">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_formation=$sql->fetch())
                     {
                 ?>
-                <tr class="table-info">
+                <tr class="table-primary text-info">
                     <td ><?php echo $ligne_formation['titre_form']; ?></td>
                     <td><?php echo $ligne_formation['stitre_form']; ?></td>
                     <td><?php echo $ligne_formation['dates_form']; ?></td>
@@ -171,7 +195,7 @@
             </div>
          
             <div class="">
-                <button type="submit" class="btn btn-success">Insérer une expérience</button>
+                <button type="submit" class="btn btn-info">Insérer une expérience</button>
             </div>
         </form>
     </div>

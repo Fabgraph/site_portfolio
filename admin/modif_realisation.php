@@ -32,26 +32,26 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container-fluid bg-primary">
-    <h1>Mise à jour d'une réalisation</h1>
+    <h1 class="text-center text-white">Mise à jour d'une réalisation</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_realisation.php" method="post">
         <div class="form-group">
             <div>
-                <label for="titre">Titre</label>
+                <label for="titre" class="text-white">Titre</label>
                 <input type="text" name="titre_real" value="<?php echo $ligne_realisation['titre_real']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="stitre">Sous-titre</label>
+                <label for="stitre" class="text-white">Sous-titre</label>
                 <input type="text" name="stitre_real" value="<?php echo $ligne_realisation['stitre_real']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="dates">Dates</label>
+                <label for="dates" class="text-white">Dates</label>
                 <input type="text" name="dates_real" value="<?php echo $ligne_realisation['dates_real']; ?>" class="form-control" required>
             </div>
             <div>
                 <div>
-                    <label for="description">Description</label>
+                    <label for="description" class="text-white">Description</label>
                 </div>
                 <div>
                     <textarea name="description_real" value="<?php echo $ligne_realisation['description_real']; ?>" cols="30" rows="10"></textarea>
@@ -62,7 +62,7 @@
         </div>
         <div>
             <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
-            <button type="submit" class="btn btn-success">MAJ</button>
+            <button type="submit" class="btn btn-info">MAJ</button>
         </div>
     </form>
     </div>

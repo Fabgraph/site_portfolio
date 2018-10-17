@@ -1,12 +1,49 @@
 <?php require 'inc/connexion.php';
 
+    session_start();// à mettre dans toutes les pages de l'admin
+
+        if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+            $id_utilisateur=$_SESSION['id_utilisateur'];
+            $email=$_SESSION['email'];
+            $mdp=$_SESSION['mdp'];
+            $nom=$_SESSION['nom'];
+
+            // echo $id_utilisateur;
+        } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
+            header('location:authentification.php');
+        }
+
+
+        // pour vider les variables de session on destroy
+        if(isset($_GET['quitter'])){
+
+            $_SESSION['connexion_admin']='';
+            $_SESSION['id_utilisateur']='';
+            $_SESSION['email']='';
+            $_SESSION['nom']='';
+            $_SESSION['mdp']='';
+    
+                unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
+                session_destroy(); // on détruit la session
+    
+                header('location:../admin/authentification.php');
+        }
+
+
+
+
+
+
+
+
+
     // insertion d'un titre
     if(isset($_POST['titre'])){// si on a reçu un nouveau titre
         if($_POST['titre']!=''){
 
             $titre = addslashes ($_POST['titre']);
             $accroche = addslashes ($_POST['accroche']);
-            $pdoCV->exec(" INSERT INTO t_titres VALUES (NULL, '$titre', '$accroche', '1') ");
+            $pdoCV->exec(" INSERT INTO t_titres VALUES (NULL, '$titre', '$accroche', '$id_utilisateur') ");
 
             header("location: ../admin/titres.php");
                 exit();
@@ -46,20 +83,6 @@
             }
     }
 
-
-    session_start();// à mettre dans toutes les pages de l'admin
-
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
-
     
 ?>
 
@@ -85,11 +108,11 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-dark">Les titres et insertion de nouveaux titres</h1>
+    <h1 class="text-center text-white">Les titres et insertion de nouveaux titres</h1>
 
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_titres $order  ");
+        $sql = $pdoCV->prepare(" SELECT * FROM t_titres WHERE id_utilisateur = '$id_utilisateur' $order  ");
         $sql->execute();
         $nbr_titres = $sql->rowCount();
     ?>
@@ -98,20 +121,20 @@
         <caption class="text-white">La liste des titres : <?php echo $nbr_titres; ?></caption>
             <thead>
                 <tr>
-                    <th class="table-primary text-info">Titre
+                    <th class="table-dark text-info">Titre
                     <a href="titres.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                     <a href="titres.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-info">Accroche</th>
-                    <th class="table-primary text-info">Modification</th>
-                    <th class="table-primary text-info">Suppression</th>
+                    <th class="table-dark text-info">Accroche</th>
+                    <th class="table-dark text-info">Modification</th>
+                    <th class="table-dark text-info">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_titre=$sql->fetch())
                     {
                 ?>
-                <tr class="table-info">
+                <tr class="table-primary text-info">
                     <td><?php echo $ligne_titre['titre']; ?></td>
                     <td><?php echo $ligne_titre['accroche']; ?></td>
                     <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>">modif</a></td>
@@ -128,17 +151,17 @@
     <div class="">
         <form action="titres.php" method="post">
             <div class="form-group">
-                <label for="titre">Titre</label>
+                <label for="titre" class="text-white">Titre</label>
                 <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="accroche">Accroche</label>
+                <label for="accroche" class="text-white">Accroche</label>
                 <div>
                     <textarea name="accroche" cols="30" rows="10"></textarea>
                 </div>
             </div>
             <div class="">
-                <button type="submit" class="btn btn-success">Insérer un Titre</button>
+                <button type="submit" class="btn btn-info">Insérer un Titre</button>
             </div>
         </form>
     </div>

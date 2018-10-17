@@ -1,11 +1,43 @@
 <?php require 'inc/connexion.php';
 
+    session_start();// à mettre dans toutes les pages de l'admin
+
+        if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+            $id_utilisateur=$_SESSION['id_utilisateur'];
+            $email=$_SESSION['email'];
+            $mdp=$_SESSION['mdp'];
+            $nom=$_SESSION['nom'];
+
+            // echo $id_utilisateur;
+        } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
+            header('location:authentification.php');
+        }
+
+    
+        // pour vider les variables de session on destroy
+        if(isset($_GET['quitter'])){
+
+            $_SESSION['connexion_admin']='';
+            $_SESSION['id_utilisateur']='';
+            $_SESSION['email']='';
+            $_SESSION['nom']='';
+            $_SESSION['mdp']='';
+
+                unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
+                session_destroy(); // on détruit la session
+
+                header('location:../admin/authentification.php');
+        }
+
+
+
+
     // insertion d'un loisir
     if(isset($_POST['loisir'])){// si on a reçu un nouveau loisir
         if($_POST['loisir']!=''){
 
             $loisir = addslashes ($_POST['loisir']);
-            $pdoCV->exec(" INSERT INTO t_loisirs VALUES (NULL, '$loisir', '1') ");
+            $pdoCV->exec(" INSERT INTO t_loisirs VALUES (NULL, '$loisir', '$id_utilisateur') ");
 
             header("location: ../admin/loisirs.php");
                 exit();
@@ -47,18 +79,7 @@
 
 
 
-    session_start();// à mettre dans toutes les pages de l'admin
-
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
+    
 
     
 ?>
@@ -85,11 +106,11 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-dark">Les loisirs et insertion de nouveaux loisirs</h1>
+    <h1 class="text-center text-white">Les loisirs et insertion de nouveaux loisirs</h1>
 
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_loisirs $order  ");
+        $sql = $pdoCV->prepare(" SELECT * FROM t_loisirs WHERE id_utilisateur = '$id_utilisateur' $order  ");
         $sql->execute();
         $nbr_loisirs = $sql->rowCount();
     ?>
@@ -98,19 +119,19 @@
         <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
             <thead>
                 <tr>
-                    <th class="table-primary text-info">Loisirs
+                    <th class="table-dark text-info">Loisirs
                     <a href="loisirs.php?column=loisir&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                     <a href="loisirs.php?column=loisir&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-info">Modification</th>
-                    <th class="table-primary text-info">Suppression</th>
+                    <th class="table-dark text-info">Modification</th>
+                    <th class="table-dark text-info">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_loisir=$sql->fetch())
                     {
                 ?>
-                <tr class="table-info">
+                <tr class="table-primary text-info">
                     <td><?php echo $ligne_loisir['loisir']; ?></td>
                     <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">modif</a></td>
                     <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>">suppr</a></td>
@@ -126,11 +147,11 @@
     <div class="">
         <form action="loisirs.php" method="post">
             <div class="form-group">
-                <label for="loisir" class="text-white">Loisir</label>
+                <label for="loisir" class="text-white" class="text-white">Loisir</label>
                 <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
             </div>
             <div class="">
-                <button type="submit" class="btn btn-success">Insérer un loisir</button>
+                <button type="submit" class="btn btn-info">Insérer un loisir</button>
             </div>
         </form>
     </div>

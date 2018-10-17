@@ -32,26 +32,26 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container-fluid bg-primary">
-    <h1 class="text-dark">Mise à jour d'une expérience</h1>
+    <h1 class="text-center text-white">Mise à jour d'une expérience</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_experience.php" method="post">
         <div class="form-group">
             <div>
-                <label for="titre">Titre</label>
+                <label for="titre" class="text-white">Titre</label>
                 <input type="text" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="stitre">Sous-titre</label>
+                <label for="stitre" class="text-white">Sous-titre</label>
                 <input type="text" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="dates">Dates</label>
+                <label for="dates" class="text-white">Dates</label>
                 <input type="text" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" class="form-control" required>
             </div>
             <div>
                 <div>
-                    <label for="description">Description</label>
+                    <label for="description" class="text-white">Description</label>
                 </div>
                 <div>
                     <textarea name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" cols="30" rows="10"></textarea>
@@ -62,7 +62,7 @@
         </div>
         <div>
             <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
-            <button type="submit" class="btn btn-success">MAJ</button>
+            <button type="submit" class="btn btn-info">MAJ</button>
         </div>
     </form>
     </div>

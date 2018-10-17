@@ -32,20 +32,20 @@
 
     <div class="container-fluid bg-primary">
 
-        <h1 class="text-dark">Mise à jour d'une compétence</h1>
+        <h1 class="text-white">Mise à jour d'une compétence</h1>
         <!-- mise à jour formulaire -->
         <form action="modif_competence.php" method="post">
         <div class="">
             <div>
-                <label for="competence">Compétence</label>
+                <label for="competence" class="text-white">Compétence</label>
                 <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
             </div>
             <div>
-                <label for="niveau">Niveau</label>
+                <label for="niveau" class="text-white">Niveau</label>
                 <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
             </div>
             <div class="">
-                <label for="categorie">Catégorie</label>
+                <label for="categorie" class="text-white">Catégorie</label>
                 <select name="categorie">
                     <option value="Développement"
                     <?php // pour ajouter selected="selected" à la balise option si c'est la categorie de la compétence.
@@ -85,7 +85,7 @@
             </div>
             <div>
             <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
-                <button type="submit" class="btn btn-success">MAJ</button>
+                <button type="submit" class="btn btn-info">MAJ</button>
             </div>
         </form>
     </div>

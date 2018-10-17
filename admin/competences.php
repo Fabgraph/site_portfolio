@@ -1,4 +1,36 @@
 <?php require 'inc/connexion.php'; 
+
+
+    session_start();// à mettre dans toutes les pages de l'admin
+
+    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
+        $id_utilisateur=$_SESSION['id_utilisateur'];
+        $email=$_SESSION['email'];
+        $mdp=$_SESSION['mdp'];
+        $nom=$_SESSION['nom'];
+
+        // echo $id_utilisateur;
+    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
+        header('location:authentification.php');
+    }
+
+
+    // pour vider les variables de session on destroy
+    if(isset($_GET['quitter'])){
+
+    $_SESSION['connexion_admin']='';
+    $_SESSION['id_utilisateur']='';
+    $_SESSION['email']='';
+    $_SESSION['nom']='';
+    $_SESSION['mdp']='';
+
+        unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
+        session_destroy(); // on détruit la session
+
+        header('location:../admin/authentification.php');
+    }
+
+
     // insertion d'un élément dans la base
     if(isset($_POST['competence'])){// si on a reçu un nouvelle compétence
         if($_POST['competence']!='' && $_POST['niveau']!='' && $_POST['categorie']!=''){
@@ -6,7 +38,7 @@
             $competence = addslashes ($_POST['competence']);
             $niveau = addslashes ($_POST['niveau']);
             $categorie = addslashes ($_POST['categorie']);
-            $pdoCV->exec(" INSERT INTO t_competences VALUES (NULL, '$competence', '$niveau', '$categorie', '1') ");
+            $pdoCV->exec(" INSERT INTO t_competences VALUES (NULL, '$competence', '$niveau', '$categorie', '$id_utilisateur') ");
 
             header("location: ../admin/competences.php");
                 exit();
@@ -59,18 +91,7 @@
 	//     $users = $queryUsers ->fetchAll(PDO::FETCH_ASSOC);   
     // }
 
-    session_start();// à mettre dans toutes les pages de l'admin
 
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
 
 ?>
 
@@ -100,7 +121,7 @@
   
     <?php
         // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_competences $order ");
+        $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order ");
         $sql->execute();
         $nbr_competences = $sql->rowCount();
     ?>
@@ -110,32 +131,32 @@
         <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
             <thead>
                 <tr> 
-                    <th class="table-primary text-info">Compétences 
+                    <th class="table-dark text-info">Compétences 
                     <a href="competences.php?column=competence&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                     <a href="competences.php?column=competence&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-info">Niveau
+                    <th class="table-dark text-info">Niveau
                     <a href="competences.php?column=niveau&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                     <a href="competences.php?column=niveau&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-info">Catégorie
+                    <th class="table-dark text-info">Catégorie
                     <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                     <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                     </th>
-                    <th class="table-primary text-info">Modification</th>
-                    <th class="table-primary text-info">Suppression</th>
+                    <th class="table-dark text-info">Modification</th>
+                    <th class="table-dark text-info">Suppression</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($ligne_competence=$sql->fetch())
                     {
                 ?>
-                <tr class="table-info">
-                    <td><?php echo $ligne_competence['competence']; ?></td>
-                    <td ><?php echo $ligne_competence['niveau']; ?></td>
-                    <td><?php echo $ligne_competence['categorie']; ?></td>
-                    <td ><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modif</a></td>
-                    <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">suppr</a></td>
+                <tr class="table-primary">
+                    <td class="text-info"><?php echo $ligne_competence['competence']; ?></td>
+                    <td class="text-info"><?php echo $ligne_competence['niveau']; ?></td>
+                    <td class="text-info"><?php echo $ligne_competence['categorie']; ?></td>
+                    <td class="text-info"><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modif</a></td>
+                    <td class="text-info"><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">suppr</a></td>
                 </tr>
                 <?php
                      }
@@ -149,15 +170,15 @@
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="competences.php" method="post">
             <div class="form-group">
-                <label for="competence">Compétence</label>
+                <label for="competence" class="text-white">Compétence</label>
                 <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="niveau">Niveau</label>
+                <label for="niveau" class="text-white">Niveau</label>
                 <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="categorie">Catégorie</label>
+                <label for="categorie" class="text-white">Catégorie</label>
                 <select name="categorie">
                     <option value="Développement">Développement</option>
                     <option value="Infographie">Infographie</option>
@@ -166,7 +187,7 @@
                 </select>
             </div>
             <div class="">
-                <button type="submit" class="btn btn-success">Insérer une compétence</button>
+                <button type="submit" class="btn btn-info">Insérer une compétence</button>
             </div>
         </form>
     </div>
