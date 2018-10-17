@@ -9,7 +9,7 @@
       <a class="nav-link text-info" href="authentification.php">Connexion</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-info" href="#">Link</a>
+      <a class="nav-link text-info" href="#">Inscription</a>
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-info" href="#" id="navbardrop" data-toggle="dropdown">
