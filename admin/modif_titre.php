@@ -28,16 +28,16 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-info">Mise à jour d'un titre</h1>
+    <h1 class="text-center text-white">Mise à jour d'un titre</h1>
 
     <!-- mise à jour formulaire -->
     <form action="modif_titre.php" method="post">
         <div class="">
-            <label for="titre">Loisir</label>
+            <label for="titre" class="text-white">Loisir</label>
             <input type="text" name="titre" value="<?php echo $ligne_titre['titre']; ?>" class="form-control" required>
         </div>
         <div class="">
-            <label for="accroche">Accroche</label>
+            <label for="accroche" class="text-white">Accroche</label>
         </div>
         <div>
             <textarea name="accroche" cols="30" rows="10"></textarea>

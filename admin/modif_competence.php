@@ -31,7 +31,7 @@
 
     <div class="container-fluid bg-primary">
 
-        <h1 class="text-white">Mise à jour d'une compétence</h1>
+        <h1 class="text-center text-white">Mise à jour d'une compétence</h1>
         <!-- mise à jour formulaire -->
         <form action="modif_competence.php" method="post">
         <div class="">

@@ -168,7 +168,7 @@
     </div>
 
     <hr class="bg-dark">
-    <div class="">
+    <div class="container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="experiences.php" method="post">
             <div class="form-group">

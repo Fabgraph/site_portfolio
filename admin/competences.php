@@ -161,30 +161,30 @@
     </div>
 
     <hr class="bg-dark">
-    <div class="">
-        <!-- insertion d'une nouvelle compétence formulaire -->
-        <form action="competences.php" method="post">
-            <div class="form-group">
-                <label for="competence" class="text-white">Compétence</label>
-                <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="niveau" class="text-white">Niveau</label>
-                <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="categorie" class="text-white">Catégorie</label>
-                <select name="categorie">
-                    <option value="Développement">Développement</option>
-                    <option value="Infographie">Infographie</option>
-                    <option value="Front">Front</option>
-                    <option value="Back">Back</option>
-                </select>
-            </div>
-            <div class="">
-                <button type="submit" class="btn btn-info">Insérer une compétence</button>
-            </div>
-        </form>
+    <div class="container">
+            <!-- insertion d'une nouvelle compétence formulaire -->
+            <form action="competences.php" method="post">
+                <div class="form-group">
+                    <label for="competence" class="text-white">Compétence</label>
+                    <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="niveau" class="text-white">Niveau</label>
+                    <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="categorie" class="text-white">Catégorie</label>
+                    <select name="categorie">
+                        <option value="Développement">Développement</option>
+                        <option value="Infographie">Infographie</option>
+                        <option value="Front">Front</option>
+                        <option value="Back">Back</option>
+                    </select>
+                </div>
+                <div class="mgbutton">
+                    <button type="submit" class="btn btn-info">Insérer une compétence</button>
+                </div>
+            </form>
     </div>
 </div>
 

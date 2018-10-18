@@ -25,12 +25,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin : mise à jour realisation</title>
-    <!-- lien Bootstrap -->
     <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-
+    
     <div class="container-fluid bg-primary">
     <h1 class="text-center text-white">Mise à jour d'une réalisation</h1>
 
@@ -69,6 +68,7 @@
             <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
             <button type="submit" class="btn btn-info">MAJ</button>
         </div>
+
     </form>
     </div>
 

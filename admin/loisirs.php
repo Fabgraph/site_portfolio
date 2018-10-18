@@ -90,8 +90,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- lien feuille de style CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css" />
     <?php 
         // requête pour une seule info
         $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
@@ -141,7 +139,7 @@
     </div>
 
     <hr class="bg-dark">
-    <div class="">
+    <div class="container">
         <form action="loisirs.php" method="post">
             <div class="form-group">
                 <label for="loisir" class="text-white" class="text-white">Loisir</label>
