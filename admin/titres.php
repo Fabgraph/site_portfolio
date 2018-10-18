@@ -100,10 +100,7 @@
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  titres <?php echo $ligne_utilisateur['prenom'] ?></title>
-    <!-- lien Bootstarp -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!-- lien Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
@@ -137,8 +134,8 @@
                 <tr class="table-primary text-info">
                     <td><?php echo $ligne_titre['titre']; ?></td>
                     <td><?php echo $ligne_titre['accroche']; ?></td>
-                    <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>">modif</a></td>
-                    <td><a href="titres.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>">suppr</a></td>
+                    <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="titres.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
                 <?php
                     }

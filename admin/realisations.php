@@ -116,12 +116,7 @@
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  réalisations <?php echo $ligne_utilisateur['prenom'] ?></title>
-    <!-- lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!-- lien Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <!-- lien feuille de style CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
@@ -160,8 +155,8 @@
                     <td><?php echo $ligne_realisation['stitre_real']; ?></td>
                     <td><?php echo $ligne_realisation['dates_real']; ?></td>
                     <td><?php echo $ligne_realisation['description_real']; ?></td>
-                    <td ><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>">modif</a></td>
-                    <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>">suppr</a></td>
+                    <td ><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
                 <?php
                      }
@@ -190,7 +185,12 @@
                 <label for="description" class="text-white" class="text-white">Description</label>
             </div>
             <div>
-                <textarea name="description_real" cols="30" rows="10"></textarea>
+                <textarea type="text" class="form-control" name="description_real" id="description_real" cols="30" rows="10"></textarea>
+                <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace( 'description_real' );
+                    </script>
             </div>
             
             <br>

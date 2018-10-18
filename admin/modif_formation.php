@@ -9,6 +9,7 @@
 
         $pdoCV->exec(" UPDATE t_formations SET titre_form='$titre', stitre_form='$stitre', dates_form='$dates', description_form='$description' WHERE id_formation='$id_formation' ");
         header('location: ../admin/formations.php');
+
     }
 
     // je récupère l'id de ce que je mets à jour
@@ -25,14 +26,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin : mise à jour formation</title>
-    <!-- lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
     <h1 class="text-center text-white">Mise à jour d'une formation</h1>
 
+    
     <!-- mise à jour formulaire -->
     <form action="modif_formation.php" method="post">
         <div class="form-group">
@@ -53,7 +54,12 @@
                     <label for="description" class="text-white">Description</label>
                 </div>
                 <div>
-                    <textarea name="description_form" value="<?php echo $ligne_formation['description_form']; ?>" cols="30" rows="10"></textarea>
+                    <textarea type="text" class="form-control" name="description_form" id="description_form" cols="30" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace( 'description_form' );
+                    </script>
                 </div>
             </div>
         

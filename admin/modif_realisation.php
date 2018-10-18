@@ -26,7 +26,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin : mise à jour realisation</title>
     <!-- lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
@@ -54,7 +54,12 @@
                     <label for="description" class="text-white">Description</label>
                 </div>
                 <div>
-                    <textarea name="description_real" value="<?php echo $ligne_realisation['description_real']; ?>" cols="30" rows="10"></textarea>
+                    <textarea type="text" class="form-control" name="description_real" id="description_real" cols="30" rows="10"><?php echo $ligne_realisation['description_real']; ?></textarea>
+                    <script>
+                        // Replace the <textarea id="editor1"> with a CKEditor
+                        // instance, using default configuration.
+                        CKEDITOR.replace( 'description_real' );
+                    </script>
                 </div>
             </div>
         

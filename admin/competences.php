@@ -107,12 +107,7 @@
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  compétences <?php echo $ligne_utilisateur['prenom'] ?></title>
-    <!-- lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!-- lien Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <!-- lien feuille de style CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
@@ -155,8 +150,8 @@
                     <td class="text-info"><?php echo $ligne_competence['competence']; ?></td>
                     <td class="text-info"><?php echo $ligne_competence['niveau']; ?></td>
                     <td class="text-info"><?php echo $ligne_competence['categorie']; ?></td>
-                    <td class="text-info"><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">modif</a></td>
-                    <td class="text-info"><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>">suppr</a></td>
+                    <td class="text-info"><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-edit"></i></a></td>
+                    <td class="text-info"><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
                 <?php
                      }

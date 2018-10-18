@@ -118,12 +118,7 @@
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  expériences <?php echo $ligne_utilisateur['prenom'] ?></title>
-    <!-- lien Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <!-- lien Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <!-- lien feuille de style CSS -->
-    <link type="text/css" rel="stylesheet" href="../css/style.css" />
+    <?php require 'inc/liens.php'; ?>
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
@@ -162,8 +157,8 @@
                     <td><?php echo $ligne_experience['stitre_exp']; ?></td>
                     <td><?php echo $ligne_experience['dates_exp']; ?></td>
                     <td><?php echo $ligne_experience['description_exp']; ?></td>
-                    <td ><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>">modif</a></td>
-                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>">suppr</a></td>
+                    <td ><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                 </tr>
                 <?php
                      }
