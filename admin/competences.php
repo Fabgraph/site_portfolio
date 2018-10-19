@@ -169,13 +169,13 @@
             <!-- insertion d'une nouvelle compétence formulaire -->
             <form action="competences.php" method="post">
             <div class="row">
-                <div class=" col-sm-12 col-md-6 col-lg-6">
+                <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="form-group">
                         <label for="competence" class="text-white">Compétence</label>
                         <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
                     </div>
                 </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-6 col-lg-6">
+                <div class=" col-sm-12 col-md-6 col-lg-3">
                     <div class="form-group">
                         <label for="niveau" class="text-white">Niveau</label>
                         <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
@@ -184,7 +184,7 @@
                 </div>
                 <div class="form-group">
                     <label for="categorie" class="text-white">Catégorie</label>
-                    <select name="categorie">
+                    <select name="categorie" class="form-control">
                         <option value="Développement">Développement</option>
                         <option value="Infographie">Infographie</option>
                         <option value="Front">Front</option>
