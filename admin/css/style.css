@@ -33,7 +33,7 @@
 /* BODY */
 .container-fluid {
     margin-top: 0 auto;
-    min-height: 90vh;
+    min-height: 100vh;
     position: relative;
 }
 
