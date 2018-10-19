@@ -151,7 +151,7 @@
                         <?php while($ligne_realisation=$sql->fetch())
                             {
                         ?>
-                        <tr class="table-primary text-info">
+                        <tr class="table-warning text-info">
                             <td ><?php echo $ligne_realisation['titre_real']; ?></td>
                             <td><?php echo $ligne_realisation['stitre_real']; ?></td>
                             <td><?php echo $ligne_realisation['dates_real']; ?></td>

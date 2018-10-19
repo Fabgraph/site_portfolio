@@ -148,7 +148,7 @@
                             <?php while($ligne_competence=$sql->fetch())
                                 {
                             ?>
-                            <tr class="table-primary">
+                            <tr class="table-warning">
                                 <td class="text-info"><?php echo $ligne_competence['competence']; ?></td>
                                 <td class="text-info"><?php echo $ligne_competence['niveau']; ?></td>
                                 <td class="text-info"><?php echo $ligne_competence['categorie']; ?></td>

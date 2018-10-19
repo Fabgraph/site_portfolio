@@ -152,7 +152,7 @@
                     <?php while($ligne_formation=$sql->fetch())
                         {
                     ?>
-                    <tr class="table-primary text-info">
+                    <tr class="table-warning text-info">
                         <td ><?php echo $ligne_formation['titre_form']; ?></td>
                         <td><?php echo $ligne_formation['stitre_form']; ?></td>
                         <td><?php echo $ligne_formation['dates_form']; ?></td>

@@ -127,7 +127,7 @@
                         <?php while($ligne_loisir=$sql->fetch())
                             {
                         ?>
-                        <tr class="table-primary text-info">
+                        <tr class="table-warning text-info">
                             <td><?php echo $ligne_loisir['loisir']; ?></td>
                             <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>"><i class="fas fa-edit"></i></a></td>
                             <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>"><i class="fas fa-trash-alt"></i></a></td>

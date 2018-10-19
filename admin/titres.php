@@ -130,7 +130,7 @@
                         <?php while($ligne_titre=$sql->fetch())
                             {
                         ?>
-                        <tr class="table-primary text-info">
+                        <tr class="table-warning text-info">
                             <td><?php echo $ligne_titre['titre']; ?></td>
                             <td><?php echo $ligne_titre['accroche']; ?></td>
                             <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-edit"></i></a></td>

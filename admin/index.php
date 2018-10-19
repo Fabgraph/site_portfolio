@@ -125,7 +125,7 @@ if(isset($_GET['quitter'])){
                             while($ligne_competence=$sql->fetch()) 
                             {
                         ?>
-                        <tr class="table-primary">
+                        <tr class="table-warning">
                             <td class="text-info">
                                 <?php echo $ligne_competence['competence']; ?>
                             </td>

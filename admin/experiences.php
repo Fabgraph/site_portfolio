@@ -153,7 +153,7 @@
                         <?php while($ligne_experience=$sql->fetch())
                             {
                         ?>
-                        <tr class="table-primary text-info">
+                        <tr class="table-warning text-info">
                             <td ><?php echo $ligne_experience['titre_exp']; ?></td>
                             <td><?php echo $ligne_experience['stitre_exp']; ?></td>
                             <td><?php echo $ligne_experience['dates_exp']; ?></td>
