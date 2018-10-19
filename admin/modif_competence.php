@@ -28,21 +28,27 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-
     <div class="container-fluid bg-primary">
-
+        <div class="container2">
         <h1 class="text-center text-white">Mise à jour d'une compétence</h1>
         <!-- mise à jour formulaire -->
         <form action="modif_competence.php" method="post">
         <div class="">
-            <div>
-                <label for="competence" class="text-white">Compétence</label>
-                <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
-            </div>
-            <div>
-                <label for="niveau" class="text-white">Niveau</label>
-                <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
-            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div>
+                        <label for="competence" class="text-white">Compétence</label>
+                        <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-6">
+                    <div>
+                        <label for="niveau" class="text-white">Niveau</label>
+                        <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
+                    </div>
+                </div>
+            </div> <!-- fin div row -->
+            <br>
             <div class="">
                 <label for="categorie" class="text-white">Catégorie</label>
                 <select name="categorie">
@@ -82,6 +88,7 @@
             </div>
         
             </div>
+            <br>
             <div>
             <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
                 <button type="submit" class="btn btn-info">MAJ</button>
@@ -90,7 +97,7 @@
     </div>
 
 
-
+    </div> <!-- fin div container2 -->
 <?php require 'inc/footer.php'; ?>
 </body>
 </html>

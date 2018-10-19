@@ -101,50 +101,55 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les loisirs et insertion de nouveaux loisirs</h1>
+        <div class="container2">
+        <h1 class="text-center text-white">Les loisirs et insertion de nouveaux loisirs</h1>
 
-    <?php
-        // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_loisirs WHERE id_utilisateur = '$id_utilisateur' $order  ");
-        $sql->execute();
-        $nbr_loisirs = $sql->rowCount();
-    ?>
-    <div class="">
-        <table class="table">
-        <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
-            <thead>
-                <tr>
-                    <th class="table-dark text-info">Loisirs
-                    <a href="loisirs.php?column=loisir&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
-                    <a href="loisirs.php?column=loisir&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Modification</th>
-                    <th class="table-dark text-info">Suppression</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($ligne_loisir=$sql->fetch())
-                    {
-                ?>
-                <tr class="table-primary text-info">
-                    <td><?php echo $ligne_loisir['loisir']; ?></td>
-                    <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>"><i class="fas fa-edit"></i></a></td>
-                    <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                <?php
-                    }
-                ?>
-            </tbody>
-        </table>
-    </div>
-
+        <?php
+            // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+            $sql = $pdoCV->prepare(" SELECT * FROM t_loisirs WHERE id_utilisateur = '$id_utilisateur' $order  ");
+            $sql->execute();
+            $nbr_loisirs = $sql->rowCount();
+        ?>
+            <div class="">
+                <table class="table">
+                <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
+                    <thead>
+                        <tr>
+                            <th class="table-dark text-info">Loisirs
+                            <a href="loisirs.php?column=loisir&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
+                            <a href="loisirs.php?column=loisir&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                            </th>
+                            <th class="table-dark text-info">Modification</th>
+                            <th class="table-dark text-info">Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($ligne_loisir=$sql->fetch())
+                            {
+                        ?>
+                        <tr class="table-primary text-info">
+                            <td><?php echo $ligne_loisir['loisir']; ?></td>
+                            <td><a href="modif_loisir.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a href="loisirs.php?id_loisir=<?php echo $ligne_loisir['id_loisir']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- fin div container2 -->
     <hr class="bg-dark">
     <div class="container">
         <form action="loisirs.php" method="post">
-            <div class="form-group">
-                <label for="loisir" class="text-white" class="text-white">Loisir</label>
-                <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
-            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="loisir" class="text-white" class="text-white">Loisir</label>
+                        <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
+                    </div>
+                </div>
+            </div> <!-- fin de la div row -->
             <div class="">
                 <button type="submit" class="btn btn-info">Insérer un loisir</button>
             </div>

@@ -31,24 +31,33 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
+    <div class="container2">
     <h1 class="text-center text-white">Mise à jour d'une formation</h1>
 
     
     <!-- mise à jour formulaire -->
     <form action="modif_formation.php" method="post">
         <div class="form-group">
-            <div>
-                <label for="titre" class="text-white">Titre</label>
-                <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
-            </div>
-            <div>
-                <label for="stitre" class="text-white">Sous-titre</label>
-                <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
-            </div>
-            <div>
-                <label for="dates" class="text-white">Dates</label>
-                <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
-            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div>
+                        <label for="titre" class="text-white">Titre</label>
+                        <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div>
+                        <label for="stitre" class="text-white">Sous-titre</label>
+                        <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div>
+                        <label for="dates" class="text-white">Dates</label>
+                        <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
+                    </div>
+                </div>
+            </div> <!-- fin div row -->
             <div>
                 <div>
                     <label for="description" class="text-white">Description</label>
@@ -73,7 +82,7 @@
 
     </div>
 
-
+    </div> <!-- fin de la div container2 -->
 <?php require 'inc/footer.php'; ?>
 </body>
 </html>

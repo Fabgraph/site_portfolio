@@ -27,19 +27,21 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Mise à jour d'un loisir</h1>
+        <div class="container2">
+        <h1 class="text-center text-white">Mise à jour d'un loisir</h1>
 
-    <!-- mise à jour formulaire -->
-    <form action="modif_loisir.php" method="post">
-        <div class="">
-            <label for="loisir" class="text-white">Loisir</label>
-            <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" class="form-control" required>
-        </div>
-        <div>
-            <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
-            <button type="submit" class="btn btn-info">MAJ</button>
-        </div>
-    </form>
+        <!-- mise à jour formulaire -->
+        <form action="modif_loisir.php" method="post">
+            <div class="">
+                <label for="loisir" class="text-white">Loisir</label>
+                <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" class="form-control" required>
+            </div>
+            <div>
+                <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
+                <button type="submit" class="btn btn-info">MAJ</button>
+            </div>
+        </form>
+        </div> <!-- fin de la div container2 -->
     </div>
 
 <?php require 'inc/footer.php'; ?>

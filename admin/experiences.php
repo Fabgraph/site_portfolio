@@ -123,72 +123,85 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les expériences et insertion de nouvelles expériences</h1>
+        <div class="container2">
+        <h1 class="text-center text-white">Les expériences et insertion de nouvelles expériences</h1>
   
-    <?php
-        // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur' $order ");
-        $sql->execute();
-        $nbr_experiences = $sql->rowCount();
-    ?>
+        <?php
+            // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+            $sql = $pdoCV->prepare(" SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur' $order ");
+            $sql->execute();
+            $nbr_experiences = $sql->rowCount();
+        ?>
 
-    <div class="">
-        <table class="table">
-        <caption class="text-white">La liste des expériences : <?php echo $nbr_experiences; ?></caption>
-            <thead>
-                <tr> 
-                    <th class="table-dark text-info">Titre
-                    <a href="experiences.php?column=dates&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
-                    <a href="experiences.php?column=dates&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Sous-titre</th>
-                    <th class="table-dark text-info">Dates</th>
-                    <th class="table-dark text-info">Description</th>
-                    <th class="table-dark text-info">Modification</th>
-                    <th class="table-dark text-info">Suppression</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($ligne_experience=$sql->fetch())
-                    {
-                ?>
-                <tr class="table-primary text-info">
-                    <td ><?php echo $ligne_experience['titre_exp']; ?></td>
-                    <td><?php echo $ligne_experience['stitre_exp']; ?></td>
-                    <td><?php echo $ligne_experience['dates_exp']; ?></td>
-                    <td><?php echo $ligne_experience['description_exp']; ?></td>
-                    <td ><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>"><i class="fas fa-edit"></i></a></td>
-                    <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                <?php
-                     }
-                ?>
-             </tbody>
-        </table>
-    </div>
-
+            <div class="">
+                <table class="table">
+                <caption class="text-white">La liste des expériences : <?php echo $nbr_experiences; ?></caption>
+                    <thead>
+                        <tr> 
+                            <th class="table-dark text-info">Titre
+                            <a href="experiences.php?column=dates&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                            <a href="experiences.php?column=dates&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                            </th>
+                            <th class="table-dark text-info">Sous-titre</th>
+                            <th class="table-dark text-info">Dates</th>
+                            <th class="table-dark text-info">Description</th>
+                            <th class="table-dark text-info">Modification</th>
+                            <th class="table-dark text-info">Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($ligne_experience=$sql->fetch())
+                            {
+                        ?>
+                        <tr class="table-primary text-info">
+                            <td ><?php echo $ligne_experience['titre_exp']; ?></td>
+                            <td><?php echo $ligne_experience['stitre_exp']; ?></td>
+                            <td><?php echo $ligne_experience['dates_exp']; ?></td>
+                            <td><?php echo $ligne_experience['description_exp']; ?></td>
+                            <td ><a href="modif_experience.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a href="experiences.php?id_experience=<?php echo $ligne_experience['id_experience']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>  <!-- fin div container2 -->                  
     <hr class="bg-dark">
     <div class="container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="experiences.php" method="post">
-            <div class="form-group">
-                <label for="titre" class="text-white">Titre</label>
-                <input type="text" name="titre_exp" placeholder="Titre du poste" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="stitre" class="text-white">Sous-titre</label>
-                <input type="text" name="stitre_exp" placeholder="Sous-titre du poste" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="dates" class="text-white">Dates</label>
-                <input type="text" name="dates_exp" placeholder="dates du poste" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="description" class="text-white">Description</label>
-                <div>
-                    <textarea name="description_exp" cols="30" rows="10"></textarea>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="titre" class="text-white">Titre</label>
+                        <input type="text" name="titre_exp" placeholder="Titre du poste" class="form-control" required>
+                    </div>
                 </div>
-            </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="stitre" class="text-white">Sous-titre</label>
+                        <input type="text" name="stitre_exp" placeholder="Sous-titre du poste" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="dates" class="text-white">Dates</label>
+                        <input type="text" name="dates_exp" placeholder="dates du poste" class="form-control" required>
+                    </div>
+                </div>
+            </div> <!-- fin de la div row -->
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="form-group">
+                        <label for="description" class="text-white">Description</label>
+                        <div>
+                            <textarea name="description_exp" cols="123" rows="10"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- fin de la div row -->
          
             <div class="">
                 <button type="submit" class="btn btn-info">Insérer une expérience</button>

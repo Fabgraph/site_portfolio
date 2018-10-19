@@ -121,66 +121,76 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les réalisations et insertion de nouvelles réalisations</h1>
+        <div class="container2">
+        <h1 class="text-center text-white">Les réalisations et insertion de nouvelles réalisations</h1>
   
-    <?php
-        // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_realisations WHERE id_utilisateur = '$id_utilisateur' $order ");
-        $sql->execute();
-        $nbr_realisations = $sql->rowCount();
-    ?>
+        <?php
+            // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+            $sql = $pdoCV->prepare(" SELECT * FROM t_realisations WHERE id_utilisateur = '$id_utilisateur' $order ");
+            $sql->execute();
+            $nbr_realisations = $sql->rowCount();
+        ?>
 
-    <div class="">
-        <table class="table">
-        <caption class="text-white">La liste des expériences : <?php echo $nbr_realisations; ?></caption>
-            <thead>
-                <tr> 
-                    <th class="table-dark text-info">Titre
-                    <a href="realisations.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
-                    <a href="realisations.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Sous-titre</th>
-                    <th class="table-dark text-info">Date</th>
-                    <th class="table-dark text-info">Description</th>
-                    <th class="table-dark text-info">Modification</th>
-                    <th class="table-dark text-info">Suppression</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($ligne_realisation=$sql->fetch())
-                    {
-                ?>
-                <tr class="table-primary text-info class="text-white"">
-                    <td ><?php echo $ligne_realisation['titre_real']; ?></td>
-                    <td><?php echo $ligne_realisation['stitre_real']; ?></td>
-                    <td><?php echo $ligne_realisation['dates_real']; ?></td>
-                    <td><?php echo $ligne_realisation['description_real']; ?></td>
-                    <td ><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-edit"></i></a></td>
-                    <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                <?php
-                     }
-                ?>
-             </tbody>
-        </table>
-    </div>
+            <div class="">
+                <table class="table">
+                <caption class="text-white">La liste des expériences : <?php echo $nbr_realisations; ?></caption>
+                    <thead>
+                        <tr> 
+                            <th class="table-dark text-info">Titre
+                            <a href="realisations.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                            <a href="realisations.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                            </th>
+                            <th class="table-dark text-info">Sous-titre</th>
+                            <th class="table-dark text-info">Date</th>
+                            <th class="table-dark text-info">Description</th>
+                            <th class="table-dark text-info">Modification</th>
+                            <th class="table-dark text-info">Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($ligne_realisation=$sql->fetch())
+                            {
+                        ?>
+                        <tr class="table-primary text-info">
+                            <td ><?php echo $ligne_realisation['titre_real']; ?></td>
+                            <td><?php echo $ligne_realisation['stitre_real']; ?></td>
+                            <td><?php echo $ligne_realisation['dates_real']; ?></td>
+                            <td><?php echo $ligne_realisation['description_real']; ?></td>
+                            <td ><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
+        </div> <!-- fin de la div container2 -->
 
     <hr class="bg-dark">
     <div class="container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="realisations.php" method="post">
-            <div class="form-group">
-                <label for="titre" class="text-white" class="text-white">Titre</label>
-                <input type="text" name="titre_real" placeholder="Titre de la réalisation" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="stitre" class="text-white" class="text-white">Sous-titre</label>
-                <input type="text" name="stitre_real" placeholder="Sous-titre de la réalisation" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="dates" class="text-white" class="text-white">Dates</label>
-                <input type="text" name="dates_real" placeholder="dates de la réalisation" class="form-control" required>
-            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="titre" class="text-white" class="text-white">Titre</label>
+                        <input type="text" name="titre_real" placeholder="Titre de la réalisation" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="stitre" class="text-white" class="text-white">Sous-titre</label>
+                        <input type="text" name="stitre_real" placeholder="Sous-titre de la réalisation" class="form-control" required>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <div class="form-group">
+                        <label for="dates" class="text-white" class="text-white">Dates</label>
+                        <input type="text" name="dates_real" placeholder="dates de la réalisation" class="form-control" required>
+                    </div>
+                </div>
+            </div> <!-- fin div row -->
             <div class="form-group">
                 <label for="description" class="text-white" class="text-white">Description</label>
             </div>

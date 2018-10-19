@@ -103,43 +103,45 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les titres et insertion de nouveaux titres</h1>
+        <div class="container2">
+        <h1 class="text-center text-white">Les titres et insertion de nouveaux titres</h1>
 
-    <?php
-        // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_titres WHERE id_utilisateur = '$id_utilisateur' $order  ");
-        $sql->execute();
-        $nbr_titres = $sql->rowCount();
-    ?>
-    <div class="">
-        <table class="table">
-        <caption class="text-white">La liste des titres : <?php echo $nbr_titres; ?></caption>
-            <thead>
-                <tr>
-                    <th class="table-dark text-info">Titre
-                    <a href="titres.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
-                    <a href="titres.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Accroche</th>
-                    <th class="table-dark text-info">Modification</th>
-                    <th class="table-dark text-info">Suppression</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($ligne_titre=$sql->fetch())
-                    {
-                ?>
-                <tr class="table-primary text-info">
-                    <td><?php echo $ligne_titre['titre']; ?></td>
-                    <td><?php echo $ligne_titre['accroche']; ?></td>
-                    <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-edit"></i></a></td>
-                    <td><a href="titres.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                <?php
-                    }
-                ?>
-            </tbody>
-        </table>
+        <?php
+            // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+            $sql = $pdoCV->prepare(" SELECT * FROM t_titres WHERE id_utilisateur = '$id_utilisateur' $order  ");
+            $sql->execute();
+            $nbr_titres = $sql->rowCount();
+        ?>
+            <div class="">
+                <table class="table">
+                <caption class="text-white">La liste des titres : <?php echo $nbr_titres; ?></caption>
+                    <thead>
+                        <tr>
+                            <th class="table-dark text-info">Titre
+                            <a href="titres.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
+                            <a href="titres.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                            </th>
+                            <th class="table-dark text-info">Accroche</th>
+                            <th class="table-dark text-info">Modification</th>
+                            <th class="table-dark text-info">Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while($ligne_titre=$sql->fetch())
+                            {
+                        ?>
+                        <tr class="table-primary text-info">
+                            <td><?php echo $ligne_titre['titre']; ?></td>
+                            <td><?php echo $ligne_titre['accroche']; ?></td>
+                            <td><a href="modif_titre.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-edit"></i></a></td>
+                            <td><a href="titres.php?id_titre=<?php echo $ligne_titre['id_titre']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                        <?php
+                            }
+                        ?>
+                    </tbody>
+                </table>
+        </div>
     </div>
 
     <hr class="bg-dark">

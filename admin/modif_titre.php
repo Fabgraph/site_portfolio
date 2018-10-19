@@ -28,26 +28,28 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Mise à jour d'un titre</h1>
+        <div class="container2">
+            <h1 class="text-center text-white">Mise à jour d'un titre</h1>
 
-    <!-- mise à jour formulaire -->
-    <form action="modif_titre.php" method="post">
-        <div class="">
-            <label for="titre" class="text-white">Loisir</label>
-            <input type="text" name="titre" value="<?php echo $ligne_titre['titre']; ?>" class="form-control" required>
-        </div>
-        <div class="">
-            <label for="accroche" class="text-white">Accroche</label>
-        </div>
-        <div>
-            <textarea name="accroche" cols="30" rows="10"></textarea>
-        </div>
-        
-        <div>
-            <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
-            <button type="submit" class="btn btn-success">MAJ</button>
-        </div>
-    </form>
+            <!-- mise à jour formulaire -->
+            <form action="modif_titre.php" method="post">
+                <div class="">
+                    <label for="titre" class="text-white">Loisir</label>
+                    <input type="text" name="titre" value="<?php echo $ligne_titre['titre']; ?>" class="form-control" required>
+                </div>
+                <div class="">
+                    <label for="accroche" class="text-white">Accroche</label>
+                </div>
+                <div>
+                    <textarea name="accroche" cols="30" rows="10"></textarea>
+                </div>
+                <br>
+                <div>
+                    <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
+                    <button type="submit" class="btn btn-success">MAJ</button>
+                </div>
+            </form>
+        </div> <!-- fin div container2 -->
     </div>
 
 <?php require 'inc/footer.php'; ?>

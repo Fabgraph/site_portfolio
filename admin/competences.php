@@ -112,65 +112,75 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
-    <h1 class="text-center text-white">Les compétences et insertion de nouvelles compétences</h1>
+        <div class="container2">
+        <h1 class="text-center text-white">Les compétences et insertion de nouvelles compétences</h1>
   
-    <?php
-        // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-        $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order ");
-        $sql->execute();
-        $nbr_competences = $sql->rowCount();
-    ?>
+        <?php
+            // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+            $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order ");
+            $sql->execute();
+            $nbr_competences = $sql->rowCount();
+        ?>
 
-    <div class="">
-        <table class="table">
-        <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
-            <thead>
-                <tr> 
-                    <th class="table-dark text-info">Compétences 
-                    <a href="competences.php?column=competence&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
-                    <a href="competences.php?column=competence&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Niveau
-                    <a href="competences.php?column=niveau&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
-                    <a href="competences.php?column=niveau&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Catégorie
-                    <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
-                    <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-down"></i></a>
-                    </th>
-                    <th class="table-dark text-info">Modification</th>
-                    <th class="table-dark text-info">Suppression</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($ligne_competence=$sql->fetch())
-                    {
-                ?>
-                <tr class="table-primary">
-                    <td class="text-info"><?php echo $ligne_competence['competence']; ?></td>
-                    <td class="text-info"><?php echo $ligne_competence['niveau']; ?></td>
-                    <td class="text-info"><?php echo $ligne_competence['categorie']; ?></td>
-                    <td class="text-info"><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-edit"></i></a></td>
-                    <td class="text-info"><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-trash-alt"></i></a></td>
-                </tr>
-                <?php
-                     }
-                ?>
-             </tbody>
-        </table>
-    </div>
+            <div class="">
+        
+                    <table class="table">
+                    <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
+                        <thead>
+                            <tr> 
+                                <th class="table-dark text-info">Compétences 
+                                <a href="competences.php?column=competence&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
+                                <a href="competences.php?column=competence&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                                </th>
+                                <th class="table-dark text-info">Niveau
+                                <a href="competences.php?column=niveau&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                                <a href="competences.php?column=niveau&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                                </th>
+                                <th class="table-dark text-info">Catégorie
+                                <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                                <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                                </th>
+                                <th class="table-dark text-info">Modification</th>
+                                <th class="table-dark text-info">Suppression</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while($ligne_competence=$sql->fetch())
+                                {
+                            ?>
+                            <tr class="table-primary">
+                                <td class="text-info"><?php echo $ligne_competence['competence']; ?></td>
+                                <td class="text-info"><?php echo $ligne_competence['niveau']; ?></td>
+                                <td class="text-info"><?php echo $ligne_competence['categorie']; ?></td>
+                                <td class="text-info"><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-edit"></i></a></td>
+                                <td class="text-info"><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
+                            <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+        
+            </div>
+        </div> <!-- fin div container2 -->
 
     <hr class="bg-dark">
     <div class="container">
             <!-- insertion d'une nouvelle compétence formulaire -->
             <form action="competences.php" method="post">
-                <div class="form-group">
-                    <label for="competence" class="text-white">Compétence</label>
-                    <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="niveau" class="text-white">Niveau</label>
-                    <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+            <div class="row">
+                <div class=" col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="competence" class="text-white">Compétence</label>
+                        <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
+                    </div>
+                </div> <!-- fin de la div col -->
+                <div class=" col-sm-12 col-md-6 col-lg-6">
+                    <div class="form-group">
+                        <label for="niveau" class="text-white">Niveau</label>
+                        <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+                    </div>
+                </div> <!-- fin de la div col -->
                 </div>
                 <div class="form-group">
                     <label for="categorie" class="text-white">Catégorie</label>
