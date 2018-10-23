@@ -30,7 +30,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
 
-    <div class="container-fluid bg-primary">
+    <div class="container-fluid">
     <div class="container2">
     <h1 class="text-center text-white">Mise à jour d'une expérience</h1>
 

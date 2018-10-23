@@ -100,7 +100,7 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-primary">
+    <div class="container-fluid">
         <div class="container2">
         <h1 class="text-center text-white">Les loisirs et insertion de nouveaux loisirs</h1>
 
