@@ -152,8 +152,8 @@
                                 <td class="text-info"><?php echo $ligne_competence['competence']; ?></td>
                                 <td class="text-info"><?php echo $ligne_competence['niveau']; ?></td>
                                 <td class="text-info"><?php echo $ligne_competence['categorie']; ?></td>
-                                <td class="text-info"><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-edit"></i></a></td>
-                                <td class="text-info"><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-trash-alt"></i></a></td>
+                                <td ><a href="modif_competence.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-edit"></i></a></td>
+                                <td><a href="competences.php?id_competence=<?php echo $ligne_competence['id_competence']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
                             <?php
                                 }
@@ -165,14 +165,14 @@
         </div> <!-- fin div container2 -->
 
     <hr class="bg-dark">
-    <div class="container">
+    <div class="container container4">
             <!-- insertion d'une nouvelle compétence formulaire -->
             <form action="competences.php" method="post">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-3">
                     <div class="form-group">
                         <label for="competence" class="text-white">Compétence</label>
-                        <input type="text" name="competence" placeholder="Nouveau compétence" class="form-control" required>
+                        <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
                     </div>
                 </div> <!-- fin de la div col -->
                 <div class=" col-sm-12 col-md-6 col-lg-3">
@@ -181,19 +181,27 @@
                         <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
                     </div>
                 </div> <!-- fin de la div col -->
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <div class="form-group">
+                        <label for="categorie" class="text-white">Catégorie</label>
+                        <select name="categorie" class="form-control">
+                            <option value="Développement">Développement</option>
+                            <option value="Infographie">Infographie</option>
+                            <option value="Front">Front</option>
+                            <option value="Back">Back</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="categorie" class="text-white">Catégorie</label>
-                    <select name="categorie" class="form-control">
-                        <option value="Développement">Développement</option>
-                        <option value="Infographie">Infographie</option>
-                        <option value="Front">Front</option>
-                        <option value="Back">Back</option>
-                    </select>
+            </div>
+            <div class="row">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <div class="mgbutton">
+                        <button type="submit" class="btn btn-info">Insérer une compétence</button>
+                    </div>
                 </div>
-                <div class="mgbutton">
-                    <button type="submit" class="btn btn-info">Insérer une compétence</button>
-                </div>
+            </div>
             </form>
     </div>
 </div>
