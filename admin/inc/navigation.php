@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php">FabgrapH</a>
+    <a class="navbar-brand text-warning" href="index.php">FabgrapH</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,7 +13,7 @@
         <a class="nav-link text-info" href="authentification.php">Connexion</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-info" href="#">Inscription</a>
+        <a class="nav-link text-info" href="inscription.php">Inscription</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -29,6 +29,9 @@
           <a class="dropdown-item text-info" href="titres.php">Titres</a>
           <a class="dropdown-item text-info" href="messages.php">Messages</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-info" href="../admin/index.php?quitter=oui" title="déconnecter vous ! ">Déconnexion</a>
       </li>
     </ul>
   </div>

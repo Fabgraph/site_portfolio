@@ -110,7 +110,7 @@ if(isset($_POST['connexion'])){// connexion est la name du button
 				</div>
 
 				<div class="text-center">
-					<a href="#" class="txt2 hov1">
+					<a href="inscription.php" class="txt2 hov1">
 						Inscription
 					</a>
 				</div>
