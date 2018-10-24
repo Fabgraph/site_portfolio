@@ -37,12 +37,12 @@ $_SESSION['mdp']='';
 
 // insertion d'un élément dans la base
 if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
-    if($_POST['nom']!='' && $_POST['email']!='' && $_POST['message']!=''){
+    if($_POST['nom']!='' && $_POST['email']!='' && $_POST['message_contact']!=''){
 
         $nom = addslashes ($_POST['nom']);
         $email = addslashes ($_POST['email']);
-        $message = addslashes ($_POST['message']);
-        $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message', '$id_utilisateur') ");
+        $message_contact = addslashes ($_POST['message_contact']);
+        $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message_contact', '$id_utilisateur') ");
 
         header("location: ../front/contact.php");
             exit();
@@ -92,8 +92,8 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
                       <input type="email" class="form-control" id="email" placeholder="jane.doe@example.com">
                     </div>
                     <div class="form-group ">
-                      <label for="message">Votre message</label>
-                     <textarea  class="form-control" placeholder="Description"></textarea> 
+                      <label for="message_contact">Votre message</label>
+                     <textarea  class="form-control" name="message_contact" id="message_contact" placeholder="Message"></textarea> 
                     </div>
                     <button type="submit" class="btn btn-default">Envoyer le message</button>
                   </form>
