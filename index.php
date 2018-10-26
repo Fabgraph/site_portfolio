@@ -22,7 +22,7 @@
 
     <div class="jumbo">
         <div class="jumbotron jumbotron-fluid pb-5">
-            <h1 class="text-center text-info titre">FabgrapH</h1>
+            <h1 class="text-center text-warning titre">FabgrapH</h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
                 $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '1' ");
