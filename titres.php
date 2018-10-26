@@ -1,36 +1,5 @@
 <?php require 'inc/connexion.php';
 
-    session_start();// à mettre dans toutes les pages de l'admin
-
-        if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-            $id_utilisateur=$_SESSION['id_utilisateur'];
-            $email=$_SESSION['email'];
-            $mdp=$_SESSION['mdp'];
-            $nom=$_SESSION['nom'];
-
-            // echo $id_utilisateur;
-        } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-            header('location:authentification.php');
-        }
-
-
-        // pour vider les variables de session on destroy
-        if(isset($_GET['quitter'])){
-
-            $_SESSION['connexion_admin']='';
-            $_SESSION['id_utilisateur']='';
-            $_SESSION['email']='';
-            $_SESSION['nom']='';
-            $_SESSION['mdp']='';
-    
-                unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
-                session_destroy(); // on détruit la session
-    
-                header('location:../front/authentification.php');
-        }
-
-
-
     // pour classer par ordre
     $order = '';
     if(isset($_GET['order']) && isset($_GET['column'])){
@@ -61,7 +30,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php 
         // requête pour une seule info
-        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  titres <?php echo $ligne_utilisateur['prenom'] ?></title>
@@ -69,13 +38,13 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-primary">
-        <div class="container2">
-        <h1 class="text-center text-white">Les titres et insertion de nouveaux titres</h1>
+    <div class="container container1">
+        
+        <h1 class="text-center text-warning titre">Les titres</h1>
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-            $sql = $pdoCV->prepare(" SELECT * FROM t_titres WHERE id_utilisateur = '$id_utilisateur' $order  ");
+            $sql = $pdoCV->prepare(" SELECT * FROM t_titres WHERE id_utilisateur = '1' $order  ");
             $sql->execute();
             $nbr_titres = $sql->rowCount();
         ?>
@@ -104,30 +73,12 @@
                         ?>
                     </tbody>
                 </table>
-        </div>
-    </div>
+            </div>
+
 
     <hr class="bg-dark">
-    <div class="container">
-        
-        <form action="titres.php" method="post">
-            <div class="form-group">
-                <label for="titre" class="text-white">Titre</label>
-                <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="accroche" class="text-white">Accroche</label>
-                <div>
-                    <textarea name="accroche" cols="30" rows="10"></textarea>
-                </div>
-            </div>
-            <div class="">
-                <button type="submit" class="btn btn-info">Insérer un Titre</button>
-            </div>
-        </form>
-        
-    </div>
-    </div> <!-- fin de la div container-fluid -->
+    
+</div> <!-- fin de la div container -->
 
 
 <?php require 'inc/footer.php'; ?>

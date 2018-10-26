@@ -1,36 +1,5 @@
 <?php require 'inc/connexion.php'; 
 
-
-    session_start();// à mettre dans toutes les pages de l'admin
-
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
-
-
-    // pour vider les variables de session on destroy
-    if(isset($_GET['quitter'])){
-
-    $_SESSION['connexion_admin']='';
-    $_SESSION['id_utilisateur']='';
-    $_SESSION['email']='';
-    $_SESSION['nom']='';
-    $_SESSION['mdp']='';
-
-        unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
-        session_destroy(); // on détruit la session
-
-        header('location:../front/authentification.php');
-    }
-
-
     // pour classer par ordre
     $order = '';
     if(isset($_GET['order']) && isset($_GET['column'])){
@@ -76,7 +45,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php 
         // requête pour une seule info
-        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  compétences <?php echo $ligne_utilisateur['prenom'] ?></title>
@@ -84,13 +53,12 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid">
-        <div class="container2">
-        <h1 class="text-center text-white">Les compétences et insertion de nouvelles compétences</h1>
+    <div class="container container1">
+        <h1 class="text-center text-warning titre">Les compétences</h1>
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-            $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' $order ");
+            $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '1' $order ");
             $sql->execute();
             $nbr_competences = $sql->rowCount();
         ?>
@@ -131,49 +99,10 @@
                     </table>
         
             </div>
-        </div> <!-- fin div container2 -->
 
     <hr class="bg-dark">
-    <div class="container container4">
-            <!-- insertion d'une nouvelle compétence formulaire -->
-            <form action="competences.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3">
-                    <div class="form-group">
-                        <label for="competence" class="text-white">Compétence</label>
-                        <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-6 col-lg-3">
-                    <div class="form-group">
-                        <label for="niveau" class="text-white">Niveau</label>
-                        <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-3 col-lg-3">
-                    <div class="form-group">
-                        <label for="categorie" class="text-white">Catégorie</label>
-                        <select name="categorie" class="form-control">
-                            <option value="Développement">Développement</option>
-                            <option value="Infographie">Infographie</option>
-                            <option value="Front">Front</option>
-                            <option value="Back">Back</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3 col-md-3 col-lg-3">
-                    <div class="mgbutton">
-                        <button type="submit" class="btn btn-info">Insérer une compétence</button>
-                    </div>
-                </div>
-            </div>
-            </form>
-    </div>
-</div>
+    
+</div> <!-- fin container -->
 
 <?php require 'inc/footer.php'; ?> 
 <!-- liens js Bootstrap -->

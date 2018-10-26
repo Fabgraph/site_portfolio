@@ -112,7 +112,7 @@
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid">
         <div class="container2">
-        <h1 class="text-center text-white">Les messages et insertion de nouvelles messages</h1>
+        <h1 class="text-center text-warning">Les messages et insertion de nouvelles messages</h1>
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

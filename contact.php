@@ -2,39 +2,6 @@
 
 <?php require 'inc/connexion.php'; 
 
-
-
-
-session_start();// à mettre dans toutes les pages de l'admin
-
-if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-    $id_utilisateur=$_SESSION['id_utilisateur'];
-    $email=$_SESSION['email'];
-    $mdp=$_SESSION['mdp'];
-    $nom=$_SESSION['nom'];
-
-    // echo $id_utilisateur;
-} else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-    header('location:authentification.php');
-}
-
-
-// pour vider les variables de session on destroy
-if(isset($_GET['quitter'])){
-
-$_SESSION['connexion_admin']='';
-$_SESSION['id_utilisateur']='';
-$_SESSION['email']='';
-$_SESSION['nom']='';
-$_SESSION['mdp']='';
-
-    unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
-    session_destroy(); // on détruit la session
-
-    header('location:../front/authentification.php');
-}
-
-
 // insertion d'un élément dans la base
 if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
     if($_POST['nom']!='' && $_POST['email']!='' && $_POST['message_contact']!=''){
@@ -42,7 +9,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
         $nom = addslashes ($_POST['nom']);
         $email = addslashes ($_POST['email']);
         $message_contact = addslashes ($_POST['message_contact']);
-        $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message_contact', '$id_utilisateur') ");
+        $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message_contact') ");
 
         header("location: ../front/contact.php");
             exit();
@@ -78,18 +45,18 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
 <section id="contact" class="content-section text-center">
         <div class="contact-section">
             <div class="container">
-              <h2>Contact Us</h2>
+              <h2 class="titre2">Contact Us</h2>
               <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                  <form class="form-horizontal">
+                  <form class="form-horizontal" action="contact.php" method="post">
                     <div class="form-group">
                       <label for="nom">Nom</label>
-                      <input type="text" class="form-control" id="nom" placeholder="Jane Doe">
+                      <input type="text" class="form-control" name="nom" id="nom" placeholder="Jane Doe">
                     </div>
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" placeholder="jane.doe@example.com">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="jane.doe@example.com">
                     </div>
                     <div class="form-group ">
                       <label for="message_contact">Votre message</label>
@@ -99,11 +66,11 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
                   </form>
 
                   <hr>
-                    <h3>Our Social Sites</h3>
+                    <h3 class="titre3">Our Social Sites</h3>
                   <ul class="list-inline banner-social-buttons">
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
-                    <li><a href="#" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li>
+                    <li><a href="https://twitter.com/?lang=fr" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
+                    <li><a href="https://fr-fr.facebook.com/" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
+                    <li><a href="https://www.youtube.com/" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -113,7 +80,10 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
 
 <?php require 'inc/footer.php'; ?>
 
-
+<!-- liens js Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 </body>
 </html>
 

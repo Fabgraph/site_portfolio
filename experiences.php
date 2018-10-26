@@ -1,35 +1,5 @@
 <?php require 'inc/connexion.php'; 
-
-    session_start();// à mettre dans toutes les pages de l'admin
-
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
-
-
-    // pour vider les variables de session on destroy
-    if(isset($_GET['quitter'])){
-
-    $_SESSION['connexion_admin']='';
-    $_SESSION['id_utilisateur']='';
-    $_SESSION['email']='';
-    $_SESSION['nom']='';
-    $_SESSION['mdp']='';
-
-        unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
-        session_destroy(); // on détruit la session
-
-        header('location:../front/authentification.php');
-    }
-    
-    
+   
     // pour classer par ordre
     $order = '';
     if(isset($_GET['order']) && isset($_GET['column'])){
@@ -81,7 +51,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php 
         // requête pour une seule info
-        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Admin : les  expériences <?php echo $ligne_utilisateur['prenom'] ?></title>
@@ -89,13 +59,12 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid">
-        <div class="container2">
-        <h1 class="text-center text-white">Les expériences et insertion de nouvelles expériences</h1>
+    <div class="container container1">
+        <h1 class="text-center text-warning titre">Les expériences</h1>
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-            $sql = $pdoCV->prepare(" SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur' $order ");
+            $sql = $pdoCV->prepare(" SELECT * FROM t_experiences WHERE id_utilisateur = '1' $order ");
             $sql->execute();
             $nbr_experiences = $sql->rowCount();
         ?>
@@ -129,49 +98,10 @@
                         ?>
                     </tbody>
                 </table>
-            </div>
-        </div>  <!-- fin div container2 -->                  
+            </div>                 
     <hr class="bg-dark">
-    <div class="container">
-        <!-- insertion d'une nouvelle compétence formulaire -->
-        <form action="experiences.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="titre" class="text-white">Titre</label>
-                        <input type="text" name="titre_exp" placeholder="Titre du poste" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="stitre" class="text-white">Sous-titre</label>
-                        <input type="text" name="stitre_exp" placeholder="Sous-titre du poste" class="form-control" required>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="dates" class="text-white">Dates</label>
-                        <input type="text" name="dates_exp" placeholder="dates du poste" class="form-control" required>
-                    </div>
-                </div>
-            </div> <!-- fin de la div row -->
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div class="form-group">
-                        <label for="description" class="text-white">Description</label>
-                        <div>
-                            <textarea name="description_exp" cols="123" rows="10"></textarea>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- fin de la div row -->
-         
-            <div class="">
-                <button type="submit" class="btn btn-info">Insérer une expérience</button>
-            </div>
-        </form>
-    </div>
-</div>
+   
+</div> <!-- fin container-fluid principal -->
 
 
 <?php require 'inc/footer.php'; ?> 

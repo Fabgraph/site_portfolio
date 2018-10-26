@@ -122,7 +122,7 @@
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid">
         <div class="container2">
-        <h1 class="text-center text-white">Les réalisations et insertion de nouvelles réalisations</h1>
+        <h1 class="text-center text-warning">Les réalisations et insertion de nouvelles réalisations</h1>
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

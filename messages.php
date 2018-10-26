@@ -1,36 +1,5 @@
 <?php require 'inc/connexion.php'; 
 
-
-    session_start();// à mettre dans toutes les pages de l'admin
-
-    if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-        $id_utilisateur=$_SESSION['id_utilisateur'];
-        $email=$_SESSION['email'];
-        $mdp=$_SESSION['mdp'];
-        $nom=$_SESSION['nom'];
-
-        // echo $id_utilisateur;
-    } else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-        header('location:authentification.php');
-    }
-
-
-    // pour vider les variables de session on destroy
-    if(isset($_GET['quitter'])){
-
-    $_SESSION['connexion_admin']='';
-    $_SESSION['id_utilisateur']='';
-    $_SESSION['email']='';
-    $_SESSION['nom']='';
-    $_SESSION['mdp']='';
-
-        unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
-        session_destroy(); // on détruit la session
-
-        header('location:../front/authentification.php');
-    }
-
-
     // insertion d'un élément dans la base
     if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
         if($_POST['nom']!='' && $_POST['email']!='' && $_POST['sujet']!='' && $_POST['message']!=''){
@@ -100,9 +69,8 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid">
-        <div class="container2">
-        <h1 class="text-center text-white">Les messages et insertion de nouvelles messages</h1>
+    <div class="container container1">
+        <h1 class="text-center text-warning titre">Les messages</h1>
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -146,49 +114,10 @@
                     </table>
         
             </div>
-        </div> <!-- fin div container2 -->
 
     <hr class="bg-dark">
-    <div class="container">
-            <!-- insertion d'un nouveau message -->
-            <form action="messages.php" method="post">
-            <div class="row">
-                <div class=" col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="nom" class="text-white">Nom</label>
-                        <input type="text" name="nom" placeholder="Nom" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="email" class="text-white">Email</label>
-                        <input type="email" name="email" placeholder="Entrez votre email" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="sujet" class="text-white">Sujet</label>
-                        <input type="text" name="sujet" placeholder="sujet" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-            </div>
-            <div class="form-group">
-                <label for="message" class="text-white">Message</label>
-                <div>
-                    <textarea type="text" class="form-control" name="message" id="message_form" cols="30" rows="10"></textarea>
-                    <script>
-                        // Replace the <textarea id="editor1"> with a CKEditor
-                        // instance, using default configuration.
-                        CKEDITOR.replace( 'message_form' );
-                    </script>
-                </div>
-            </div>
-                <div class="mgbutton">
-                    <button type="submit" class="btn btn-info">Insérer un message</button>
-                </div>
-            </form>
-    </div>
-</div>
+
+</div> <!-- fin container-fluid principal -->
 
 <?php require 'inc/footer.php'; ?> 
 <!-- liens js Bootstrap -->

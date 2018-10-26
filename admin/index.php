@@ -51,7 +51,7 @@ if(isset($_GET['quitter'])){
 
     <div class="jumbo">
         <div class="jumbotron jumbotron-fluid bg-info pb-5">
-            <h1 class="text-center text-white">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
+            <h1 class="text-center text-warning">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
                 $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' ");
@@ -106,11 +106,12 @@ if(isset($_GET['quitter'])){
 <div class="container-fluid bg-primary">
     <br>
     <div class="row">
-        <div class="col-sm-9">
-            <p class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cupiditate! Animi mollitia ut nihil id illo! Repellat illum earum voluptate laboriosam cupiditate neque impedit incidunt, soluta dolores, voluptatum laborum? Adipisci?</p>
+        <div class="col-sm-12 col-md-9 col-lg-9">
+            <h2 class="text-center text-warning">Bienvenue sur mon site portfolio</h2>
+            <p class="text-center text-warning">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-12 col-md-3 col-lg-3">
 
             <div class="">
                 <table class="table">

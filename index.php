@@ -1,33 +1,4 @@
-<?php require 'inc/connexion.php'; 
-
-session_start();// à mettre dans toutes les pages de l'admin
-
-if(isset($_SESSION['connexion_admin'])){// si on est connecté on récupère les variables de session
-    $id_utilisateur=$_SESSION['id_utilisateur'];
-    $email=$_SESSION['email'];
-    $mdp=$_SESSION['mdp'];
-    $nom=$_SESSION['nom'];
-
-    // echo $id_utilisateur;
-} else {// si on n'est pas connecté on ne peut pas accéder à l'index d'admin
-    header('location:authentification.php');
-}
-
-// pour vider les variables de session on destroy
-if(isset($_GET['quitter'])){
-
-    $_SESSION['connexion_admin']='';
-    $_SESSION['id_utilisateur']='';
-    $_SESSION['email']='';
-    $_SESSION['nom']='';
-    $_SESSION['mdp']='';
-
-        unset($_SESSION['connexion_admin']); // unset détruit la variable connexion_admin
-        session_destroy(); // on détruit la session
-
-        header('location:../front/authentification.php');
-}
-?>
+<?php require 'inc/connexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,7 +10,7 @@ if(isset($_GET['quitter'])){
 
     <?php 
         // requête pour une seule info
-        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '$id_utilisateur' ");
+        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Accueil : <?php echo $ligne_utilisateur['prenom'] ?></title>
@@ -50,11 +21,11 @@ if(isset($_GET['quitter'])){
 
 
     <div class="jumbo">
-        <div class="jumbotron jumbotron-fluid bg-info pb-5">
-            <h1 class="text-center text-white">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
+        <div class="jumbotron jumbotron-fluid pb-5">
+            <h1 class="text-center text-info titre">FabgrapH</h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-                $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' ");
+                $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '1' ");
                 $sql->execute();
                 $nbr_competences = $sql->rowCount();
             ?>
@@ -103,14 +74,15 @@ if(isset($_GET['quitter'])){
             </div> <!-- fin de la div container -->
         </div> 
     </div> <!-- fin jumbotron -->
-<div class="container-fluid bg-primary">
+<div class="container container1">
     <br>
     <div class="row">
-        <div class="col-sm-9">
-            <p class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cupiditate! Animi mollitia ut nihil id illo! Repellat illum earum voluptate laboriosam cupiditate neque impedit incidunt, soluta dolores, voluptatum laborum? Adipisci?</p>
+        <div class="col-sm-12 col-md-9 col-lg-9">
+            <h2 class="text-center text-warning titre">Bienvenue sur mon site portfolio</h2>
+            <p class="text-center text-warning">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
         </div>
 
-        <div class="col-sm-3">
+        <div class="col-sm-12 col-md-3 col-lg-3">
 
             <div class="">
                 <table class="table">
@@ -136,23 +108,11 @@ if(isset($_GET['quitter'])){
                     </tbody>
                 </table>
             </div>
-
-            
-
-
-        
-
         </div>
-
     </div>
-
-
-
 
 </div> <!-- fin de la div container -->
 <?php require 'inc/footer.php'; ?>
-
-
 <!-- lien js Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

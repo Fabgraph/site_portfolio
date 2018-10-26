@@ -6,3 +6,6 @@
 <link type="text/css" rel="stylesheet" href="css/style.css" />
 <!-- lien ck editor -->
 <script src="ckeditor/ckeditor.js"></script>
+<!-- lien google fonts -->
+<link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i" rel="stylesheet">

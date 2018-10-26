@@ -104,7 +104,7 @@
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid bg-primary">
         <div class="container2">
-        <h1 class="text-center text-white">Les titres et insertion de nouveaux titres</h1>
+        <h1 class="text-center text-warning">Les titres et insertion de nouveaux titres</h1>
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

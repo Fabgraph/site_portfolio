@@ -1,10 +1,14 @@
 @charset "utf-8";
+
+/* body {
+    
+} */
 /* Taille du jumbotron */
 .jumbo .jumbotron {
     width: 100%;
     height: 600px;
-    background: url('../img/fond3.jpg') no-repeat center center;
-    margin-bottom: -0.03%;
+    background-color: rgba(223, 226, 64, 0.795);
+    margin-bottom: -3%;
 }
 
 
@@ -24,27 +28,25 @@
 
 /* Taille des images */
 .container .row .carousel-item img {
-    width: 100%;
-    margin-right: 50%;
+    width: 90.5%;
+    height: 45%;
+    margin-left: 5%;
+    margin-right: 20%;
     margin-bottom: 700px;
 }
 
 
 /* BODY */
-.container-fluid {
+.container {
     height: 810px;
     min-height: 100vh;
-    background: url(../img/fond5.jpg);
-    background-attachment: fixed;
-}
-
-.container {
+    margin-top: 3%;
     margin-bottom: 6%;
 }
 
-/* .container2 {
-    margin-top: 2.7%;
-} */
+.container1 {
+    background-color: rgba(3, 16, 75, 0.747);
+}
 
 .container3 {
     margin-left: -1%;
@@ -53,7 +55,7 @@
 }
 
 .container4 {
-    padding-left: 30%;
+    padding-left: 20%;
 }
 
 .descrip {
@@ -74,10 +76,13 @@ body{
 	width:100%;
 	height:100%;
     font-family: 'Roboto Condensed', sans-serif;
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
+    margin-top: -0.3%;
 }
 
 
-h1,h2,h3 {
+.titre1,.titre2,.titre3 {
 	margin:0 0 35px 0;
 	font-family: 'Patua One', cursive;
 	text-transform: uppercase;
@@ -87,7 +92,8 @@ h1,h2,h3 {
 p{
 	margin:0 0 25px;
 	font-size:18px;
-	line-height:1.6em;
+    line-height:1.6em;
+    font-family: 'Space Mono', monospace;
 }
 a{
 	color:#26a5d3;
@@ -105,4 +111,8 @@ a:hover,a:focus{
 
 textarea.form-control{
     height:100px;
+}
+
+.titre {
+    font-family: 'Rubik', sans-serif;
 }

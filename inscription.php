@@ -55,7 +55,7 @@ if (!empty($_POST)) {  // si le formulaire est soumis
 require 'inc/navigation.php';  // doctype, HEADER, nav
 echo $contenu; // pour afficher les messages à l'internaute
 ?>
-    <h1 class="mt-4">Inscription</h1>
+    <h1 class="mt-4 titre">Inscription</h1>
 <?php
 if (!$inscription) :   // if (!$inscription) équivaut à écrire if ($inscription == false), c'est-à-dire que nous rentrons dans la condition si $inscription vaut false. Syntaxe en if (condition) : ... endif;
 ?>
