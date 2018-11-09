@@ -13,7 +13,7 @@
         $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
-    <title>Accueil : <?php echo $ligne_utilisateur['prenom'] ?></title>
+    <title>Accueil : du site de <?php echo $ligne_utilisateur['prenom'] ?></title>
 </head>
 <body>
 
@@ -74,15 +74,28 @@
             </div> <!-- fin de la div container -->
         </div> 
     </div> <!-- fin jumbotron -->
+
 <div class="container container1">
     <br>
     <div class="row">
-        <div class="col-sm-12 col-md-9 col-lg-9">
+
+        <!-- debut CARD image -->
+        <div class="card col-sm-12 col-md-4 col-lg-4" style="width:400px" id="CardPhoto">
+            <img class="card-img-top" src="img_avatar1.png" alt="Fabrice DOMOISON">
+            <div class="card-body">
+                <h4 class="card-title">Fabrice Domoison</h4>
+                <p class="card-text">Jeune graphiste print et développeur-intégrateur web.</p>
+                <a href="profile.php" class="btn btn-primary">Voir Mon Profile</a>
+            </div>
+        </div>
+        <!-- fin card image -->
+
+        <div class="col-sm-12 col-md-6 col-lg-6">
             <h2 class="text-center text-warning titre">Bienvenue sur mon site portfolio</h2>
             <p class="text-center text-warning">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
         </div>
 
-        <div class="col-sm-12 col-md-3 col-lg-3">
+        <div class="col-sm-12 col-md-2 col-lg-2">
 
             <div class="">
                 <table class="table">

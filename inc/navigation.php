@@ -11,7 +11,7 @@
           Catégorie
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-info" href="#">Mon profil</a>
+          <a class="dropdown-item text-info" href="profile.php">Mon profil</a>
           <a class="dropdown-item text-info" href="competences.php">Compétences</a>
           <a class="dropdown-item text-info" href="experiences.php">Experience</a>
           <a class="dropdown-item text-info" href="formations.php">Formations</a>

@@ -64,7 +64,7 @@
         $sql = $pdoCV->query(" SELECT * FROM t_messages WHERE id_message ");
         $ligne_message = $sql->fetch();
     ?>
-    <title>Admin : les  messages</title>
+    <title>Les  messages</title>
     <?php require 'inc/liens.php'; ?>
 </head>
 <body>

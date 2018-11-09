@@ -34,18 +34,19 @@
 .container-fluid {
     height: 810px;
     min-height: 100vh;
+    margin-top: 2.9%;
     background: url(../img/fond5.jpg);
     background-attachment: fixed;
-    margin-top: 2.9%;
 }
 
 .container {
     margin-bottom: 6%;
 }
 
-/* .container2 {
-    margin-top: 2.7%;
-} */
+.container2 {
+    margin-top: 2.9%;
+    padding-top: 2%;
+}
 
 .container3 {
     margin-left: -1%;
@@ -59,6 +60,11 @@
 
 .descrip {
     padding-left: 0.8%;
+}
+
+body {
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
 }
 
 /* style tableau */

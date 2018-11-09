@@ -102,7 +102,7 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid bg-primary">
+    <div class="container-fluid">
         <div class="container2">
         <h1 class="text-center text-warning">Les titres et insertion de nouveaux titres</h1>
 

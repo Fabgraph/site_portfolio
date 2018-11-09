@@ -8,11 +8,7 @@
     <ul class="navbar-nav">
 
       <li class="nav-item active">
-        <a class="nav-link text-info" href="index.php">Accueil <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link text-info" href="authentification.php">Connexion</a>
+        <a class="nav-link text-info" href="authentification.php">Connexion <span class="sr-only">(current)</span></a>
       </li>
 
       <li class="nav-item">
@@ -24,7 +20,7 @@
             Catégorie
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item text-info" href="#">Mon profil</a>
+            <a class="dropdown-item text-info" href="profile.php">Mon profile</a>
             <a class="dropdown-item text-info" href="competences.php">Compétences</a>
             <a class="dropdown-item text-info" href="experiences.php">Experience</a>
             <a class="dropdown-item text-info" href="formations.php">Formations</a>

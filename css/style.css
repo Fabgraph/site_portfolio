@@ -46,6 +46,13 @@
 
 .container1 {
     background-color: rgba(3, 16, 75, 0.747);
+    height: auto;
+}
+
+.container2 {
+    background-color: rgba(3, 16, 75, 0.747);
+    height: auto;
+    padding-top: 2%;
 }
 
 .container3 {
@@ -61,14 +68,6 @@
 .descrip {
     padding-left: 0.8%;
 }
-
-/* style tableau */
-
-/* FOOTER */
-/* footer {
-    margin: 0 -25px 0 -25px;
- } */
-
 
  /* STYLE FORMULAIRE CONTACT */
 
@@ -115,4 +114,14 @@ textarea.form-control{
 
 .titre {
     font-family: 'Rubik', sans-serif;
+}
+
+p.text-info {
+    background: white;
+    opacity: 0.70;
+    padding: 1%;
+}
+
+p.text-info.centre {
+    margin-left: 15%;
 }

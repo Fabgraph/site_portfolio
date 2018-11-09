@@ -54,7 +54,7 @@
         $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
-    <title>Admin : les  expériences <?php echo $ligne_utilisateur['prenom'] ?></title>
+    <title>Les  expériences <?php echo $ligne_utilisateur['prenom'] ?></title>
     <?php require 'inc/liens.php'; ?>
 </head>
 <body>
