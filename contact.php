@@ -35,7 +35,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <!--- Include the above in your HEAD tag -->
 </head>
 <body>
 <?php require 'inc/navigation.php'; ?>
@@ -66,7 +66,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
                   </form>
 
                   <hr>
-                    <h3 class="titre3">Our Social Sites</h3>
+                    <h3 class="titre3">Vos sites sociaux</h3>
                   <ul class="list-inline banner-social-buttons">
                     <li><a href="https://twitter.com/?lang=fr" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
                     <li><a href="https://fr-fr.facebook.com/" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>

@@ -70,7 +70,7 @@
 
         <div class="">
             <table class="table">
-            <caption class="text-white">La liste des expériences : <?php echo $nbr_formations; ?></caption>
+            <caption class="text-white">La liste des formations : <?php echo $nbr_formations; ?></caption>
                 <thead>
                     <tr> 
                         <th class="table-dark text-info">Titre

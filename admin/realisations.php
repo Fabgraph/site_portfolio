@@ -133,7 +133,7 @@
 
             <div class="">
                 <table class="table">
-                <caption class="text-white">La liste des expériences : <?php echo $nbr_realisations; ?></caption>
+                <caption class="text-white">La liste des réalisations : <?php echo $nbr_realisations; ?></caption>
                     <thead>
                         <tr> 
                             <th class="table-dark text-info">Titre
