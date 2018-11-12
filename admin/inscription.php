@@ -14,7 +14,7 @@ if (!empty($_POST)) {  // si le formulaire est soumis
     if (!isset($_POST['mdp']) || strlen($_POST['mdp']) < 4 || strlen($_POST['mdp']) > 20) $contenu .= '<div class="bg-danger">Le mot de passe doit contenir entre 4 et 20 caractères.</div>';
     if (!isset($_POST['pseudo']) || strlen($_POST['pseudo']) < 2 || strlen($_POST['pseudo']) > 20) $contenu .= '<div class="bg-danger">Le pseudo doit contenir entre 2 et 20 caractères.</div>';
     if (!isset($_POST['age']) || strlen($_POST['age']) < 2 || strlen($_POST['age']) > 3) $contenu .= '<div class="bg-danger">L\'age doit contenir entre 2 et 3 caractères.</div>';
-    if (!isset($_POST['anniversiare']) || strlen($_POST['anniversiare']) = 8) $contenu .= '<div class="bg-danger">Le anniversiare doit contenir 8 caractères.</div>';
+    /* if (!isset($_POST['anniversaire']) || strlen($_POST['anniversaire']) = 8) $contenu .= '<div class="bg-danger">L\'anniversaire doit contenir 8 caractères.</div>'; */
     if (!isset($_POST['civilite']) || ($_POST['civilite'] != 'm' && $_POST['civilite'] != 'f')) $contenu .= '<div class="bg-danger">La civilité est incorrecte.</div>';
     if (!isset($_POST['adresse']) || strlen($_POST['adresse']) < 2 || strlen($_POST['adresse']) > 50) $contenu .= '<div class="bg-danger">L\'adresse doit contenir entre 2 et 50 caractères.</div>';
     if (!isset($_POST['code_postal']) || !ctype_digit($_POST['code_postal']) || strlen($_POST['code_postal']) != 5) $contenu .= '<div class="bg-danger">Le code postal est incorrect.</div>';  // ctype_digit() permet de vérifier qu'un string contient un nombre entier (utilisé pour les formulaires qui ne retournent que des string avec le type "text")
@@ -68,6 +68,7 @@ if (!empty($_POST)) {  // si le formulaire est soumis
 <?php require 'inc/navigation.php';  // doctype, HEADER, nav
 echo $contenu; // pour afficher les messages à l'internaute
 ?>
+<div class="container">
     <h1 class="mt-4">Inscription</h1>
 <?php
 if (!$inscription) :   // if (!$inscription) équivaut à écrire if ($inscription == false), c'est-à-dire que nous rentrons dans la condition si $inscription vaut false. Syntaxe en if (condition) : ... endif;
@@ -128,9 +129,9 @@ if (!$inscription) :   // if (!$inscription) équivaut à écrire if ($inscripti
         <input type="submit" name="inscription" value="s'inscrire" class="btn">
     </form>
 
-<?php
-endif;
-require 'inc/footer.php'; ?>  // footer et fermetures des balises
+<?php endif; ?>
+</div> <!-- fin de la div container -->
+<?php require 'inc/footer.php'; ?>  // footer et fermetures des balises
 <!-- liens js Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
