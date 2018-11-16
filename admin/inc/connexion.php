@@ -12,6 +12,39 @@ $pdoCV = new PDO('mysql:host=' . $host .';dbname='.$database,$user,$password);
 $pdoCV->exec("SET NAMES utf8");
 
 define('RACINE_SITE', '/htdocs/site_portfolio/');
+
+// Pour voir si l'internaute est connecté
+function internauteEstConnecte(){
+	if (isset($_SESSION['membre'])){ 
+		return true;
+	} else {
+		return false;
+	}
+	return (isset($_SESSION['membre']));
+}
+
+function internauteEstConnecteEtAdmin(){
+	if (internauteEstConnecte() && $_SESSION['membre']['value'] == 1) {
+		return true;
+	}else {
+		return false;
+	}
+	return (internauteEstConnecte() && $_SESSION['membre']['value'] == 1);
+}
+
+// Pour faciliter le executeRequete
+
+function executeRequete($req,$param = array()){
+	if(!empty($param)){ 
+		foreach($param as $indice => $valeur){
+			$param[$indice] = htmlspecialchars($valeur, ENT_QUOTES);
+		}
+	}
+	global $pdoCV;
+	$result = $pdoCV->prepare($req);
+	$result->execute($param);
+	return $result;
+}
 ?>
 
 

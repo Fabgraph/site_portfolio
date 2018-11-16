@@ -53,9 +53,15 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center text-warning titre">Les compétences</h1>
+	        <img src="img/competences.jpg" class="img-responsive">
+        </div>
+    </div>
+
     <div class="container container1">
-        <h1 class="text-center text-warning titre">Les compétences</h1>
-  
+
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
             $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '1' $order ");

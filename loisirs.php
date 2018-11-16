@@ -57,9 +57,13 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center text-warning titre">Les loisirs</h1>
+	        <img src="img/loisirs.jpg" class="img-responsive">
+        </div>
+    </div>
     <div class="container container1">
-       
-        <h1 class="text-center text-warning titre">Les loisirs</h1>
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

@@ -28,7 +28,7 @@ if(isset($_POST['connexion'])){// connexion est la name du button
 
         // echo $ligne_utilisateur['nom'];
 
-        header('location:../admin/index.php');
+        header('location:../site_portfolio/admin/index.php');
     }
 }
 

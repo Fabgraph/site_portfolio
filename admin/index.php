@@ -103,47 +103,41 @@ if(isset($_GET['quitter'])){
             </div> <!-- fin de la div container -->
         </div> 
     </div> <!-- fin jumbotron -->
-<div class="container-fluid bg-primary">
+<div class="container bg-primary">
     <br>
     <div class="row">
-        <div class="col-sm-12 col-md-9 col-lg-9">
+        <div class="col-sm-12 col-md-6 col-lg-6">
             <h2 class="text-center text-warning">Bienvenue sur mon site portfolio</h2>
             <p class="text-center text-warning">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
         </div>
 
-        <div class="col-sm-12 col-md-3 col-lg-3">
 
-            <div class="">
-                <table class="table">
-                <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
-                    <thead>
-                        <tr>
-                            <th class="table-dark text-info">Compétences</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php 
-                            while($ligne_competence=$sql->fetch()) 
-                            {
-                        ?>
-                        <tr class="table-warning">
-                            <td class="text-info">
-                                <?php echo $ligne_competence['competence']; ?>
-                            </td>
-                        </tr>
-                        <?php
-                            }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
-
-            
-
-
-        
-
+        <div class="col-sm-12 col-md-6 col-lg-6">
+            <table class="table">
+            <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
+                <thead>
+                    <tr>
+                        <th class="table-dark text-info">Compétences</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        while($ligne_competence=$sql->fetch()) 
+                        {
+                    ?>
+                    <tr class="table-warning">
+                        <td class="text-info">
+                            <?php echo $ligne_competence['competence']; ?>
+                        </td>
+                    </tr>
+                    <?php
+                        }
+                    ?>
+                </tbody>
+            </table>
         </div>
+
+    
 
     </div>
 

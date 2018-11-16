@@ -21,6 +21,9 @@
           <a class="dropdown-item text-info" href="messages.php">Messages</a>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link text-info" href="inscription.php">Inscription</a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link text-info" href="authentification.php">Connexion <span class="sr-only">(current)</span></a>
       </li>

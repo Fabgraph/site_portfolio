@@ -90,14 +90,12 @@
         </div>
         <!-- fin card image -->
 
-        <div class="col-sm-12 col-md-6 col-lg-6">
+        <div class="col-sm-12 col-md-4 col-lg-4">
             <h2 class="text-center text-warning titre">Bienvenue sur mon site portfolio</h2>
             <p class="text-center text-warning">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
         </div>
 
-        <div class="col-sm-12 col-md-2 col-lg-2">
-
-            <div class="">
+        <div class="col-sm-12 col-md-4 col-lg-4">
                 <table class="table">
                 <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
                     <thead>
@@ -120,7 +118,6 @@
                         ?>
                     </tbody>
                 </table>
-            </div>
         </div>
     </div>
 

@@ -122,9 +122,13 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center text-warning">Les formations et insertion de nouvelles formations</h1>
+	        <img src="img/formations.jpg" class="img-responsive">
+        </div>
+    </div>
+    <div class="container-fluid">
         <div class="container2">
-        <h1 class="text-center text-warning">Les formations et insertion de nouvelles formations</h1>
-  
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
             $sql = $pdoCV->prepare(" SELECT * FROM t_formations WHERE id_utilisateur = '$id_utilisateur' $order ");

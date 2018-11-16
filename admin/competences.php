@@ -112,8 +112,14 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center text-warning">Les compétences et insertion de nouvelles compétences</h1>
+	        <img src="img/competences.jpg" class="img-responsive">
+        </div>
+    </div>
+    <div class="container-fluid">
         <div class="container2">
-        <h1 class="text-center text-warning">Les compétences et insertion de nouvelles compétences</h1>
+        
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

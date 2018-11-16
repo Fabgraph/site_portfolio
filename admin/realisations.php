@@ -121,9 +121,13 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid">
+        <div class="row">
+            <h1 class="text-center text-warning">Les réalisations et insertion de nouvelles réalisations</h1>
+	        <img src="img/realisations.jpg" class="img-responsive">
+        </div>
+    </div>
+    <div class="container-fluid">
         <div class="container2">
-        <h1 class="text-center text-warning">Les réalisations et insertion de nouvelles réalisations</h1>
-  
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
             $sql = $pdoCV->prepare(" SELECT * FROM t_realisations WHERE id_utilisateur = '$id_utilisateur' $order ");

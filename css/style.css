@@ -8,7 +8,7 @@
     width: 100%;
     height: 600px;
     background-color: rgba(3, 55, 75, 0.747);
-    margin-bottom: -3%;
+    margin-bottom: 3%;
 }
 
 
@@ -32,21 +32,39 @@
     height: 45%;
     margin-left: 5%;
     margin-right: 20%;
-    margin-bottom: 700px;
+    margin-bottom: 70%;
 }
 
+/* Taille images entête */
+.container-fluid .row {
+    margin-top: 5%;
+}
+
+.container-fluid .row img {
+    width: 1950px;
+    height: 500px;
+}
+
+/* TITRES DES PAGES */
+
+.container-fluid .row h1 {
+    padding-left: 40%;
+}
 
 /* BODY */
 .container {
     height: 810px;
     min-height: 100vh;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-bottom: 6%;
 }
 
 .container1 {
     background-color: rgba(3, 16, 75, 0.747);
     height: auto;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .container2 {
@@ -129,4 +147,10 @@ p.text-info {
 
 p.text-info.centre {
     margin-left: 15%;
+}
+
+
+/* Formulaire d'inscription */
+.container .row form {
+    padding-bottom: 10%;
 }
