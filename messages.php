@@ -1,4 +1,4 @@
-<?php require 'inc/connexion.php'; 
+<?php require 'admin/inc/connexion.php';
 
     // insertion d'un élément dans la base
     if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence

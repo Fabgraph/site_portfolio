@@ -1,4 +1,4 @@
-<?php require 'inc/connexion.php'; ?>
+<?php require 'admin/inc/connexion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="fr">

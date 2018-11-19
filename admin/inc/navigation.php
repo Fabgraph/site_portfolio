@@ -18,7 +18,7 @@
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item text-white bg-dark" href="competences.php">Compétences</a>
             <a class="dropdown-item text-white bg-dark" href="experiences.php">Expériences</a>
-            <a class="dropdown-item text-whit bg-dark" href="formations.php">Formations</a>
+            <a class="dropdown-item text-white bg-dark" href="formations.php">Formations</a>
             <a class="dropdown-item text-white bg-dark" href="loisirs.php">Loisirs</a>
           </div>
         </li>

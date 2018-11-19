@@ -1,4 +1,4 @@
-<?php require 'inc/connexion.php';
+<?php require 'admin/inc/connexion.php';
 
     // insertion d'un loisir
     if(isset($_POST['loisir'])){// si on a reçu un nouveau loisir

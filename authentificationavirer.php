@@ -1,4 +1,4 @@
-<?php require 'inc/connexion.php';
+<?php require 'admin/inc/connexion.php';
 
 session_start();// à mettre dans toutes les pages de l'admin
 //traitement pour la connexion à l'admin

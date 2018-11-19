@@ -1,4 +1,4 @@
-<?php require 'inc/connexion.php'; // connexion PDO
+<?php require 'admin/inc/connexion.php'; // connexion PDO
 
 if (isset($_POST['nom'])) {
 	$nom=addslashes($_POST['nom']);

@@ -1,4 +1,4 @@
-<?php require 'inc/connexion.php';
+<?php require 'admin/inc/connexion.php';
 
 
 $inscription = false;  // pour savoir si l'internaute vient de s'inscrire (on metttra la variable à true) et ne plus afficher le formulaire d'inscription
