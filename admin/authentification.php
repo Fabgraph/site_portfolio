@@ -25,10 +25,8 @@ if(isset($_POST['connexion'])){// connexion est la name du button
         $_SESSION['email'] = $ligne_utilisateur['email'];
         $_SESSION['nom'] = $ligne_utilisateur['nom'];
         $_SESSION['mdp'] = $ligne_utilisateur['mdp'];
-
-        // echo $ligne_utilisateur['nom'];
-
-        header('location:../admin/index.php');
+        
+        header('location:index.php');
     }
 }
 
@@ -91,9 +89,10 @@ if(isset($_POST['connexion'])){// connexion est la name du button
 					<button type="submit"  class="login100-form-btn" name="connexion">
 						Se connecter
 					</button>
-				</div>
+                </div>
+                <br>
 
-				<div class="text-center p-t-57 p-b-20">
+				<!-- <div class="text-center p-t-57 p-b-20">
 					<span class="txt1">
 						Or login with
 					</span>
@@ -107,7 +106,7 @@ if(isset($_POST['connexion'])){// connexion est la name du button
 					<a href="https://www.google.com/" class="login100-social-item">
 						<img src="img/icons/icon-google.png" alt="GOOGLE">
 					</a>
-				</div>
+				</div> -->
 
 				<div class="text-center">
 					<a href="inscription.php" class="txt2 hov1">

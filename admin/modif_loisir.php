@@ -26,9 +26,9 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
 
-    <div class="container-fluid">
-        <div class="container2">
+    <div class="container">
         <h1 class="text-center text-warning">Mise à jour d'un loisir</h1>
+        <div class="container2 fond_container">
 
         <!-- mise à jour formulaire -->
         <form action="modif_loisir.php" method="post">

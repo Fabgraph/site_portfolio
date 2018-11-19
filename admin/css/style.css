@@ -1,4 +1,15 @@
 @charset "utf-8";
+/* Navigation */
+/* .deconnexion {
+    position: relative;
+    right: 0;
+}
+
+.clear { 
+    clear: both;
+ } */
+
+
 
 /* Taille du jumbotron */
 .jumbo .jumbotron {
@@ -60,11 +71,40 @@
     margin-bottom: 5%;
 }
 
+.container h1 {
+    margin-top: 8%;
+}  
+
+.fond_container {
+    background:  lightseagreen;
+}
+
 .container1 {
     margin-top: 0 auto;
 }
+
 .container2 {
-    /* margin-bottom: 5%; */
+    margin-top: 2%;
+}
+
+.container2 form {
+    padding: 2%;
+}
+
+.container2 form div textarea.form-control {
+    padding-left: 5%;
+}
+
+.container2 .row div {
+    padding-left: 2%;
+}
+
+.container2 .row .col-sm-12 .categorie {
+    padding-top: 12%;
+}
+
+.container2 .row .col-sm-12 {
+    display: inline-block;
 }
 
 .container3 {

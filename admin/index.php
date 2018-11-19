@@ -103,12 +103,12 @@ if(isset($_GET['quitter'])){
             </div> <!-- fin de la div container -->
         </div> 
     </div> <!-- fin jumbotron -->
-<div class="container bg-primary">
+<div class="container fond_container">
     <br>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">
-            <h2 class="text-center text-warning">Bienvenue sur mon site portfolio</h2>
-            <p class="text-center text-warning">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
+            <h2 class="text-center text-primary">Bienvenue sur mon site portfolio</h2>
+            <p class="text-center text-primary">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
         </div>
 
 

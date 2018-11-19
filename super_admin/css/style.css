@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+/* Taille du jumbotron */
+.jumbo .jumbotron {
+    width: 100%;
+    height: 600px;
+    background: url('../img/fond3.jpg') no-repeat center center;
+    margin-bottom: 3%;
+}
+
+
+/* Taille du SLIDER */
+#demo {
+    width: 80%;
+    height: 45%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: -15%;
+
+}
+
+.container-fluid .jumbo .jumbotron .container .row #a {
+    margin-left: 30%;
+}
+
+/* Taille des images */
+.container .row .carousel-item img {
+    width: 100%;
+    margin-right: 50%;
+    margin-bottom: 700px;
+}
+
+/* TITRES DES PAGES */
+
+.container-fluid .row h1 {
+    padding-left: 2%;
+    margin-top: -5%;
+}
+
+/* Taille images entête */
+.container-fluid .row {
+    display: block;
+}
+
+.container-fluid .row img {
+    width: 1950px;
+    height: 600px;
+}
+
+/* BODY */
+.container-fluid {
+    height: 510px;
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
+    margin-top: 10%;
+}
+
+.container {
+    display: block;
+    margin-bottom: 5%;
+}
+
+.container1 {
+    margin-top: 0 auto;
+}
+.container2 {
+    /* margin-bottom: 5%; */
+}
+
+.container3 {
+    margin-left: -1%;
+    margin-right: 200px;
+    height: 50%;
+}
+
+.container4 {
+    padding-left: 20%;
+}
+
+.descrip {
+    padding-left: 0.8%;
+}
+
+body {
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+}
+
+/* style tableau */
+
+/* FOOTER */
+/* footer {
+    margin: 0 -25px 0 -25px;
+ } */
+
+h1, h2 {
+    font-family: 'Rubik', sans-serif;
+}
+
+p {
+    font-family: 'Space Mono', monospace;
+}
+
+

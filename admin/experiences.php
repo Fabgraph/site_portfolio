@@ -122,13 +122,9 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    
     <div class="container-fluid">
-        <div class="row">
-            <h1 class="text-center text-warning">Les expériences et insertion de nouvelles expériences</h1>
-	        <img src="img/experiences.jpg" class="img-responsive">
-        </div>
-    </div>
-    <div class="container-fluid">
+        <h1 class="text-center text-warning">Admin : les expériences</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -173,7 +169,7 @@
             </div>
         </div>  <!-- fin div container2 -->                  
     <hr class="bg-dark">
-    <div class="container">
+    <div class="container fond_container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="experiences.php" method="post">
             <div class="row">

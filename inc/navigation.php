@@ -6,12 +6,15 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="dropdown-item text-info" href="profil.php">Mon profil</a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Catégorie
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item text-info" href="profile.php">Mon profil</a>
+          
           <a class="dropdown-item text-info" href="competences.php">Compétences</a>
           <a class="dropdown-item text-info" href="experiences.php">Experience</a>
           <a class="dropdown-item text-info" href="formations.php">Formations</a>
@@ -25,7 +28,7 @@
         <a class="nav-link text-info" href="inscription.php">Inscription</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link text-info" href="authentification.php">Connexion <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-info" href="admin/authentification.php">Connexion à l'admin <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-info" href="contact.php">Contactez-moi</a>

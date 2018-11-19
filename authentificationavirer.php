@@ -26,9 +26,14 @@ if(isset($_POST['connexion'])){// connexion est la name du button
         $_SESSION['nom'] = $ligne_utilisateur['nom'];
         $_SESSION['mdp'] = $ligne_utilisateur['mdp'];
 
-        // echo $ligne_utilisateur['nom'];
 
         header('location:../site_portfolio/admin/index.php');
+        // echo $ligne_utilisateur['nom'];
+        /* if (internauteEstConnecteEtAdmin() && $_SESSION['membre']['value'] == 1) {
+            header('location:../site_portfolio/admin/index.php');
+        } else {
+            header('location:../site_portfolio/index.php');
+        } */
     }
 }
 

@@ -30,10 +30,9 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container-fluid">
-        <div class="container2">
-            <h1 class="text-center text-warning">Mise à jour d'une réalisation</h1>
-
+    <div class="container">
+        <h1 class="text-center text-warning">Mise à jour d'une réalisation</h1>
+        <div class="container2 fond_container">
             <!-- mise à jour formulaire -->
             <form action="modif_realisation.php" method="post">
                 <div class="form-group">

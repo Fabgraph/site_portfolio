@@ -85,7 +85,7 @@
             <div class="card-body">
                 <h4 class="card-title">Fabrice Domoison</h4>
                 <p class="card-text">Jeune graphiste print et développeur-intégrateur web.</p>
-                <a href="profile.php" class="btn btn-primary">Voir Mon Profile</a>
+                <a href="profil.php" class="btn btn-primary">Voir Mon Profile</a>
             </div>
         </div>
         <!-- fin card image -->

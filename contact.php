@@ -11,7 +11,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
         $message_contact = addslashes ($_POST['message_contact']);
         $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message_contact') ");
 
-        header("location: ../front/contact.php");
+        header("location: contact.php");
             exit();
 
     }// ferme le if n'est pas vide
@@ -49,6 +49,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
               <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
+
                   <form class="form-horizontal" action="mail.php" method="post">
                     <div class="form-group">
                       <label for="nom">Nom</label>
@@ -59,8 +60,8 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
                       <input type="email" class="form-control" name="email" id="email" placeholder="jane.doe@example.com">
                     </div>
                     <div class="form-group ">
-                      <label for="message_contact">Votre message</label>
-                     <textarea  class="form-control" name="message_contact" id="message_contact" placeholder="Message"></textarea> 
+                      <label for="message">Votre message</label>
+                     <textarea  class="form-control" name="message" id="message" placeholder="Message"></textarea> 
                     </div>
                     <button type="submit" class="btn btn-default">Envoyer le message</button>
                   </form>

@@ -110,13 +110,9 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    
     <div class="container-fluid">
-        <div class="row">
-            <h1 class="text-center text-warning">Les messages et insertion de nouvelles messages</h1>
-	        <img src="img/messages.jpg" class="img-responsive">
-        </div>
-    </div>
-    <div class="container-fluid">
+        <h1 class="text-center text-warning">Admin : les messages</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -167,7 +163,7 @@
         </div> <!-- fin div container2 -->
 
     <hr class="bg-dark">
-    <div class="container">
+    <div class="container fond_container">
             <!-- insertion d'un nouveau message -->
             <form action="messages.php" method="post">
             <div class="row">

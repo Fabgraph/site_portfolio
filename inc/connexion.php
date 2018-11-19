@@ -1,5 +1,5 @@
 <?php 
-// fichier de connexion à la BDD
+// fichier de connexion à la BDD pour le site Front
 
 $host= 'localhost';   // le chemin vers le serveur  de données
 $database='site_portfolio';   // le nom de la base de données
@@ -12,7 +12,7 @@ $pdoCV = new PDO('mysql:host=' . $host .';dbname='.$database,$user,$password);
 $pdoCV->exec("SET NAMES utf8");
 
 // Pour voir si l'internaute est connecté
-function internauteEstConnecte(){
+/* function internauteEstConnecte(){
 	if (isset($_SESSION['membre'])){ 
 		return true;
 	} else {
@@ -28,11 +28,11 @@ function internauteEstConnecteEtAdmin(){
 		return false;
 	}
 	return (internauteEstConnecte() && $_SESSION['membre']['value'] == 1);
-}
+} */
 
 // Pour faciliter le executeRequete
 
-function executeRequete($req,$param = array()){
+/* function executeRequete($req,$param = array()){
 	if(!empty($param)){ 
 		foreach($param as $indice => $valeur){
 			$param[$indice] = htmlspecialchars($valeur, ENT_QUOTES);
@@ -42,7 +42,7 @@ function executeRequete($req,$param = array()){
 	$result = $pdoCV->prepare($req);
 	$result->execute($param);
 	return $result;
-}
+} */
 
 ?>
 

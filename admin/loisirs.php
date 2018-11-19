@@ -100,13 +100,9 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    
     <div class="container-fluid">
-        <div class="row">
-            <h1 class="text-center text-warning">Les loisirs et insertion de nouveaux loisirs</h1>
-	        <img src="img/loisirs.jpg" class="img-responsive">
-        </div>
-    </div>
-    <div class="container-fluid">
+        <h1 class="text-center text-warning">Admin : les loisirs</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -144,7 +140,7 @@
             </div>
         </div> <!-- fin div container2 -->
     <hr class="bg-dark">
-    <div class="container">
+    <div class="container fond_container">
         <form action="loisirs.php" method="post">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12">

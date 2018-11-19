@@ -102,13 +102,9 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    
     <div class="container-fluid">
-        <div class="row">
-            <h1 class="text-center text-warning">Les titres et insertion de nouveaux titres</h1>
-	        <img src="img/titres.jpg" class="img-responsive">
-        </div>
-    </div>
-    <div class="container-fluid">
+        <h1 class="text-center text-warning">Admin : les titres</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -149,7 +145,7 @@
     </div>
 
     <hr class="bg-dark">
-    <div class="container">
+    <div class="container fond_container">
         
         <form action="titres.php" method="post">
             <div class="form-group">

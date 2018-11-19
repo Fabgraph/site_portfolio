@@ -111,13 +111,9 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
+    
     <div class="container-fluid">
-        <div class="row">
-            <h1 class="text-center text-warning">Les compétences et insertion de nouvelles compétences</h1>
-	        <img src="img/competences.jpg" class="img-responsive">
-        </div>
-    </div>
-    <div class="container-fluid">
+        <h1 class="text-center text-warning">Admin : les compétences</h1>
         <div class="container2">
         
   
@@ -171,25 +167,23 @@
         </div> <!-- fin div container2 -->
 
     <hr class="bg-dark">
-    <div class="container container4">
-            <!-- insertion d'une nouvelle compétence formulaire -->
-            <form action="competences.php" method="post">
+    <div class="container container4 fond_container">
+        <!-- insertion d'une nouvelle compétence formulaire -->
+        <form action="competences.php" method="post">
             <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="competence" class="text-white">Compétence</label>
                         <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
                     </div>
-                </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-6 col-lg-3">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="niveau" class="text-white">Niveau</label>
                         <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
                     </div>
-                </div> <!-- fin de la div col -->
-            </div>
-            <div class="row">
-                <div class="col-sm-12 col-md-3 col-lg-3">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="categorie" class="text-white">Catégorie</label>
                         <select name="categorie" class="form-control">
