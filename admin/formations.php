@@ -171,26 +171,26 @@
     <div class="container fond_container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="formations.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="form-row">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="titre" class="text-white">Titre</label>
                         <input type="text" name="titre_form" placeholder="Titre de la formation" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="stitre" class="text-white">Sous-titre</label>
                         <input type="text" name="stitre_form" placeholder="Sous-titre de la formation" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="dates" class="text-white">Dates</label>
                         <input type="text" name="dates_form" placeholder="dates de la formation" class="form-control" required>
                     </div>
                 </div>
-            </div> <!-- fin de la div row -->
+            </div> <!-- fin de la div form-row -->
             <div class="form-group">
                 <label for="description" class="text-white">Description</label>
                 <div>
@@ -203,7 +203,7 @@
                 </div>
             </div>
          
-            <div class="">
+            <div class="form-row">
                 <button type="submit" class="btn btn-info">Insérer une expérience</button>
             </div>
         </form>

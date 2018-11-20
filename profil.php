@@ -13,7 +13,7 @@
 
 <?php require 'inc/navigation.php'; ?>
 
-<div class="container container2">
+<div class="container container2 marge-bas">
 
     <div class="card titre">
         <div class="card-body bg-info">
@@ -209,7 +209,7 @@
 
     <div class="card titre">
         <div class="card-body bg-info">
-            <h1 class="text-center text-warning">Expériences Professionnelles</h1>
+            <h1 class="text-center text-warning">Centre d'intérêt et activités</h1>
         </div>
     </div>
     <br>

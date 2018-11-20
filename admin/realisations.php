@@ -171,26 +171,26 @@
     <div class="container fond_container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="realisations.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="form-row">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="titre" class="text-white" class="text-white">Titre</label>
                         <input type="text" name="titre_real" placeholder="Titre de la réalisation" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="stitre" class="text-white" class="text-white">Sous-titre</label>
                         <input type="text" name="stitre_real" placeholder="Sous-titre de la réalisation" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="dates" class="text-white" class="text-white">Dates</label>
                         <input type="text" name="dates_real" placeholder="dates de la réalisation" class="form-control" required>
                     </div>
                 </div>
-            </div> <!-- fin div row -->
+            </div> <!-- fin div form-row -->
             <div class="form-group">
                 <label for="description" class="text-white" class="text-white">Description</label>
             </div>

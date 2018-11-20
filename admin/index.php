@@ -81,7 +81,7 @@ if(isset($_GET['quitter'])){
                                     <img src="img/img_resultat.jpg" alt="Chicago" class="taille_img">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/dessin.jpg" alt="New York" class="taille_img">
+                                    <img src="img/oeil.jpg" alt="New York" class="taille_img">
                                 </div>
                                 </div>
 
@@ -107,8 +107,8 @@ if(isset($_GET['quitter'])){
     <br>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">
-            <h2 class="text-center text-primary">Bienvenue sur mon site portfolio</h2>
-            <p class="text-center text-primary">Je me présente en quelques mots. Je suis développeur-intégrateur web et graphiste print. Voici mon premier site, réalisé avec Bootstrap. Il présente mes compétences dans le but de touver un futur employeur.</p>
+            <h2 class="text-center text-warning">Bienvenue sur l'administration du site</h2>
+            <p class="text-center text-warning">Ici, vous pouvez modifier les différentes catégories. Pour pouvoir rentrer des informations sur votre savoir faire en intégration, développement et en graphisme print.</p>
         </div>
 
 

@@ -166,45 +166,43 @@
             </div>
         </div> <!-- fin div container2 -->
 
-    <hr class="bg-dark">
-    <div class="container container4 fond_container">
-        <!-- insertion d'une nouvelle compétence formulaire -->
-        <form action="competences.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="competence" class="text-white">Compétence</label>
-                        <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
+        <hr class="bg-dark">
+        <div class="container container4 fond_container">
+            <!-- insertion d'une nouvelle compétence formulaire -->
+            <form action="competences.php" method="post">
+                <div class="form-row">
+                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label for="competence" class="text-white">Compétence</label>
+                            <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="niveau" class="text-white">Niveau</label>
-                        <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label for="niveau" class="text-white">Niveau</label>
+                            <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="categorie" class="text-white">Catégorie</label>
-                        <select name="categorie" class="form-control">
-                            <option value="Développement">Développement</option>
-                            <option value="Infographie">Infographie</option>
-                            <option value="Front">Front</option>
-                            <option value="Back">Back</option>
-                        </select>
+                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                        <div class="form-group">
+                            <label for="categorie" class="text-white">Catégorie</label>
+                            <select name="categorie" class="form-control">
+                                <option value="Développement">Développement</option>
+                                <option value="Infographie">Infographie</option>
+                                <option value="Front">Front</option>
+                                <option value="Back">Back</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-3 col-md-3 col-lg-3">
-                    <div class="mgbutton">
-                        <button type="submit" class="btn btn-info">Insérer une compétence</button>
+                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                        <div class="mgbutton">
+                            <button type="submit" class="btn btn-info">Insérer une compétence</button>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div> <!-- fin de la div form-row -->
             </form>
-    </div>
-</div>
+        </div> <!-- fin de la div container -->
+    </div> <!-- fin de la div container-fluid -->
 
 <?php require 'inc/footer.php'; ?> 
 <!-- liens js Bootstrap -->

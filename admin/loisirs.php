@@ -142,17 +142,17 @@
     <hr class="bg-dark">
     <div class="container fond_container">
         <form action="loisirs.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="form-row marge-gauche">
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">
                         <label for="loisir" class="text-white" class="text-white">Loisir</label>
                         <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
                     </div>
                 </div>
-            </div> <!-- fin de la div row -->
-            <div class="">
-                <button type="submit" class="btn btn-info">Insérer un loisir</button>
-            </div>
+                <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                    <button type="submit" class="btn btn-info">Insérer un loisir</button>
+                </div>
+            </div> <!-- fin de la div form-row -->
         </form>
     </div>
 </div>

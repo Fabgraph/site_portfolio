@@ -172,28 +172,28 @@
     <div class="container fond_container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="experiences.php" method="post">
-            <div class="row">
-                <div class="col-sm-12 col-md-4 col-lg-4">
+            <div class="form-row">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="titre" class="text-white">Titre</label>
                         <input type="text" name="titre_exp" placeholder="Titre du poste" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="stitre" class="text-white">Sous-titre</label>
                         <input type="text" name="stitre_exp" placeholder="Sous-titre du poste" class="form-control" required>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">
                         <label for="dates" class="text-white">Dates</label>
                         <input type="text" name="dates_exp" placeholder="dates du poste" class="form-control" required>
                     </div>
                 </div>
-            </div> <!-- fin de la div row -->
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12">
+            </div> <!-- fin de la div form-row -->
+            <div class="form-row">
+                <div class="form-group col-sm-12 col-md-12 col-lg-12">
                     <div class="form-group">
                         <label for="description" class="text-white">Description</label>
                         <div>
@@ -201,9 +201,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- fin de la div row -->
+            </div> <!-- fin de la div form-row -->
          
-            <div class="">
+            <div class="form-row">
                 <button type="submit" class="btn btn-info">Insérer une expérience</button>
             </div>
         </form>

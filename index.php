@@ -52,7 +52,7 @@
                                     <img src="img/img_resultat.jpg" alt="Chicago" class="taille_img">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/dessin.jpg" alt="New York" class="taille_img">
+                                    <img src="img/oeil.jpg" alt="New York" class="taille_img">
                                 </div>
                                 </div>
 

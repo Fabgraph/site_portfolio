@@ -146,23 +146,23 @@
 
     <hr class="bg-dark">
     <div class="container fond_container">
-        
-        <form action="titres.php" method="post">
-            <div class="form-group">
-                <label for="titre" class="text-white">Titre</label>
-                <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="accroche" class="text-white">Accroche</label>
-                <div>
-                    <textarea name="accroche" cols="30" rows="10"></textarea>
+        <div class="form-row">
+            <form action="titres.php" method="post">
+                <div class="form-group">
+                    <label for="titre" class="text-white">Titre</label>
+                    <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
                 </div>
-            </div>
-            <div class="">
-                <button type="submit" class="btn btn-info">Insérer un Titre</button>
-            </div>
-        </form>
-        
+                <div class="form-group">
+                    <label for="accroche" class="text-white">Accroche</label>
+                    <div>
+                        <textarea name="accroche" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-info">Insérer un Titre</button>
+                </div>
+            </form>
+        </div>
     </div>
     </div> <!-- fin de la div container-fluid -->
 

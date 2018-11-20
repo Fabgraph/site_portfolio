@@ -1,15 +1,4 @@
 @charset "utf-8";
-/* Navigation */
-/* .deconnexion {
-    position: relative;
-    right: 0;
-}
-
-.clear { 
-    clear: both;
- } */
-
-
 
 /* Taille du jumbotron */
 .jumbo .jumbotron {
@@ -59,6 +48,13 @@
 }
 
 /* BODY */
+body {
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
+    width: 100%;
+    height: auto;
+}
+
 .container-fluid {
     height: 510px;
     background: url(../img/fond5.jpg);
@@ -71,9 +67,9 @@
     margin-bottom: 5%;
 }
 
-.container h1 {
-    margin-top: 8%;
-}  
+/* .container h1 {
+    margin-top: 4%;
+}   */
 
 .fond_container {
     background:  lightseagreen;
@@ -107,6 +103,11 @@
     display: inline-block;
 }
 
+.container2 .card {
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
+
 .container3 {
     margin-left: -1%;
     margin-right: 200px;
@@ -121,19 +122,6 @@
     padding-left: 0.8%;
 }
 
-body {
-    background: url(../img/fond5.jpg);
-    background-attachment: fixed;
-    width: 100%;
-    height: auto;
-}
-
-/* style tableau */
-
-/* FOOTER */
-/* footer {
-    margin: 0 -25px 0 -25px;
- } */
 
 h1, h2 {
     font-family: 'Rubik', sans-serif;
@@ -143,4 +131,36 @@ p {
     font-family: 'Space Mono', monospace;
 }
 
+/* Barres de progression */
 
+.container2 .row .col-sm-12 .progress .progress-bar {
+    margin-left: -5%;
+}
+
+/* Formulaire */
+/* - compétences.php */
+.container4 form .form-row {
+   margin-left: -42%;
+   padding-top: 2%;
+}
+.container4 form .form-row .form-group .mgbutton {
+    margin-top: 12%;
+}
+
+/* - expériences.php */
+.container form {
+    padding: 1% 0 1% 0;
+}
+
+/* - loisirs.php */
+.container .marge-gauche {
+    padding-left: 25%;
+}
+.container .form-row .col-md-6 button {
+    margin-top: 7.9%;
+}
+
+/* - titres.php */
+.container .form-row form {
+    padding-left: 35%;
+}

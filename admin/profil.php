@@ -138,6 +138,7 @@
             </div>
         </div>
         <div class="col-sm-10 col-md-8 col-lg-8">
+            <br>
             <p class="text-white">1ère année de faculté de psychologie, Université de Paris VIII.</p>
         </div>
         <br>
@@ -147,6 +148,7 @@
             </div>
         </div>
         <div class="col-sm-10 col-md-8 col-lg-8">
+            <br>
             <p class="text-white">Baccalauréat ES (Economique et Social), Lycée Jean Jaurés à Montreuil.</p>
         </div>
     </div> <!-- fin div row -->
