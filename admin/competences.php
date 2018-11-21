@@ -187,10 +187,8 @@
                         <div class="form-group">
                             <label for="categorie" class="text-white">Catégorie</label>
                             <select name="categorie" class="form-control">
-                                <option value="Développement">Développement</option>
-                                <option value="Infographie">Infographie</option>
-                                <option value="Front">Front</option>
-                                <option value="Back">Back</option>
+                                <option value="Web">Web</option>
+                                <option value="Print">Print</option>
                             </select>
                         </div>
                     </div>

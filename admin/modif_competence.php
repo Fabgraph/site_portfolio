@@ -47,38 +47,22 @@
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <label for="categorie" class="text-white categorie">Catégorie</label>
                         <select name="categorie">
-                            <option value="Développement"
+                            <option value="Web"
                             <?php // pour ajouter selected="selected" à la balise option si c'est la categorie de la compétence.
                     
                                 if (!(strcmp("Développement", $ligne_competence['categorie']))) {// strcmp compare deux chaînes de caractères
                                     echo "selected=\"selected\"";
                                 }
                     
-                            ?>>Developpement</option>
-                            <option value="Infographie"
+                            ?>>Web</option>
+                            <option value="Print"
                             <?php 
                     
                                 if (!(strcmp("Infographie", $ligne_competence['categorie']))) {
                                     echo "selected=\"selected\"";
                                 }
                             ?>
-                            >Infographie</option>
-                            <option value="Front"
-                            <?php
-                    
-                                if (!(strcmp("Front", $ligne_competence['categorie']))) {
-                                    echo "selected=\"selected\"";
-                                }
-                            ?>
-                            >Front</option>
-                            <option value="Back"
-                            <?php
-                    
-                                if (!(strcmp("Back", $ligne_competence['categorie']))) {
-                                    echo "selected=\"selected\"";
-                                }
-                            ?>
-                            >Back</option>
+                            >Print</option>
                         </select>
                 </div>
         

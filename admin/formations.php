@@ -30,10 +30,6 @@
         }
 
 
-
-
-
-
     // insertion d'un élément dans la base
     if(isset($_POST['titre_form'])){// si on a reçu un nouvelle formation
         if($_POST['titre_form']!='' && $_POST['stitre_form']!='' && $_POST['dates_form']!='' && $_POST['description_form']!=''){

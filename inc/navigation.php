@@ -25,10 +25,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-info" href="inscription.php">Inscription</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link text-info" href="admin/authentification.php">Connexion à l'admin <span class="sr-only">(current)</span></a>
+        <a class="nav-link text-info" href="inscription.php">Inscription <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-info" href="contact.php">Contactez-moi</a>

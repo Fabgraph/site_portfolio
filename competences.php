@@ -69,7 +69,7 @@
             $nbr_competences = $sql->rowCount();
         ?>
 
-            <div class="">
+            <div class="row">
         
                     <table class="table">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>

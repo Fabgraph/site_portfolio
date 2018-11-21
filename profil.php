@@ -13,208 +13,148 @@
 
 <?php require 'inc/navigation.php'; ?>
 
-<div class="container container2 marge-bas">
+<div class="container container2 marges">
 
     <div class="card titre">
         <div class="card-body bg-info">
+            <?php
+                // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+                $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '1' ");
+                $sql->execute();
+                $nbr_competences = $sql->rowCount();
+            ?>
             <h1 class="text-center text-warning">Compétences</h1>
         </div>
     </div>
     <br>
     <div class="row">
-
+        
         <div class="col-sm-12 col-md-6 col-lg-6">
+            <?php
+                // requête pour selectionner un enum de categorie
+                $categorie_web = $pdoCV->query(" SELECT DISTINCT categorie FROM competence ");
+            ?>
+            <h2 class="text-white"><?php echo $categorie_web ?></h2>
+            
+            <div>
+                <?php
+                    // requête pour selectionner une catégorie dans competence
+                    $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE categorie = 'Web ");
+                    $sql->execute();
+                    $competences_web = $sql->rowCount(); 
 
-            <h3 class="text-center text-warning">Web</h3>
-            <br>
-            <h4 class="text-info">HTML/CSS</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:80%"></div>
+                    while($ligne_competence=$sql->fetch()) {
+                ?>
+
+                <h3 class="text-center text-warning"><?php echo $competences_web ?></h3>
+                <h4 class="text-center text-warning"><?php echo $ligne_competence['competence'] ?></h4>
+                <h5 class="text-info"><?php $ligne_competence['niveau'] ?></h5>
+                <?php 
+                    }
+                ?>
             </div>
-
-            <h4 class="text-info">WordPress</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:60%"></div>
-            </div>
-
-            <h4 class="text-info">Bootstrap</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:60%"></div>
-            </div>
-
-            <h4 class="text-info">SQL</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:40%"></div>
-            </div>
-
-            <h4 class="text-info">PHP</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:40%"></div>
-            </div>
-
-            <h4 class="text-info">JavaScript</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:20%"></div>
-            </div>
-
-            <h4 class="text-info">Angular js</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:20%"></div>
-            </div>
-
-            <h4 class="text-info">Ionic/Cordova</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:20%"></div>
-            </div>
-
-            <h4 class="text-info">Ajax</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:5%"></div>
-            </div>
-
         </div>
-
         <div class="col-sm-12 col-md-6 col-lg-6">
+            <?php 
+                // requête pour selectionner une catégorie dans competence
+                $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE categorie = 'Print' ");
+                $sql->execute();
+                $competences_print = $sql->rowCount(); 
 
-            <h3 class="text-center text-warning">Print</h3>
-            <br>
-            <h4 class="text-info">Indesign</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:80%"></div>
-            </div>
-
-            <h4 class="text-info">Illustrator</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:60%"></div>
-            </div>
-
-            <h4 class="text-info">Photoshop</h4>
-            <div class="progress">
-                <div class="progress-bar bg-warning" style="width:40%"></div>
-            </div>
-
+                while($ligne_competence=$sql->fetch())
+                {
+            ?>
+            <h2 class="text-info"><?php echo $ligne_competence['categorie'] ?></h2>
+            <?php 
+                }
+            ?>
+            <div>
+                <?php while($ligne_competence=$sql->fetch())
+                    {
+                ?>
+                <h3 class="text-center text-warning"><?php echo $competences_print ?></h3>
+                <h4 class="text-center text-warning"><?php echo $ligne_competence['competence'] ?></h4>
+                <h5 class="text-info"><?php echo $ligne_competence['niveau'] ?></h5>
+                <?php 
+                    }
+                ?>
+            </div>      
         </div>
-
+        
     </div> <!-- fin div row -->
     <br>
 
     <div class="card titre">
         <div class="card-body bg-info">
+            <?php
+                // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+                $sql = $pdoCV->prepare(" SELECT DISTINCT * FROM t_formations WHERE id_utilisateur = '1'   ");
+                $sql->execute();
+                $nbr_formations = $sql->rowCount();
+            ?>
             <h1 class="text-center text-warning">Formations</h1>
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2018-2019</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Formation développeur-intégrateur web par WebForce3 et Le PoleS, Pantin. Formation de 10 mois labellisée Grandes Ecoles du Numérique, Techniques de développement web et mobile.</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2017</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Formation «Assistant 3D»  par Dassault Systèmes, Bagnolet et Paris. Découverte de la 3D ses outils et ses usages, et apprendre à maîtriser Catia V5 «BASICS».</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2014-2016</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Baccalauréat Professionnel Artisanat et Métier d’Art (option Communication Visuelle et Plurimédia), ERP Malleterre à Soisy-sur-Seine : • Création, mise en page et rough • Projets d’arts appliqué • Apprentissage des logiciels Indesign, Illustrator et Photoshop</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2005-2006</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">1ère année de faculté de psychologie, Université de Paris VIII.</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2005</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Baccalauréat ES (Economique et Social), Lycée Jean Jaurés à Montreuil.</p>
-        </div>
+    <div class="row text-white">
+        <?php while($ligne_formation=$sql->fetch())
+            {
+        ?>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center"><?php echo $ligne_formation['dates_form']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center"><?php echo $ligne_formation['titre_form']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center"><?php echo $ligne_formation['stitre_form']; ?></div>
+       <div class="col-sm-12 col-md-6 col-lg-6 text-center"><?php echo $ligne_formation['description_form']; ?></div>
+        <?php 
+            }
+        ?>
     </div> <!-- fin div row -->
     <br>
 
     <div class="card titre">
         <div class="card-body bg-info">
+            <?php
+                // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
+                $sql = $pdoCV->prepare(" SELECT * FROM t_experiences WHERE id_utilisateur = '1' ");
+                $sql->execute();
+                $nbr_experiences = $sql->rowCount();
+            ?>
             <h1 class="text-center text-warning">Expériences Professionnelles</h1>
         </div>
     </div>
     <br>
-    <div class="row">
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2017</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Stage à Agence Inédit (3 semaines) : Création de cartes de visite, logo, panneaux, flyers et pose de pannneaux</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2014-2016</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Stage à Groupe Protection Habitat (3 semaines) : Participation à la création d’un catalogue, réalisation d’une couverture et détourage d’images.</p>
-            <p class="text-info">Stage à la Mairie des Lilas (7 semaines) : Réalisation d’affiches, d’un quatre pages, de kakémono et corrections de texte.</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2011-2013</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info"> Atelier imprimerie MGEN : Façonnage et PAO.</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2010</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Pré-orientation professionnelle au Centre Alexandre DUMAS.</p>
-        </div>
-        <br>
-        <div class="col-sm-2 col-md-4 col-lg-4 d-flex p-3 text-warning">
-            <div class="p-2">
-                <h5>2007-2008</h5>
-            </div>
-        </div>
-        <div class="col-sm-10 col-md-8 col-lg-8">
-            <p class="text-info">Manutentionnaire Intérimaire : déchargement de bureau de camions.</p>
-        </div>
+    <div class="row text-white">
+        <?php while($ligne_experience=$sql->fetch())
+            {
+        ?>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center"><?php echo $ligne_experience['dates_exp']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center"><?php echo $ligne_experience['titre_exp']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center"><?php echo $ligne_experience['stitre_exp']; ?></div>
+       <div class="col-sm-12 col-md-6 col-lg-6 text-center"><?php echo $ligne_experience['description_exp']; ?></div>
+        <?php 
+            }
+        ?>
     </div> <!-- fin div row -->
         <br>
 
     <div class="card titre">
         <div class="card-body bg-info">
+            <?php 
+                // requête pour une seule info
+                $sql = $pdoCV->query(" SELECT * FROM t_loisirs WHERE id_utilisateur = '1' ");
+                $ligne_loisir = $sql->fetch();
+            ?>
             <h1 class="text-center text-warning">Centre d'intérêt et activités</h1>
         </div>
     </div>
     <br>
-    <div class="row">
-        <p class="text-info centre" style="padding: 0 20% 0 20%">Dessin - Pyrogravure - Musique</p>
+    <div class="row text-white">
+        <?php while($ligne_loisir=$sql->fetch())
+            {
+        ?>
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center"><?php echo $ligne_loisir['loisir']; ?></div>
+        <?php 
+            }
+        ?>
     </div>
     
 </div> <!-- fin div container -->
