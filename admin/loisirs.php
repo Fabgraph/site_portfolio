@@ -101,8 +101,8 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container-fluid">
-        <h1 class="text-center text-warning">Admin : les loisirs</h1>
+    <div class="container">
+        <h1 class="text-center text-white">Admin : les loisirs</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -110,17 +110,17 @@
             $sql->execute();
             $nbr_loisirs = $sql->rowCount();
         ?>
-            <div class="">
+            <div class="table-responsive">
                 <table class="table">
                 <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
                     <thead>
                         <tr>
-                            <th class="table-dark text-info">Loisirs
+                            <th class="table-dark text-primary">Loisirs
                             <a href="loisirs.php?column=loisir&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                             <a href="loisirs.php?column=loisir&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                             </th>
-                            <th class="table-dark text-info">Modification</th>
-                            <th class="table-dark text-info">Suppression</th>
+                            <th class="table-dark text-primary">Modification</th>
+                            <th class="table-dark text-primary">Suppression</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -139,9 +139,11 @@
                 </table>
             </div>
         </div> <!-- fin div container2 -->
-    <hr class="bg-dark">
+    <div class="container">                  
+        <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
+    </div>
     <div class="container fond_container">
-        <form action="loisirs.php" method="post">
+        <form action="loisirs.php" method="post" class="col-auto">
             <div class="form-row marge-gauche">
                 <div class="form-group col-sm-12 col-md-6 col-lg-6">
                     <div class="form-group">

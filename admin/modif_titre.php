@@ -27,30 +27,44 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
 
-    <div class="container">
-        <h1 class="text-center text-warning">Mise à jour d'un titre</h1>
-        <div class="container2 fond_container">
-
-            <!-- mise à jour formulaire -->
-            <form action="modif_titre.php" method="post">
-                <div class="">
-                    <label for="titre" class="text-white">Loisir</label>
-                    <input type="text" name="titre" value="<?php echo $ligne_titre['titre']; ?>" class="form-control" required>
-                </div>
-                <div class="">
-                    <label for="accroche" class="text-white">Accroche</label>
-                </div>
+    <div class="container fond-container">
+        <div class="row p-4">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="text-center text-white">Mise à jour d'un titre</h1>
+            </div>
+        </div>
+        <div class="row p-4">
+            <div class="col-sm-0 col-md-2 col-lg-2"></div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <!-- mise à jour formulaire -->
+                <form action="modif_titre.php" method="post" class="col-auto">
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-12 col-lg-12"></div>
+                        <label for="titre" class="text-white">Loisir</label>
+                        <input type="text" name="titre" value="<?php echo $ligne_titre['titre']; ?>" class="form-control" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <div>
+                                <label for="accroche" class="text-white">Accroche</label>
+                            </div>
+                            <div>
+                                <textarea name="accroche" cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                    </div>
                 <div>
-                    <textarea name="accroche" cols="30" rows="10"></textarea>
+                    
                 </div>
-                <br>
-                <div>
-                    <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
-                    <button type="submit" class="btn btn-success">MAJ</button>
-                </div>
-            </form>
-        </div> <!-- fin div container2 -->
-    </div>
+                </form>
+            </div>
+            <div class="col-sm-0 col-md-2 col-lg-2"></div>
+        </div> <!-- fin div row -->
+        <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
+        <button type="submit" class="btn btn-info marge-titre">MAJ</button>
+    </div> <!-- fin div container -->
 
 <?php require 'inc/footer.php'; ?>
 

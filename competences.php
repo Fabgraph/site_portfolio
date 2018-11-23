@@ -68,7 +68,7 @@
             $sql->execute();
             $nbr_competences = $sql->rowCount();
         ?>
-
+        <div class="table-responsive">
             <div class="row">
         
                     <table class="table">
@@ -105,7 +105,7 @@
                     </table>
         
             </div>
-
+        </div>
     <hr class="bg-dark">
     
 </div> <!-- fin container -->

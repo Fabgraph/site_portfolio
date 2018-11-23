@@ -28,56 +28,54 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container">
-        <h1 class="text-center text-warning">Mise à jour d'une compétence</h1>
-        <div class="container2 fond_container">
-        <!-- mise à jour formulaire -->
-        <form action="modif_competence.php" method="post">
-        <div class="">
-            <div class="row">
+    <div class="container fond-container p-4 ">
+        <div class="row p-4">
+            <div class="col">
+                <h1 class="text-center">Mise à jour d'une compétence</h1>
+            </div>
+        </div> <!-- fin de la row 1 -->
+        <div class="row p-4">
+            <div class="col-2"><i class="fas fa-highlighter"></i></div>
+            <div class="col-8">
+                <!-- mise à jour formulaire -->
+                <form action="modif_competence.php" method="post" class="col-auto">
+                    <div class="form-row">
                 
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <label for="competence" class="text-white">Compétence</label>
-                        <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <label for="niveau" class="text-white">Niveau</label>
-                        <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
-                    </div>
-                <div class="col-sm-12 col-md-4 col-lg-4">
-                    <label for="categorie" class="text-white categorie">Catégorie</label>
-                        <select name="categorie">
-                            <option value="Web"
-                            <?php // pour ajouter selected="selected" à la balise option si c'est la categorie de la compétence.
-                    
-                                if (!(strcmp("Développement", $ligne_competence['categorie']))) {// strcmp compare deux chaînes de caractères
+                        <div class="col">
+                            <label for="competence" class="">Compétence</label>
+                            <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <label for="niveau" class="">Niveau</label>
+                            <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="categorie" class="">Catégorie</label>
+                                <select name="categorie" class="form-control">
+                                    <option value="Print" <?php // pour ajouter selected="selected" à la balise option si c'est la cat. de la compétence
+                                    if (!(strcmp("Print", $ligne_competence['categorie']))) {//strcmp compare deux chaînes de caractères
                                     echo "selected=\"selected\"";
-                                }
-                    
-                            ?>>Web</option>
-                            <option value="Print"
-                            <?php 
-                    
-                                if (!(strcmp("Infographie", $ligne_competence['categorie']))) {
-                                    echo "selected=\"selected\"";
-                                }
-                            ?>
-                            >Print</option>
-                        </select>
-                </div>
-        
-                <br>
-                <div>
+                                    }
+                                    ?>>Print</option>
+                                    <option value="Web" <?php
+                                    if (!(strcmp("Web", $ligne_competence['categorie']))) {
+                                    echo "selected=\"selected\"";   
+                                    }
+                                    ?>>Web</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div> <!-- fin form-row -->
                     <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
-                    <br>
-                    <button type="submit" class="btn btn-info">MAJ</button>
-                </div>
-        </form>
-    </div>
+                    <button type="submit" class="btn btn-success">MAJ</button>
+                </form>
+            </div>
+            <div class="col fond-col-vide"></div>
+        </div> <!-- fin row 2 -->
+    </div> <!-- fin div container -->
 
-
-    </div> <!-- fin div container2 -->
-<?php require 'inc/footer.php'; ?>
+    <?php require 'inc/footer.php'; ?>
 
 <!-- liens js Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

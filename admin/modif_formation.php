@@ -30,58 +30,65 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container">
-    <h1 class="text-center text-warning">Mise à jour d'une formation</h1>
-    <div class="container2 fond_container">
+    <div class="container fond-container">
+        <div class="row pt-4">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="text-center text-white">Mise à jour d'une formation</h1>
+            </div>
+        </div>
+        <div class="row p-4">
     
-    <!-- mise à jour formulaire -->
-        <form action="modif_formation.php" method="post">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div>
-                            <label for="titre" class="text-white">Titre</label>
-                            <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
+            <!-- mise à jour formulaire -->
+            <form action="modif_formation.php" method="post" class="col-auto">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                        <div class="col-sm-12 col-md-2 col-lg-2">
+                            <div>
+                                <label for="titre" class="text-white">Titre</label>
+                                <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div>
-                            <label for="stitre" class="text-white">Sous-titre</label>
-                            <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
+                        <div class="col-sm-12 col-md-2 col-lg-2">
+                            <div>
+                                <label for="stitre" class="text-white">Sous-titre</label>
+                                <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4 col-lg-4">
-                        <div>
-                            <label for="dates" class="text-white">Dates</label>
-                            <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
+                        <div class="col-sm-12 col-md-2 col-lg-2">
+                            <div>
+                                <label for="dates" class="text-white">Dates</label>
+                                <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
+                            </div>
                         </div>
+                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
+                    </div> <!-- fin div row 2 -->
+                    
+                    <div class="row">
+                        <div class="col-sm-0 col-md-4 col-lg-4"></div>
+                        <div class="col-sm-12 col-md-8 col-lg-8">
+                            <label for="description" class="text-white">Description</label>
+                        
+                            <textarea type="text" class="form-control" name="description_form" id="description_form" cols="30" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
+                            <script>
+                                // Replace the <textarea id="editor1"> with a CKEditor
+                                // instance, using default configuration.
+                                CKEDITOR.replace( 'description_form' );
+                            </script>
+                        </div>
+                        <div class="col-sm-0 col-md-0 col-lg-0"></div>
                     </div>
-                </div> <!-- fin div row -->
-                <div>
-                    <div>
-                        <label for="description" class="text-white">Description</label>
-                    </div>
-                    <div>
-                        <textarea type="text" class="form-control" name="description_form" id="description_form" cols="30" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
-                        <script>
-                            // Replace the <textarea id="editor1"> with a CKEditor
-                            // instance, using default configuration.
-                            CKEDITOR.replace( 'description_form' );
-                        </script>
-                    </div>
-                </div>
         
         
             </div>
-            <div>
-                <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
-                <button type="submit" class="btn btn-info">MAJ</button>
-            </div>
+                
         </form>
-
     </div>
+    <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
+    <button type="submit" class="btn btn-info mb-4 marge-form">MAJ</button>
+    
 
-    </div> <!-- fin de la div container2 -->
+    </div> <!-- fin de la div container -->
 <?php require 'inc/footer.php'; ?>
 
 

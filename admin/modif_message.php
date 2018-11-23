@@ -31,11 +31,11 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container">
-        <h1 class="text-center text-warning">Mise à jour d'une message</h1>
+        <h1 class="text-center text-white">Mise à jour d'une message</h1>
         <div class="container2 fond_container">
     
         <!-- mise à jour formulaire -->
-        <form action="modif_message.php" method="post">
+        <form action="modif_message.php" method="post" class="col-auto">
             <div class="form-group">
                 <div class="row">
                     <div class="col-sm-12 col-md-4 col-lg-4">

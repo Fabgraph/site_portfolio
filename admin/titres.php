@@ -103,8 +103,8 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container-fluid">
-        <h1 class="text-center text-warning">Admin : les titres</h1>
+    <div class="container">
+        <h1 class="text-center text-white">Admin : les titres</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -112,18 +112,18 @@
             $sql->execute();
             $nbr_titres = $sql->rowCount();
         ?>
-            <div class="">
+            <div class="table-responsive">
                 <table class="table">
                 <caption class="text-white">La liste des titres : <?php echo $nbr_titres; ?></caption>
                     <thead>
                         <tr>
-                            <th class="table-dark text-info">Titre
+                            <th class="table-dark text-primary">Titre
                             <a href="titres.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                             <a href="titres.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                             </th>
-                            <th class="table-dark text-info">Accroche</th>
-                            <th class="table-dark text-info">Modification</th>
-                            <th class="table-dark text-info">Suppression</th>
+                            <th class="table-dark text-primary">Accroche</th>
+                            <th class="table-dark text-primary">Modification</th>
+                            <th class="table-dark text-primary">Suppression</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -144,10 +144,12 @@
         </div>
     </div>
 
-    <hr class="bg-dark">
+    <div class="container">                  
+        <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
+    </div>
     <div class="container fond_container">
         <div class="form-row">
-            <form action="titres.php" method="post">
+            <form action="titres.php" method="post" class="col-auto">
                 <div class="form-group">
                     <label for="titre" class="text-white">Titre</label>
                     <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>

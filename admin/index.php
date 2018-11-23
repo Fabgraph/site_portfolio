@@ -51,14 +51,14 @@ if(isset($_GET['quitter'])){
 
     <div class="jumbo">
         <div class="jumbotron jumbotron-fluid bg-info pb-5">
-            <h1 class="text-center text-warning">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
+            <h1 class="text-center text-white">Bienvenue : <?php echo $ligne_utilisateur['pseudo'] ?></h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
                 $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '$id_utilisateur' ");
                 $sql->execute();
                 $nbr_competences = $sql->rowCount();
             ?>
-            <div class="container">
+            <div class="container container-jumbotron">
                 <div class="row" id="a">
                     <div class="col-sm-12">
 
@@ -67,31 +67,32 @@ if(isset($_GET['quitter'])){
 
                                 <!-- Indicators -->
                                 <ul class="carousel-indicators">
-                                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                                <li data-target="#demo" data-slide-to="1"></li>
-                                <li data-target="#demo" data-slide-to="2"></li>
+                                <li data-target="#demo" data-slide-to="0" class="active" id="li"></li>
+                                <li data-target="#demo" data-slide-to="1" id="li"></li>
+                                <li data-target="#demo" data-slide-to="2" id="li"></li>
                                 </ul>
 
                                 <!-- The slideshow -->
                                 <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="img/img_code.jpg" alt="Los Angeles" class="taille_img">
+                                    <div class="carousel-item active">
+                                        <img src="img/img_code.jpg" alt="Los Angeles" class="taille_img">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="img/img_resultat.jpg" alt="Chicago" class="taille_img">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="img/oeil.jpg" alt="New York" class="taille_img">
+                                    </div>
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="img/img_resultat.jpg" alt="Chicago" class="taille_img">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="img/oeil.jpg" alt="New York" class="taille_img">
-                                </div>
-                                </div>
-
-                                <!-- Left and right controls -->
-                                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                                </a>
-                                <a class="carousel-control-next" href="#demo" data-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                                </a>
+                                
+                                    <!-- Left and right controls -->
+                                    <a class="carousel-control-prev" href="#demo" data-slide="prev" id="span">
+                                    <span class="carousel-control-prev-icon"></span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#demo" data-slide="next" id="span">
+                                    <span class="carousel-control-next-icon"></span>
+                                    </a>
+                                
 
                         </div>
 
@@ -107,8 +108,8 @@ if(isset($_GET['quitter'])){
     <br>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">
-            <h2 class="text-center text-warning">Bienvenue sur l'administration du site</h2>
-            <p class="text-center text-warning">Ici, vous pouvez modifier les différentes catégories. Pour pouvoir rentrer des informations sur votre savoir faire en intégration, développement et en graphisme print.</p>
+            <h2 class="text-center text-success">Bienvenue sur l'administration du site</h2>
+            <p class="text-center text-success">Ici, vous pouvez modifier les différentes catégories. Pour pouvoir rentrer des informations sur votre savoir faire en intégration, développement et en graphisme print.</p>
         </div>
 
 
@@ -117,7 +118,7 @@ if(isset($_GET['quitter'])){
             <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
                 <thead>
                     <tr>
-                        <th class="table-dark text-info">Compétences</th>
+                        <th class="table-dark text-primary">Compétences</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -117,8 +117,8 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container-fluid">
-        <h1 class="text-center text-warning">Admin : les formations</h1>
+    <div class="container">
+        <h1 class="text-center text-white">Admin : les formations</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -127,20 +127,20 @@
             $nbr_formations = $sql->rowCount();
         ?>
 
-        <div class="">
+        <div class="table-responsive">
             <table class="table">
             <caption class="text-white">La liste des formations : <?php echo $nbr_formations; ?></caption>
                 <thead>
                     <tr> 
-                        <th class="table-dark text-info">Titre
+                        <th class="table-dark text-primary">Titre
                         <a href="formations.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                         <a href="formations.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                         </th>
-                        <th class="table-dark text-info">Sous-titre</th>
-                        <th class="table-dark text-info">Dates</th>
-                        <th class="table-dark text-info">Description</th>
-                        <th class="table-dark text-info">Modification</th>
-                        <th class="table-dark text-info">Suppression</th>
+                        <th class="table-dark text-primary">Sous-titre</th>
+                        <th class="table-dark text-primary">Dates</th>
+                        <th class="table-dark text-primary">Description</th>
+                        <th class="table-dark text-primary">Modification</th>
+                        <th class="table-dark text-primary">Suppression</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -163,10 +163,12 @@
         </div>
     </div> <!-- fin de la div container2 -->
 
-    <hr class="bg-dark">
+    <div class="container">                  
+        <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
+    </div>
     <div class="container fond_container">
         <!-- insertion d'une nouvelle compétence formulaire -->
-        <form action="formations.php" method="post">
+        <form action="formations.php" method="post" class="col-auto">
             <div class="form-row">
                 <div class="form-group col-sm-12 col-md-4 col-lg-4">
                     <div class="form-group">

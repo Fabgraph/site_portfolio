@@ -1,166 +1,79 @@
 @charset "utf-8";
+/* BODY */
+body {
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: white;
+}
+
+.fond-container {
+    background:  rgba(64, 12, 112, 0.568);
+}
+
+.marge-exp {
+    margin-left: -8%;
+}
+
+.marge-form {
+   margin-left: 27%;
+}
+
+.marge-loisir {
+    margin: 1% 0 2% 36%;
+}
+
+.marge-real {
+    margin: 0 0 3% 20%;
+}
+
+.marge-titre {
+    margin: 1% 0 3% 35%;
+}
+
+/* NAVBAR */
+.navbar .collapse .navbar-nav .espace-haut {
+    margin: 0.5% 0 0 0;
+}
 
 /* Taille du jumbotron */
 .jumbo .jumbotron {
     width: 100%;
-    height: 600px;
+    height: 30%;
     background: url('../img/fond3.jpg') no-repeat center center;
-    margin-bottom: 3%;
+    margin: 2% 0 2% 0;
 }
 
 
 /* Taille du SLIDER */
 #demo {
-    width: 80%;
+    width: 100%;
     height: 45%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: -15%;
-
+    margin: 5% 20% -30% 20%;
 }
 
 .container-fluid .jumbo .jumbotron .container .row #a {
-    margin-left: 30%;
+    margin:  -20% 0 0 40%;
 }
 
-/* Taille des images */
+/* Caroussel images */
 .container .row .carousel-item img {
     width: 100%;
-    margin-right: 50%;
-    margin-bottom: 700px;
+    padding:  10% 0 0 0;
 }
 
-/* TITRES DES PAGES */
-
-.container-fluid .row h1 {
-    padding-left: 2%;
-    margin-top: -5%;
+.container .row .col-sm-12 #demo {
+    width: 90%;
+    margin: -8% 0 0 0;
+    padding: 5% 0 -8% 0;
 }
 
-/* Taille images entête */
-.container-fluid .row {
-    display: block;
+#span {
+    margin: 20% 0.3% -35% 0.3%;
 }
 
-.container-fluid .row img {
-    width: 1950px;
-    height: 600px;
+#li {
+    margin: 60% 0.3% -55% 0.3%;
 }
 
-/* BODY */
-body {
-    background: url(../img/fond5.jpg);
-    background-attachment: fixed;
-    width: 100%;
-    height: auto;
-}
-
-.container-fluid {
-    height: 510px;
-    background: url(../img/fond5.jpg);
-    background-attachment: fixed;
-    margin-top: 10%;
-}
-
-.container {
-    display: block;
-    margin-bottom: 5%;
-}
-
-/* .container h1 {
-    margin-top: 4%;
-}   */
-
-.fond_container {
-    background:  lightseagreen;
-}
-
-.container1 {
-    margin-top: 0 auto;
-}
-
-.container2 {
-    margin-top: 2%;
-}
-
-.container2 form {
-    padding: 2%;
-}
-
-.container2 form div textarea.form-control {
-    padding-left: 5%;
-}
-
-.container2 .row div {
-    padding-left: 2%;
-}
-
-.container2 .row .col-sm-12 .categorie {
-    padding-top: 12%;
-}
-
-.container2 .row .col-sm-12 {
-    display: inline-block;
-}
-
-.container2 .card {
-    margin-top: 8%;
-    margin-bottom: 8%;
-}
-
-.container3 {
-    margin-left: -1%;
-    margin-right: 200px;
-    height: 50%;
-}
-
-.container4 {
-    padding-left: 20%;
-}
-
-.descrip {
-    padding-left: 0.8%;
-}
-
-
-h1, h2 {
-    font-family: 'Rubik', sans-serif;
-}
-
-p {
-    font-family: 'Space Mono', monospace;
-}
-
-/* Barres de progression */
-
-.container2 .row .col-sm-12 .progress .progress-bar {
-    margin-left: -5%;
-}
-
-/* Formulaire */
-/* - compétences.php */
-.container4 form .form-row {
-   margin-left: -42%;
-   padding-top: 2%;
-}
-.container4 form .form-row .form-group .mgbutton {
-    margin-top: 12%;
-}
-
-/* - expériences.php */
-.container form {
-    padding: 1% 0 1% 0;
-}
-
-/* - loisirs.php */
-.container .marge-gauche {
-    padding-left: 25%;
-}
-.container .form-row .col-md-6 button {
-    margin-top: 7.9%;
-}
-
-/* - titres.php */
-.container .form-row form {
-    padding-left: 35%;
-}

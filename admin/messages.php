@@ -111,8 +111,8 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container-fluid">
-        <h1 class="text-center text-warning">Admin : les messages</h1>
+    <div class="container">
+        <h1 class="text-center text-white">Admin : les messages</h1>
         <div class="container2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -121,24 +121,24 @@
             $nbr_messages = $sql->rowCount();
         ?>
 
-            <div class="">
+            <div class="table-responsive">
         
                     <table class="table">
                     <caption class="text-white">La liste des messages: <?php echo $nbr_messages; ?></caption>
                         <thead>
                             <tr> 
-                                <th class="table-dark text-info">Nom 
+                                <th class="table-dark text-primary">Nom 
                                 <a href="messages.php?column=nom&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                                 <a href="messages.php?column=nom&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
-                                <th class="table-dark text-info">Email
+                                <th class="table-dark text-primary">Email
                                 <a href="messages.php?column=email&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                                 <a href="messages.php?column=email&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
-                                <th class="table-dark text-info">Sujet</th>
-                                <th class="table-dark text-info">Message</th>
-                                <th class="table-dark text-info">Modification</th>
-                                <th class="table-dark text-info">Suppression</th>
+                                <th class="table-dark text-primary">Sujet</th>
+                                <th class="table-dark text-primary">Message</th>
+                                <th class="table-dark text-primary">Modification</th>
+                                <th class="table-dark text-primary">Suppression</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -162,46 +162,6 @@
             </div>
         </div> <!-- fin div container2 -->
 
-    <hr class="bg-dark">
-    <div class="container fond_container">
-            <!-- insertion d'un nouveau message -->
-            <form action="messages.php" method="post">
-            <div class="row">
-                <div class=" col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="nom" class="text-white">Nom</label>
-                        <input type="text" name="nom" placeholder="Nom" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="email" class="text-white">Email</label>
-                        <input type="email" name="email" placeholder="Entrez votre email" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-                <div class=" col-sm-12 col-md-4 col-lg-4">
-                    <div class="form-group">
-                        <label for="sujet" class="text-white">Sujet</label>
-                        <input type="text" name="sujet" placeholder="sujet" class="form-control" required>
-                    </div>
-                </div> <!-- fin de la div col -->
-            </div>
-            <div class="form-group">
-                <label for="message" class="text-white">Message</label>
-                <div>
-                    <textarea type="text" class="form-control" name="message" id="message_form" cols="30" rows="10"></textarea>
-                    <script>
-                        // Replace the <textarea id="editor1"> with a CKEditor
-                        // instance, using default configuration.
-                        CKEDITOR.replace( 'message_form' );
-                    </script>
-                </div>
-            </div>
-                <div class="mgbutton">
-                    <button type="submit" class="btn btn-info">Insérer un message</button>
-                </div>
-            </form>
-    </div>
 </div>
 
 <?php require 'inc/footer.php'; ?> 

@@ -26,22 +26,30 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
 
-    <div class="container">
-        <h1 class="text-center text-warning">Mise à jour d'un loisir</h1>
-        <div class="container2 fond_container">
-
-        <!-- mise à jour formulaire -->
-        <form action="modif_loisir.php" method="post">
-            <div class="">
-                <label for="loisir" class="text-white">Loisir</label>
-                <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" class="form-control" required>
+    <div class="container fond-container">
+        <div class="row p-4">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="text-center text-white">Mise à jour d'un loisir</h1>
             </div>
-            <div>
-                <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
-                <button type="submit" class="btn btn-info">MAJ</button>
+        </div>
+        
+        <div class="row p-4">
+            <div class="col-sm-0 col-md-4 col-lg-4"></div>
+            <div class="col-sm-12 col-md-7 col-lg-7">
+                <!-- mise à jour formulaire -->
+                <form action="modif_loisir.php" method="post" class="col-auto">
+                    <div class="form-row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <label for="loisir" class="text-white">Loisir</label>
+                            <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" class="form-control" required>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </form>
-        </div> <!-- fin de la div container2 -->
+            <div class="col-sm-0 col-md-1 col-lg-1"></div>
+        </div> <!-- fin de la div row -->
+        <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
+        <button type="submit" class="btn btn-info marge-loisir">MAJ</button>
     </div>
 
 <?php require 'inc/footer.php'; ?>

@@ -1,8 +1,12 @@
 @charset "utf-8";
+/* NAVBAR */
+.navbar .collapse .navbar-nav .dropdown-menu {
+    margin: -0.05% 0 0 11%;
+}
 
-/* body {
-    
-} */
+.navbar .collapse .navbar-nav .espace-haut {
+    margin: 1% 0 0 0;
+}
 /* Taille du jumbotron */
 .jumbo .jumbotron {
     width: 100%;
@@ -141,12 +145,6 @@ textarea.form-control{
     margin: 0 auto;
 }
 
-/* p.text-info {
-    background: rgb(236, 233, 13);
-    opacity: 0.70;
-    padding: 1%;
-}
- */
 p.text-info.centre {
     margin-left: 15%;
 }
@@ -162,6 +160,10 @@ section .contact-section .container {
     margin-bottom: 2.9%;
     padding-top: 2%;
     padding-bottom: 2%;
+}
+
+.centrer {
+    padding-left: 13%;
 }
 
 .container2 .card {

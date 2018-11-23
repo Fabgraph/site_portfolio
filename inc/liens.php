@@ -9,3 +9,6 @@
 <!-- lien google fonts -->
 <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i" rel="stylesheet">
+<!-- Jqurey et JavaScript-->
+<script src="js/jquery.js"></script>
+<script src="js/script2.js"></script>

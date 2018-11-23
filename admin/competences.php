@@ -112,8 +112,8 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container-fluid">
-        <h1 class="text-center text-warning">Admin : les compétences</h1>
+    <div class="container">
+        <h1 class="text-center text-white">Admin : les compétences</h1>
         <div class="container2">
         
   
@@ -124,26 +124,26 @@
             $nbr_competences = $sql->rowCount();
         ?>
 
-            <div class="">
+            <div class="table-responsive">">
         
                     <table class="table">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
                         <thead>
                             <tr> 
-                                <th class="table-dark text-info">Compétences 
+                                <th class="table-dark text-primary">Compétences 
                                 <a href="competences.php?column=competence&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> | 
                                 <a href="competences.php?column=competence&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
-                                <th class="table-dark text-info">Niveau
+                                <th class="table-dark text-primary">Niveau
                                 <a href="competences.php?column=niveau&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                                 <a href="competences.php?column=niveau&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
-                                <th class="table-dark text-info">Catégorie
+                                <th class="table-dark text-primary">Catégorie
                                 <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                                 <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
-                                <th class="table-dark text-info">Modification</th>
-                                <th class="table-dark text-info">Suppression</th>
+                                <th class="table-dark text-primary">Modification</th>
+                                <th class="table-dark text-primary">Suppression</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -166,10 +166,12 @@
             </div>
         </div> <!-- fin div container2 -->
 
-        <hr class="bg-dark">
+        <div class="container">                  
+            <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
+        </div>
         <div class="container container4 fond_container">
             <!-- insertion d'une nouvelle compétence formulaire -->
-            <form action="competences.php" method="post">
+            <form action="competences.php" method="post" class="col-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-12 col-md-3 col-lg-3">
                         <div class="form-group">

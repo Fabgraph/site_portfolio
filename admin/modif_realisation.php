@@ -30,55 +30,59 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
-        <h1 class="text-center text-warning">Mise à jour d'une réalisation</h1>
-        <div class="container2 fond_container">
-            <!-- mise à jour formulaire -->
-            <form action="modif_realisation.php" method="post">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <div>
-                                <label for="titre" class="text-white">Titre</label>
-                                <input type="text" name="titre_real" value="<?php echo $ligne_realisation['titre_real']; ?>" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <div>
-                                <label for="stitre" class="text-white">Sous-titre</label>
-                                <input type="text" name="stitre_real" value="<?php echo $ligne_realisation['stitre_real']; ?>" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 col-lg-4">
-                            <div>
-                                <label for="dates" class="text-white">Dates</label>
-                                <input type="text" name="dates_real" value="<?php echo $ligne_realisation['dates_real']; ?>" class="form-control" required>
-                            </div>
-                        </div>
-                    </div> <!-- fin div row -->
-                    <div>
-                        <div>
-                            <label for="description" class="text-white">Description</label>
-                        </div>
-                        <div>
-                            <textarea type="text" class="form-control" name="description_real" id="description_real" cols="30" rows="10"><?php echo $ligne_realisation['description_real']; ?></textarea>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'description_real' );
-                            </script>
-                        </div>
-                    </div>
+    <div class="container fond-container">
+        <div class="row p-4">
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <h1 class="text-center text-white">Mise à jour d'une réalisation</h1>
+            </div>
+        </div>
         
-        
+        <div class="row p-4">
+            <div class="col-sm-0 col-md-2 col-lg-2"></div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <!-- mise à jour formulaire -->
+                <form action="modif_realisation.php" method="post" class="col-auto">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div>
+                                    <label for="titre" class="text-white">Titre</label>
+                                    <input type="text" name="titre_real" value="<?php echo $ligne_realisation['titre_real']; ?>" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div>
+                                    <label for="stitre" class="text-white">Sous-titre</label>
+                                    <input type="text" name="stitre_real" value="<?php echo $ligne_realisation['stitre_real']; ?>" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 col-lg-4">
+                                <div>
+                                    <label for="dates" class="text-white">Dates</label>
+                                    <input type="text" name="dates_real" value="<?php echo $ligne_realisation['dates_real']; ?>" class="form-control" required>
+                                </div>
+                            </div>
+                        </div> <!-- fin div form-row -->
+                        <div>
+                            <div>
+                                <label for="description" class="text-white">Description</label>
+                            </div>
+                            <div>
+                                <textarea type="text" class="form-control" name="description_real" id="description_real" cols="25" rows="10"><?php echo $ligne_realisation['description_real']; ?></textarea>
+                                <script>
+                                    // Replace the <textarea id="editor1"> with a CKEditor
+                                    // instance, using default configuration.
+                                    CKEDITOR.replace( 'description_real' );
+                                </script>
+                            </div>
+                        </div>
                 </div>
-                <div>
-                    <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
-                    <button type="submit" class="btn btn-info">MAJ</button>
-                </div>
-
             </form>
-        </div> <!-- fin div container2 -->
+            </div>
+            <div class="col-sm-0 col-md-2 col-lg-2"></div>
+        </div> <!-- fin div row -->
+        <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
+        <button type="submit" class="btn btn-info marge-real">MAJ</button>
     </div>
 
 

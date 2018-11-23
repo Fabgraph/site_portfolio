@@ -74,7 +74,7 @@
             $nbr_experiences = $sql->rowCount();
         ?>
 
-            <div class="">
+            <div class="table-responsive">
                 <table class="table">
                 <caption class="text-white">La liste des expériences : <?php echo $nbr_experiences; ?></caption>
                     <thead>

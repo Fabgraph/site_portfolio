@@ -84,7 +84,7 @@
             $nbr_messages = $sql->rowCount();
         ?>
 
-            <div class="">
+            <div class="table-responsive">
         
                     <table class="table">
                     <caption class="text-white">La liste des messages: <?php echo $nbr_messages; ?></caption>

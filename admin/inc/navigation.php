@@ -1,13 +1,13 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand text-warning" href="index.php">FabgrapH</a>
+    <a class="navbar-brand text-primary" href="index.php">FabgrapH</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
 
-        <li class="nav-item">
+        <li class="nav-item espace-haut">
             <a class="dropdown-item text-white" href="../admin/profil.php">Mon profil</a>
         </li>
 
@@ -33,7 +33,7 @@
           </div>
         </li>
 
-        <li>
+        <li class="espace-haut">
             <a class="dropdown-item text-white" href="messages.php">Messages</a>
         </li>
     </ul>
