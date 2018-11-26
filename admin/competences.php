@@ -112,7 +112,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
+    <div class="container fond-container">
         <h1 class="text-center text-white">Admin : les compétences</h1>
         <div class="container2">
         
@@ -124,7 +124,7 @@
             $nbr_competences = $sql->rowCount();
         ?>
 
-            <div class="table-responsive">">
+            <div class="table-responsive">
         
                     <table class="table">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
@@ -169,40 +169,44 @@
         <div class="container">                  
             <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
         </div>
-        <div class="container container4 fond_container">
-            <!-- insertion d'une nouvelle compétence formulaire -->
-            <form action="competences.php" method="post" class="col-auto">
-                <div class="form-row">
-                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
-                        <div class="form-group">
-                            <label for="competence" class="text-white">Compétence</label>
-                            <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
+        <div class="row">
+            <div class="col-sm-0 col-md-2 lo-lg-2"></div>
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <!-- insertion d'une nouvelle compétence formulaire -->
+                <form action="competences.php" method="post" class="col-auto">
+                    <div class="form-row">
+                        <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label for="competence" class="text-white">Compétence</label>
+                                <input type="text" name="competence" placeholder="Nouvelle compétence" class="form-control" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
-                        <div class="form-group">
-                            <label for="niveau" class="text-white">Niveau</label>
-                            <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+                        <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label for="niveau" class="text-white">Niveau</label>
+                                <input type="text" name="niveau" placeholder="niveau en chiffre" class="form-control" required>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
-                        <div class="form-group">
-                            <label for="categorie" class="text-white">Catégorie</label>
-                            <select name="categorie" class="form-control">
-                                <option value="Web">Web</option>
-                                <option value="Print">Print</option>
-                            </select>
+                        <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                            <div class="form-group">
+                                <label for="categorie" class="text-white">Catégorie</label>
+                                <select name="categorie" class="form-control">
+                                    <option value="Web">Web</option>
+                                    <option value="Print">Print</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group col-sm-12 col-md-3 col-lg-3">
-                        <div class="mgbutton">
-                            <button type="submit" class="btn btn-info">Insérer une compétence</button>
+                        <div class="form-group col-sm-12 col-md-3 col-lg-3">
+                            <div class="mgbutton">
+                                <button type="submit" class="btn btn-info button-competences">Insérer une compétence</button>
+                            </div>
                         </div>
-                    </div>
-                </div> <!-- fin de la div form-row -->
-            </form>
-        </div> <!-- fin de la div container -->
-    </div> <!-- fin de la div container-fluid -->
+                    </div> <!-- fin de la div form-row -->
+                </form>
+            </div> <!-- fin de la div col -->
+            <div class="col-sm-0 col-md-2 lo-lg-2"></div>
+        </div> <!-- fin de la div row -->
+    </div> <!-- fin de la div container -->
 
 <?php require 'inc/footer.php'; ?> 
 <!-- liens js Bootstrap -->

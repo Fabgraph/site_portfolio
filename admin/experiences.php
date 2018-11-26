@@ -123,9 +123,9 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
+    <div class="container fond-container">
         <h1 class="text-center text-white">Admin : les expériences</h1>
-        <div class="container2">
+        <div class="row p-2">
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
             $sql = $pdoCV->prepare(" SELECT * FROM t_experiences WHERE id_utilisateur = '$id_utilisateur' $order ");
@@ -168,7 +168,7 @@
                 </table>
             </div>
         </div>  <!-- fin div container2 -->
-    <div class="container">                  
+    <div class="container pl-2 pr-2">                  
         <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
     </div>
     <div class="container fond_container">
@@ -199,7 +199,7 @@
                     <div class="form-group">
                         <label for="description" class="text-white">Description</label>
                         <div>
-                            <textarea name="description_exp" cols="106" rows="10"></textarea>
+                            <textarea name="description_exp" cols="109" rows="10"></textarea>
                         </div>
                     </div>
                 </div>

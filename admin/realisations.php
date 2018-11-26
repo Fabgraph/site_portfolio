@@ -121,7 +121,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
+    <div class="container  fond-container">
         <h1 class="text-center text-white">Admin : les réalisations</h1>
         <div class="container2">
         <?php
@@ -170,7 +170,7 @@
     <div class="container">                  
         <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
     </div>
-    <div class="container fond_container">
+    <div class="container">
         <!-- insertion d'une nouvelle compétence formulaire -->
         <form action="realisations.php" method="post" class="col-auto">
             <div class="form-row" id="marges2">

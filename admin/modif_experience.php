@@ -31,12 +31,12 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container fond-container">
-        <div class="row p-4">
+        <div class="row">
             <div class="col">
                 <h1 class="text-center text-white">Mise à jour d'une expérience</h1>
             </div> <!-- fin row 1 -->
         </div>
-        <div class="row p-4">
+        <div class="row">
             <div class="col-2"></div>
             <!-- mise à jour formulaire -->
             <form action="modif_experience.php" method="post" class="col-auto">
@@ -62,19 +62,19 @@
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
                     </div>
                     <div class="form-row">
-                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
                         <div class="col-sm-12 col-md-6 col-lg-6">
                             <label for="description" class="text-white">Description</label>
-                            <textarea name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" cols="94" rows="10"></textarea>
+                            <textarea name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" cols="35" rows="10"></textarea>
                         </div>
-                        <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
                     </div>
                     
                 </div> <!-- fin div form-group -->
             </form>
             <div class="col-2"></div>
             <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
-            <button type="submit" class="btn btn-info marge-exp">MAJ</button>
+            <button type="submit" class="btn btn-info marge-exp">Modification d'une expérience</button>
             
         </div> <!-- fin de la div row 2 -->
         

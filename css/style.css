@@ -1,4 +1,13 @@
 @charset "utf-8";
+/* BODY */
+body{
+	width:100%;
+	height:70%;
+    font-family: 'Roboto Condensed', sans-serif;
+    background: url(../img/fond5.jpg);
+    background-attachment: fixed;
+    margin-top: -0.3%;
+}   
 /* NAVBAR */
 .navbar .collapse .navbar-nav .dropdown-menu {
     margin: -0.05% 0 0 11%;
@@ -47,16 +56,6 @@
 .container-fluid .row img {
     width: 100%;
     height: 36em;
-}
-
-/* BODY */
-body{
-	width:100%;
-	height:70%;
-    font-family: 'Roboto Condensed', sans-serif;
-    background: url(../img/fond5.jpg);
-    background-attachment: fixed;
-    margin-top: -0.3%;
 }
 
 .container {

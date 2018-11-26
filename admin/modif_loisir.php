@@ -27,13 +27,13 @@
     <?php require 'inc/navigation.php'; ?>
 
     <div class="container fond-container">
-        <div class="row p-4">
+        <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1 class="text-center text-white">Mise à jour d'un loisir</h1>
             </div>
         </div>
         
-        <div class="row p-4">
+        <div class="row">
             <div class="col-sm-0 col-md-4 col-lg-4"></div>
             <div class="col-sm-12 col-md-7 col-lg-7">
                 <!-- mise à jour formulaire -->
@@ -49,7 +49,7 @@
             <div class="col-sm-0 col-md-1 col-lg-1"></div>
         </div> <!-- fin de la div row -->
         <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
-        <button type="submit" class="btn btn-info marge-loisir">MAJ</button>
+        <button type="submit" class="btn btn-info marge-loisir">Modification d'un loisir</button>
     </div>
 
 <?php require 'inc/footer.php'; ?>

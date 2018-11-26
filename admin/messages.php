@@ -137,7 +137,6 @@
                                 </th>
                                 <th class="table-dark text-primary">Sujet</th>
                                 <th class="table-dark text-primary">Message</th>
-                                <th class="table-dark text-primary">Modification</th>
                                 <th class="table-dark text-primary">Suppression</th>
                             </tr>
                         </thead>
@@ -150,7 +149,6 @@
                                 <td class="text-info"><?php echo $ligne_message['email']; ?></td>
                                 <td class="text-info"><?php echo $ligne_message['sujet']; ?></td>
                                 <td class="text-info"><?php echo $ligne_message['message']; ?></td>
-                                <td class="text-info"><a href="modif_message.php?id_message=<?php echo $ligne_message['id_message']; ?>"><i class="fas fa-edit"></i></a></td>
                                 <td class="text-info"><a href="messages.php?id_message=<?php echo $ligne_message['id_message']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                             </tr>
                             <?php

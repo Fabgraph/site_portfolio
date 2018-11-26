@@ -8,28 +8,42 @@ body {
     color: white;
 }
 
+.container {
+    padding: 2%;
+}
+
 .fond-container {
     background:  rgba(64, 12, 112, 0.568);
 }
 
+/* button des pages */
+.button-competences {
+    margin-top: 19%;
+}
+
+.button-loisirs {
+    margin-top: 9%;
+}
+
+/* button des pages de modification */
 .marge-exp {
-    margin-left: -8%;
+    margin-left: 18%;
 }
 
 .marge-form {
-   margin-left: 27%;
+   margin-left: 31%;
 }
 
 .marge-loisir {
-    margin: 1% 0 2% 36%;
+    margin: 1% 0 2% 35.5%;
 }
 
 .marge-real {
-    margin: 0 0 3% 20%;
+    margin: 0 0 3% 18.5%;
 }
 
 .marge-titre {
-    margin: 1% 0 3% 35%;
+    margin: 1% 0 3% 34.5%;
 }
 
 /* NAVBAR */

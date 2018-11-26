@@ -28,13 +28,13 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container fond-container p-4 ">
-        <div class="row p-4">
+    <div class="container fond-container ">
+        <div class="row">
             <div class="col">
                 <h1 class="text-center">Mise à jour d'une compétence</h1>
             </div>
         </div> <!-- fin de la row 1 -->
-        <div class="row p-4">
+        <div class="row">
             <div class="col-2"><i class="fas fa-highlighter"></i></div>
             <div class="col-8">
                 <!-- mise à jour formulaire -->
@@ -68,7 +68,7 @@
                         </div>
                     </div> <!-- fin form-row -->
                     <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
-                    <button type="submit" class="btn btn-success">MAJ</button>
+                    <button type="submit" class="btn btn-info">Modification d'une conpétence</button>
                 </form>
             </div>
             <div class="col fond-col-vide"></div>

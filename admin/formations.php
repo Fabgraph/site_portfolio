@@ -202,7 +202,7 @@
             </div>
          
             <div class="form-row">
-                <button type="submit" class="btn btn-info">Insérer une expérience</button>
+                <button type="submit" class="btn btn-info">Insérer une formation</button>
             </div>
         </form>
     </div>

@@ -31,18 +31,18 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container fond-container">
-        <div class="row pt-4">
+        <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1 class="text-center text-white">Mise à jour d'une formation</h1>
             </div>
         </div>
-        <div class="row p-4">
+        <div class="row">
     
             <!-- mise à jour formulaire -->
             <form action="modif_formation.php" method="post" class="col-auto">
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                        <div class="col-sm-0 col-md-5 col-lg-5" style="margin-left: -2%;"></div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
                             <div>
                                 <label for="titre" class="text-white">Titre</label>
@@ -65,27 +65,27 @@
                     </div> <!-- fin div row 2 -->
                     
                     <div class="row">
-                        <div class="col-sm-0 col-md-4 col-lg-4"></div>
-                        <div class="col-sm-12 col-md-8 col-lg-8">
+                        <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 pr-4" style="margin-left: -2%;">
                             <label for="description" class="text-white">Description</label>
                         
-                            <textarea type="text" class="form-control" name="description_form" id="description_form" cols="30" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
+                            <textarea type="text" class="form-control" name="description_form" id="description_form" cols="45" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
                             <script>
                                 // Replace the <textarea id="editor1"> with a CKEditor
                                 // instance, using default configuration.
                                 CKEDITOR.replace( 'description_form' );
                             </script>
                         </div>
-                        <div class="col-sm-0 col-md-0 col-lg-0"></div>
+                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
                     </div>
         
         
-            </div>
+                </div>
                 
-        </form>
-    </div>
+            </form>
+        </div>
     <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
-    <button type="submit" class="btn btn-info mb-4 marge-form">MAJ</button>
+    <button type="submit" class="btn btn-info mb-4 marge-form">Modification d'une formation</button>
     
 
     </div> <!-- fin de la div container -->

@@ -31,13 +31,13 @@
     <?php require 'inc/navigation.php'; ?>
     
     <div class="container fond-container">
-        <div class="row p-4">
+        <div class="row">
             <div class="col-sm-12 col-md-12 col-lg-12">
                 <h1 class="text-center text-white">Mise à jour d'une réalisation</h1>
             </div>
         </div>
         
-        <div class="row p-4">
+        <div class="row">
             <div class="col-sm-0 col-md-2 col-lg-2"></div>
             <div class="col-sm-12 col-md-8 col-lg-8">
                 <!-- mise à jour formulaire -->
@@ -82,7 +82,7 @@
             <div class="col-sm-0 col-md-2 col-lg-2"></div>
         </div> <!-- fin div row -->
         <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
-        <button type="submit" class="btn btn-info marge-real">MAJ</button>
+        <button type="submit" class="btn btn-info marge-real">Modification d'une réalisation</button>
     </div>
 
 

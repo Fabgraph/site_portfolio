@@ -101,7 +101,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
+    <div class="container  fond-container">
         <h1 class="text-center text-white">Admin : les loisirs</h1>
         <div class="container2">
         <?php
@@ -142,18 +142,22 @@
     <div class="container">                  
         <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
     </div>
-    <div class="container fond_container">
-        <form action="loisirs.php" method="post" class="col-auto">
-            <div class="form-row marge-gauche">
-                <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                    <div class="form-group">
-                        <label for="loisir" class="text-white" class="text-white">Loisir</label>
-                        <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
+    <div class="row">
+        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            <form action="loisirs.php" method="post" class="col-auto">
+                <div class="form-row marge-gauche">
+                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                        <div class="form-group">
+                            <label for="loisir" class="text-white" class="text-white">Loisir</label>
+                            <input type="text" name="loisir" placeholder="Nouveau loisir" class="form-control" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-sm-12 col-md-6 col-lg-6">
-                    <button type="submit" class="btn btn-info">Insérer un loisir</button>
-                </div>
+                    <div class="form-group col-sm-12 col-md-6 col-lg-6">
+                        <button type="submit" class="btn btn-info button-loisirs">Insérer un loisir</button>
+                    </div>
+        </div>
+        <div class="col-sm-0 col-md-1 col-lg-1"></div>
             </div> <!-- fin de la div form-row -->
         </form>
     </div>

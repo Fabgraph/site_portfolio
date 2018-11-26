@@ -103,7 +103,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
+    <div class="container  fond-container">
         <h1 class="text-center text-white">Admin : les titres</h1>
         <div class="container2">
         <?php
@@ -147,26 +147,32 @@
     <div class="container">                  
         <hr class="bg-dark mx-auto" style="width: 100%; height: 1%; color: rgb(0, 0, 0);">
     </div>
-    <div class="container fond_container">
-        <div class="form-row">
-            <form action="titres.php" method="post" class="col-auto">
-                <div class="form-group">
-                    <label for="titre" class="text-white">Titre</label>
-                    <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="accroche" class="text-white">Accroche</label>
-                    <div>
-                        <textarea name="accroche" cols="30" rows="10"></textarea>
+    <div class="row"></div>
+            <div class="container">
+                <div class="form-row">
+                    <div class="col-sm-0 col-md-4 col-lg-4"></div>
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <form action="titres.php" method="post" class="col-auto">
+                            <div class="form-group">
+                                <label for="titre" class="text-white">Titre</label>
+                                <input type="text" name="titre" placeholder="Nouveau titre" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="accroche" class="text-white">Accroche</label>
+                                <div>
+                                    <textarea name="accroche" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button type="submit" class="btn btn-info">Insérer un Titre</button>
+                            </div>
+                        </form>
                     </div>
+                    <div class="col-sm-0 col-md-4 col-lg-4"></div>
                 </div>
-                <div class="">
-                    <button type="submit" class="btn btn-info">Insérer un Titre</button>
-                </div>
-            </form>
+            </div>
         </div>
-    </div>
-    </div> <!-- fin de la div container-fluid -->
+    </div> <!-- fin de la div row -->
 
 
 <?php require 'inc/footer.php'; ?>

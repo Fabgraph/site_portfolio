@@ -29,11 +29,11 @@
                 $une_competence_web = $pdoCV->query(" SELECT * FROM t_competences WHERE id_utilisateur = '1' AND categorie = 'Web' ");
                 $ligne_competence = $une_competence_web->fetch();
             ?>
-            <h1 class="text-center text-white">Compétences</h1>
+            <h1 class="text-center text-primary">Compétences</h1>
         </div>
     </div>
     <br>
-    <div class="row">
+    <div class="row bg-secondary m-2 p-2">
         
         <div class="col-sm-12 col-md-6 col-lg-6">
             
@@ -46,7 +46,7 @@
             <?php
                 while($ligne_competence=$une_categorie_web->fetch()) {
             ?>
-            <h2 class="text-center text-primary"><?php echo $ligne_competence['categorie']; ?></h2>
+            <h2 class="text-center text-warning"><?php echo $ligne_competence['categorie']; ?></h2>
             <?php
                 }
             ?>
@@ -56,7 +56,7 @@
                 ?>
                 <div class="row">
                     <div class="col-sm-6">
-                        <h3 class="text-left  text-success"><?php echo $ligne_competence['competence']; ?></h3>
+                        <h3 class="text-left  text-warning"><?php echo $ligne_competence['competence']; ?></h3>
                     </div>
                     <div class="col-sm-6">
                         <h5 class="text-right text-white"><?php echo $ligne_competence['niveau']; ?></h5>
@@ -87,7 +87,7 @@
             <?php
                 while($ligne_competence=$une_categorie_print->fetch()) {
             ?>
-            <h2 class="text-center text-primary"><?php echo $ligne_competence['categorie'] ?></h2>
+            <h2 class="text-center text-warning"><?php echo $ligne_competence['categorie'] ?></h2>
             <?php 
                 }
             ?>
@@ -96,7 +96,7 @@
                     while($ligne_competence=$une_competence_print->fetch()) {
                 ?>
                 <div class="col-sm-6">
-                    <h3 class="text-left text-success"><?php echo $ligne_competence['competence'] ?></h3>
+                    <h3 class="text-left text-warning"><?php echo $ligne_competence['competence'] ?></h3>
                 </div>
                 <div class="col-sm-6">
                     <h5 class="text-right text-white"><?php echo $ligne_competence['niveau'] ?></h5>
@@ -125,18 +125,18 @@
                 $une_formation = $pdoCV->query(" SELECT * FROM t_formations WHERE id_utilisateur = '1' ");
                 $ligne_formation = $une_formation->fetch();
             ?>
-            <h1 class="text-center text-white">Formations</h1>
+            <h1 class="text-center text-primary">Formations</h1>
         </div>
     </div>
     <br>
-    <div class="row">
+    <div class="row bg-secondary m-2 p-2">
         <?php while($ligne_formation=$une_formation->fetch())
             {
         ?>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-info"><?php echo $ligne_formation['dates_form']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_formation['titre_form']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_formation['stitre_form']; ?></div>
-       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-success"><?php echo $ligne_formation['description_form']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-warning"><?php echo $ligne_formation['dates_form']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_formation['titre_form']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_formation['stitre_form']; ?></div>
+       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_formation['description_form']; ?></div>
         <?php 
             }
         ?>
@@ -151,18 +151,18 @@
                 $sql3->execute();
                 $nbr_experiences = $sql3->rowCount();
             ?>
-            <h1 class="text-center text-white">Expériences Professionnelles</h1>
+            <h1 class="text-center text-primary">Expériences Professionnelles</h1>
         </div>
     </div>
     <br>
-    <div class="row">
+    <div class="row bg-secondary m-2 p-2">
         <?php while($ligne_experience=$sql3->fetch())
             {
         ?>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-info"><?php echo $ligne_experience['dates_exp']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_experience['titre_exp']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_experience['stitre_exp']; ?></div>
-       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-success"><?php echo $ligne_experience['description_exp']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-warning"><?php echo $ligne_experience['dates_exp']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_experience['titre_exp']; ?></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_experience['stitre_exp']; ?></div>
+       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_experience['description_exp']; ?></div>
         <?php 
             }
         ?>
@@ -176,15 +176,15 @@
                 $un_loisir = $pdoCV->query(" SELECT * FROM t_loisirs WHERE id_utilisateur = '1' ");
                 $ligne_loisir = $un_loisir->fetch();
             ?>
-            <h1 class="text-center text-white">Centre d'intérêt et activités</h1>
+            <h1 class="text-center text-primary">Centre d'intérêt et activités</h1>
         </div>
     </div>
     <br>
-    <div class="row">
+    <div class="row bg-secondary m-2 p-2">
         <?php while($ligne_loisir=$un_loisir->fetch())
             {
         ?>
-        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-success"><?php echo $ligne_loisir['loisir']; ?></div>
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_loisir['loisir']; ?></div>
         <?php 
             }
         ?>
