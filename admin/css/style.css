@@ -81,6 +81,7 @@ body {
     width: 90%;
     margin: -8% 0 0 0;
     padding: 5% 0 -8% 0;
+    margin-left: 7%;
 }
 
 #span {
@@ -90,4 +91,3 @@ body {
 #li {
     margin: 60% 0.3% -55% 0.3%;
 }
-

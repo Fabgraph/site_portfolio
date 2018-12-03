@@ -7,7 +7,7 @@
         $description = addslashes($_POST['description_real']);
         $id_realisation = $_POST['id_realisation'];
 
-        $pdoCV->exec(" UPDATE t_realisations SET titre_real='$titre', stitre_real='$stitre', dates_real='$dates', description_real='$description' WHERE id_realisation='$id_realisation' ");
+        $pdoCV->exec(" UPDATE t_realisations SET titre_real='$titre_real', stitre_real='$stitre_real', dates_real='$dates_real', description_real='$description_real' WHERE id_realisation='$id_realisation' ");
         header('location: ../admin/realisations.php');
     }
 
@@ -77,12 +77,12 @@
                             </div>
                         </div>
                 </div>
+                <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
+                <button type="submit" class="btn btn-info marge-real">Modification d'une réalisation</button>
             </form>
             </div>
-            <div class="col-sm-0 col-md-2 col-lg-2"></div>
         </div> <!-- fin div row -->
-        <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
-        <button type="submit" class="btn btn-info marge-real">Modification d'une réalisation</button>
+        
     </div>
 
 

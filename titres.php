@@ -44,7 +44,7 @@
 	        <img src="img/titres.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container container1">
+    <div class="container bg pt-4">
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

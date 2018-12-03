@@ -1,13 +1,13 @@
 <?php require 'inc/connexion.php';
     // gestion mise à jour d'une information
     if(isset($_POST['titre_form'])){
-        $titre = addslashes($_POST['titre_form']);
-        $stitre = addslashes($_POST['stitre_form']);
-        $dates = addslashes($_POST['dates_form']);
-        $description = addslashes($_POST['description_form']);
+        $titre_form = addslashes($_POST['titre_form']);
+        $stitre_form = addslashes($_POST['stitre_form']);
+        $dates_form = addslashes($_POST['dates_form']);
+        $description_form = addslashes($_POST['description_form']);
         $id_formation = $_POST['id_formation'];
 
-        $pdoCV->exec(" UPDATE t_formations SET titre_form='$titre', stitre_form='$stitre', dates_form='$dates', description_form='$description' WHERE id_formation='$id_formation' ");
+        $pdoCV->exec(" UPDATE t_formations SET titre_form='$titre_form', stitre_form='$stitre_form', dates_form='$dates_form', description_form='$description_form' WHERE id_formation='$id_formation' ");
         header('location: ../admin/formations.php');
 
     }
@@ -45,19 +45,19 @@
                         <div class="col-sm-0 col-md-5 col-lg-5" style="margin-left: -2%;"></div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
                             <div>
-                                <label for="titre" class="text-white">Titre</label>
+                                <label for="titre_form" class="text-white">Titre</label>
                                 <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
                             <div>
-                                <label for="stitre" class="text-white">Sous-titre</label>
+                                <label for="stitre_form" class="text-white">Sous-titre</label>
                                 <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
                             <div>
-                                <label for="dates" class="text-white">Dates</label>
+                                <label for="dates_form" class="text-white">Dates</label>
                                 <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                     <div class="row">
                         <div class="col-sm-0 col-md-5 col-lg-5"></div>
                         <div class="col-sm-12 col-md-6 col-lg-6 pr-4" style="margin-left: -2%;">
-                            <label for="description" class="text-white">Description</label>
+                            <label for="description_form" class="text-white">Description</label>
                         
                             <textarea type="text" class="form-control" name="description_form" id="description_form" cols="45" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
                             <script>
@@ -78,16 +78,20 @@
                         </div>
                         <div class="col-sm-0 col-md-1 col-lg-1"></div>
                     </div>
-        
-        
                 </div>
-                
+                <div class="row pr-5">
+                    <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                    <div class="col-sm-12 col-md-5 col-lg-5">
+                        <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
+                        <button type="submit" class="btn btn-info">Modification d'une formation</button>
+                    </div>
+                    <div class="col-sm-0 col-md-2 col-lg-2"></div>
+                </div>
             </form>
         </div>
-    <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
-    <button type="submit" class="btn btn-info mb-4 marge-form">Modification d'une formation</button>
+            
     
-
+        </div> <!-- fin div row -->
     </div> <!-- fin de la div container -->
 <?php require 'inc/footer.php'; ?>
 

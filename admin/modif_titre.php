@@ -61,12 +61,12 @@
                 <div>
                     
                 </div>
+                <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
+                <button type="submit" class="btn btn-info marge-titre">Modification d'un titre</button>
                 </form>
             </div>
-            <div class="col-sm-0 col-md-2 col-lg-2"></div>
         </div> <!-- fin div row -->
-        <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
-        <button type="submit" class="btn btn-info marge-titre">Modification d'un titre</button>
+        
     </div> <!-- fin div container -->
 
 <?php require 'inc/footer.php'; ?>

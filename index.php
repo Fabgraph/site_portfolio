@@ -75,16 +75,16 @@
         </div> 
     </div> <!-- fin jumbotron -->
 
-<div class="container container1">
+<div class="container bg">
     <br>
-    <div class="row">
+    <div class="row pl-3 pb-3">
 
         <!-- debut CARD image -->
         <div class="card col-sm-12 col-md-4 col-lg-4" style="width:400px" id="CardPhoto">
             <img class="card-img-top" src="img_avatar1.png" alt="Fabrice DOMOISON">
             <div class="card-body">
                 <h4 class="card-title">Fabrice Domoison</h4>
-                <p class="card-text">Jeune graphiste print et développeur-intégrateur web.</p>
+                <h5 class="card-text text-primary">Jeune graphiste print et développeur-intégrateur web.</h5>
                 <a href="profil.php" class="btn btn-primary">Voir Mon Profile</a>
             </div>
         </div>

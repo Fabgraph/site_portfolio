@@ -17,7 +17,7 @@
 		        $order = ' ORDER BY dates_form';
 	        }
 	        elseif($_GET['column'] == 'description_form'){
-		        $order = ' ORDER BY stitre_form';
+		        $order = ' ORDER BY description_form';
 	        }
 
 	//----------------
@@ -64,11 +64,11 @@
 	        <img src="img/formations.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container container1">
+    <div class="container bg pt-4">
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-            $sql = $pdoCV->prepare(" SELECT * FROM t_formations WHERE id_utilisateur = '1' $order ");
+            $sql = $pdoCV->prepare(" SELECT * FROM t_formations WHERE id_utilisateur = '1' ");
             $sql->execute();
             $nbr_formations = $sql->rowCount();
         ?>
@@ -92,7 +92,7 @@
                         {
                     ?>
                     <tr class="table-warning text-info">
-                        <td ><?php echo $ligne_formation['titre_form']; ?></td>
+                        <td><?php echo $ligne_formation['titre_form']; ?></td>
                         <td><?php echo $ligne_formation['stitre_form']; ?></td>
                         <td><?php echo $ligne_formation['dates_form']; ?></td>
                         <td><?php echo $ligne_formation['description_form']; ?></td>

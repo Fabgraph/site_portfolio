@@ -65,7 +65,7 @@
 	        <img src="img/experiences.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container container1">
+    <div class="container bg pt-4">
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -93,7 +93,7 @@
                             {
                         ?>
                         <tr class="table-warning text-info">
-                            <td ><?php echo $ligne_experience['titre_exp']; ?></td>
+                            <td><?php echo $ligne_experience['titre_exp']; ?></td>
                             <td><?php echo $ligne_experience['stitre_exp']; ?></td>
                             <td><?php echo $ligne_experience['dates_exp']; ?></td>
                             <td><?php echo $ligne_experience['description_exp']; ?></td>

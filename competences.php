@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="container container1">
+    <div class="container bg pt-4">
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -69,7 +69,7 @@
             $nbr_competences = $sql->rowCount();
         ?>
         <div class="table-responsive">
-            <div class="row">
+            <div class="row ml-2">
         
                     <table class="table">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>

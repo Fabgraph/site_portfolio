@@ -1,13 +1,13 @@
 <?php require 'inc/connexion.php';
     // gestion mise à jour d'une information
     if(isset($_POST['titre_exp'])){
-        $titre = addslashes($_POST['titre_exp']);
-        $stitre = addslashes($_POST['stitre_exp']);
-        $dates = addslashes($_POST['dates_exp']);
-        $description = addslashes($_POST['description_exp']);
+        $titre_exp = addslashes($_POST['titre_exp']);
+        $stitre_exp = addslashes($_POST['stitre_exp']);
+        $dates_exp = addslashes($_POST['dates_exp']);
+        $description_exp = addslashes($_POST['description_exp']);
         $id_experience = $_POST['id_experience'];
 
-        $pdoCV->exec(" UPDATE t_experiences SET titre_exp='$titre', stitre_exp='$stitre', dates_exp='$dates', description_exp='$description' WHERE id_experience='$id_experience' ");
+        $pdoCV->exec(" UPDATE t_experiences SET titre_exp='$titre_exp', stitre_exp='$stitre_exp', dates_exp='$dates_exp', description_exp='$description_exp' WHERE id_experience='$id_experience' ");
         header('location: ../admin/experiences.php');
     }
 
@@ -45,18 +45,18 @@
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
                             <div>
-                                <label for="titre" class="text-white">Titre</label>
+                                <label for="titre_exp" class="text-white">Titre</label>
                                 <input type="text" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
                             <div>
-                                <label for="stitre" class="text-white">Sous-titre</label>
+                                <label for="stitre_exp" class="text-white">Sous-titre</label>
                                 <input type="text" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-2 col-lg-2">
-                                <label for="dates" class="text-white">Dates</label>
+                                <label for="dates_exp" class="text-white">Dates</label>
                                 <input type="text" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" class="form-control" required>
                         </div>
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
@@ -64,17 +64,16 @@
                     <div class="form-row">
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
                         <div class="col-sm-12 col-md-6 col-lg-6">
-                            <label for="description" class="text-white">Description</label>
+                            <label for="description_exp" class="text-white">Description</label>
                             <textarea name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" cols="35" rows="10"></textarea>
                         </div>
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
                     </div>
                     
                 </div> <!-- fin div form-group -->
+                <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
+                <button type="submit" class="btn btn-info marge-exp">Modification d'une expérience</button>
             </form>
-            <div class="col-2"></div>
-            <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
-            <button type="submit" class="btn btn-info marge-exp">Modification d'une expérience</button>
             
         </div> <!-- fin de la div row 2 -->
         

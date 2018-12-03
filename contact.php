@@ -4,12 +4,12 @@
 
 // insertion d'un élément dans la base
 if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
-    if($_POST['nom']!='' && $_POST['email']!='' && $_POST['message_contact']!=''){
+    if($_POST['nom']!='' && $_POST['email']!='' && $_POST['message']!=''){
 
         $nom = addslashes ($_POST['nom']);
         $email = addslashes ($_POST['email']);
-        $message_contact = addslashes ($_POST['message_contact']);
-        $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message_contact') ");
+        $message = addslashes ($_POST['message']);
+        $pdoCV->exec(" INSERT INTO t_contact VALUES (NULL, '$nom', '$email', '$message') ");
 
         header("location: contact.php");
             exit();

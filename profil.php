@@ -13,7 +13,7 @@
 
 <?php require 'inc/navigation.php'; ?>
 
-<div class="container container2 marges">
+<div class="container bg mt-5 mb-5 pt-5 pb-5">
 
     <div class="card titre">
         <div class="card-body bg-dark">

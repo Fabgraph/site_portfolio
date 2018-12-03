@@ -39,6 +39,7 @@
             $stitre_form = addslashes ($_POST['stitre_form']);
             $dates_form = addslashes ($_POST['dates_form']);
             $description_form = addslashes ($_POST['description_form']);
+            $description_form = substr("$description_form", 3, -4);
             $pdoCV->exec(" INSERT INTO t_formations VALUES (NULL, '$titre_form', '$stitre_form', '$dates_form', '$description_form', '$id_utilisateur') ");
 
             header("location: ../admin/formations.php");
