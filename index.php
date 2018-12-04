@@ -22,7 +22,7 @@
 
     <div class="jumbo">
         <div class="jumbotron jumbotron-fluid pb-5">
-            <h1 class="text-center text-warning titre">FabgrapH</h1>
+            <h1 class="text-center text-warning titre">Fabrice Domoison alias FabgrapH</h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
                 $sql = $pdoCV->prepare(" SELECT * FROM t_competences WHERE id_utilisateur = '1' ");
@@ -46,13 +46,22 @@
                                 <!-- The slideshow -->
                                 <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="img/img_code.jpg" alt="Los Angeles" class="taille_img">
+                                    <img src="img/img_code.jpg" alt="Code" class="taille_img">
+                                    <div class="carousel-caption">
+                                        <h5>Web</h5>
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/img_resultat.jpg" alt="Chicago" class="taille_img">
+                                    <img src="img/img_resultat.jpg" alt="Affiche" class="taille_img">
+                                    <div class="carousel-caption">
+                                        <h5>Print</h5>
+                                    </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/oeil.jpg" alt="New York" class="taille_img">
+                                    <img src="img/oeil.jpg" alt="Dessin" class="taille_img">
+                                    <div class="carousel-caption">
+                                        <h5>Dessin</h5>
+                                    </div>
                                 </div>
                                 </div>
 

@@ -103,8 +103,6 @@
                             <th class="table-dark text-info">Sous-titre</th>
                             <th class="table-dark text-info">Date</th>
                             <th class="table-dark text-info">Description</th>
-                            <th class="table-dark text-info">Modification</th>
-                            <th class="table-dark text-info">Suppression</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,8 +114,6 @@
                             <td><?php echo $ligne_realisation['stitre_real']; ?></td>
                             <td><?php echo $ligne_realisation['dates_real']; ?></td>
                             <td><?php echo $ligne_realisation['description_real']; ?></td>
-                            <td ><a href="modif_realisation.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-edit"></i></a></td>
-                            <td><a href="realisations.php?id_realisation=<?php echo $ligne_realisation['id_realisation']; ?>"><i class="fas fa-trash-alt"></i></a></td>
                         </tr>
                         <?php
                             }
