@@ -36,16 +36,16 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!--- Include the above in your HEAD tag -->
+    <!-- liens formulaire contact -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700|Patua+One|Roboto+Condensed:700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-<?php require 'inc/navigation.php'; ?>
-
-<link href="https://fonts.googleapis.com/css?family=Oswald:700|Patua+One|Roboto+Condensed:700" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<section id="contact" class="content-section text-center">
+  <section id="contact" class="content-section text-center">
+    <?php require 'inc/navigation.php'; ?>
         <div class="contact-section">
             <div class="container">
-              <h2 class="titre2">Contact Us</h2>
+              <h2 class="">Contact Us</h2>
               <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
@@ -67,7 +67,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
                   </form>
 
                   <hr>
-                    <h3 class="titre3">Vos sites sociaux</h3>
+                    <h3 class="">Vos sites sociaux</h3>
                   <ul class="list-inline banner-social-buttons">
                     <li><a href="https://twitter.com/?lang=fr" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
                     <li><a href="https://fr-fr.facebook.com/" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
@@ -77,8 +77,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
               </div>
             </div>
         </div>
-      </section>
-
+  </section>
 <?php require 'inc/footer.php'; ?>
 
 <!-- liens js Bootstrap -->

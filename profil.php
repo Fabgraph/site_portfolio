@@ -13,7 +13,7 @@
 
 <?php require 'inc/navigation.php'; ?>
 
-<div class="container bg mt-5 mb-5 pt-5 pb-5">
+<div class="container bg pt-5 pb-5">
 
     <div class="card titre">
         <div class="card-body bg-dark">
@@ -51,22 +51,32 @@
                 }
             ?>
             
-                <?php 
-                    while($ligne_competence=$une_competence_web->fetch()) {
-                ?>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3 class="text-left  text-info"><?php echo $ligne_competence['competence']; ?></h3>
-                    </div>
-                    <div class="col-sm-6">
-                        <h6 class="text-right text-white"><?php echo $ligne_competence['niveau']; ?></h6>
-                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                            <span class="sr-only">40% effectué (success)</span>
+                
+                <?php
+                    $competence = $pdoCV->query(" SELECT * FROM t_competences WHERE categorie = 'Web' ");
+                    while($niveau = $competence->fetch(PDO::FETCH_ASSOC)) {
+                    echo'<div class="row">
+                            <div class="col-sm-6">
+                                <h3 class="text-left  text-info">';
+                                echo $niveau['competence'];
+                                echo '</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="text-right text-white">';
+                                echo $niveau['niveau'];
+                                echo '</h6>
+                                <div class="progress">
+                                    <div id="';
+                                    echo $niveau['id_competence'];
+                                    echo '" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: '; 
+                                    echo $niveau['niveau'];
+                                    echo '%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
                         </div>
-                    </div>
-                </div>
-                <?php 
+                    </div>';
                     }
+            
                 ?>
             
         </div>
@@ -91,28 +101,39 @@
             <?php 
                 }
             ?>
-            <div class="row">
-                <?php 
-                    while($ligne_competence=$une_competence_print->fetch()) {
-                ?>
-                <div class="col-sm-6">
-                    <h3 class="text-left text-info"><?php echo $ligne_competence['competence'] ?></h3>
-                </div>
-                <div class="col-sm-6">
-                    <h6 class="text-right text-white"><?php echo $ligne_competence['niveau'] ?></h6>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                            <span class="sr-only">40% effectué (success)</span>
-                        </div>
-                    </div> 
-                </div>
-                <?php 
+            
+            <?php
+                    $competence = $pdoCV->query(" SELECT * FROM t_competences WHERE categorie = 'Print' ");
+                    while($niveau = $competence->fetch(PDO::FETCH_ASSOC)) {
+                    echo'<div class="row">
+                            <div class="col-sm-6">
+                                <h3 class="text-left  text-info">';
+                                echo $niveau['competence'];
+                                echo '</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <h6 class="text-right text-white">';
+                                echo $niveau['niveau'];
+                                echo '</h6>
+                                <div class="progress">
+                                    <div id="';
+                                    echo $niveau['id_competence'];
+                                    echo'" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: '; 
+                                    echo $niveau['niveau'];
+                                    echo '%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                    </div>';
                     }
-                ?>
-            </div>      
+            
+                ?>     
         </div>
         
     </div> <!-- fin div row -->
+    <div>
+        coucou
+       
+    </div>
     <br>
 
     <div class="card titre">
@@ -135,10 +156,10 @@
         <?php while($ligne_formation=$une_formation->fetch())
             {
         ?>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_formation['dates_form']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white "><?php echo $ligne_formation['titre_form']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_formation['stitre_form']; ?></div>
-       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_formation['description_form']; ?></div>
+        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_formation['dates_form']; ?></div>
+        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white "><?php echo $ligne_formation['titre_form']; ?></div>
+        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_formation['stitre_form']; ?></div>
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_formation['description_form']; ?></div>
         <?php 
             }
         ?>
@@ -212,9 +233,9 @@
 
 <?php require 'inc/footer.php'; ?> 
 <!-- liens js Bootstrap -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/script3.js"></script>
 </body>
 </html>

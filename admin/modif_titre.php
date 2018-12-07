@@ -41,7 +41,7 @@
                     <div class="form-row">
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
                         <div class="col-sm-12 col-md-6 col-lg-6">
-                            <label for="titre" class="text-white">Loisir</label>
+                            <label for="titre" class="text-white">Titre</label>
                             <input type="text" name="titre" value="<?php echo $ligne_titre['titre']; ?>" class="form-control" required>
                         </div>
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
@@ -58,11 +58,15 @@
                         </div>
                         <div class="col-sm-0 col-md-3 col-lg-3"></div>
                     </div>
-                <div>
-                    
-                </div>
-                <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
-                <button type="submit" class="btn btn-info marge-titre">Modification d'un titre</button>
+                    <br>
+                    <div class="row pr-3">
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                        <div class="col-sm-0 col-md-4 col-lg-4">
+                            <input type="hidden" name="id_titre" value="<?php echo $ligne_titre['id_titre']; ?>">
+                            <button type="submit" class="btn btn-info">Modification d'un titre</button>
+                        </div>
+                        <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                    </div>
                 </form>
             </div>
         </div> <!-- fin div row -->

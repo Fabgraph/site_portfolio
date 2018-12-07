@@ -6,7 +6,7 @@ body{
     font-family: 'Roboto Condensed', sans-serif;
     background: url(../img/fond5.jpg);
     background-attachment: fixed;
-    margin-top: 55px;
+    /* margin-top: 55px; */
     margin-bottom: 5%;
 } 
 
@@ -83,7 +83,6 @@ h5 {
     background-attachment: fixed;
     background:#333333;
     color:#f4f4f4;
-    margin-top: 4%;
 }
 
 

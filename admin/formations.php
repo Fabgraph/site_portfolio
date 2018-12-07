@@ -39,7 +39,6 @@
             $stitre_form = addslashes ($_POST['stitre_form']);
             $dates_form = addslashes ($_POST['dates_form']);
             $description_form = addslashes ($_POST['description_form']);
-            $description_form = substr("$description_form", 3, -4);
             $pdoCV->exec(" INSERT INTO t_formations VALUES (NULL, '$titre_form', '$stitre_form', '$dates_form', '$description_form', '$id_utilisateur') ");
 
             header("location: ../admin/formations.php");
@@ -194,11 +193,6 @@
                 <label for="description" class="text-white">Description</label>
                 <div>
                     <textarea type="text" class="form-control" name="description_form" id="description_form" cols="30" rows="10"></textarea>
-                    <script>
-                        // Replace the <textarea id="editor1"> with a CKEditor
-                        // instance, using default configuration.
-                        CKEDITOR.replace( 'description_form' );
-                    </script>
                 </div>
             </div>
          

@@ -41,51 +41,44 @@
             <!-- mise à jour formulaire -->
             <form action="modif_formation.php" method="post" class="col-auto">
                 <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-0 col-md-5 col-lg-5" style="margin-left: -2%;"></div>
-                        <div class="col-sm-12 col-md-2 col-lg-2">
+                    <div class="row pl-5">
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <div>
                                 <label for="titre_form" class="text-white">Titre</label>
                                 <input type="text" name="titre_form" value="<?php echo $ligne_formation['titre_form']; ?>" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <div>
                                 <label for="stitre_form" class="text-white">Sous-titre</label>
                                 <input type="text" name="stitre_form" value="<?php echo $ligne_formation['stitre_form']; ?>" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <div>
                                 <label for="dates_form" class="text-white">Dates</label>
                                 <input type="text" name="dates_form" value="<?php echo $ligne_formation['dates_form']; ?>" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
-                    </div> <!-- fin div row 2 -->
+                    </div> <!-- fin div row -->
                     
                     <div class="row">
-                        <div class="col-sm-0 col-md-5 col-lg-5"></div>
-                        <div class="col-sm-12 col-md-6 col-lg-6 pr-4" style="margin-left: -2%;">
+                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                        <div class="col-sm-12 col-md-9 col-lg-9 pl-5">
                             <label for="description_form" class="text-white">Description</label>
-                        
-                            <textarea type="text" class="form-control" name="description_form" id="description_form" cols="45" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
-                            <script>
-                                // Replace the <textarea id="editor1"> with a CKEditor
-                                // instance, using default configuration.
-                                CKEDITOR.replace( 'description_form' );
-                            </script>
+                            <textarea type="text" class="form-control" name="description_form" id="description_form" cols="60" rows="10"><?php echo $ligne_formation['description_form']; ?></textarea>
                         </div>
-                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
+                        <div class="col-sm-0 col-md-0 col-lg-0"></div>
                     </div>
                 </div>
-                <div class="row pr-5">
-                    <div class="col-sm-0 col-md-5 col-lg-5"></div>
+                <div class="row mr-5 pr-5">
+                    <div class="col-sm-0 col-md-4 col-lg-4"></div>
                     <div class="col-sm-12 col-md-5 col-lg-5">
                         <input type="hidden" name="id_formation" value="<?php echo $ligne_formation['id_formation']; ?>">
                         <button type="submit" class="btn btn-info">Modification d'une formation</button>
                     </div>
-                    <div class="col-sm-0 col-md-2 col-lg-2"></div>
+                    <div class="col-sm-0 col-md-3 col-lg-3"></div>
                 </div>
             </form>
         </div>

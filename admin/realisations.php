@@ -198,11 +198,6 @@
             </div>
             <div>
                 <textarea type="text" class="form-control" name="description_real" id="description_real" cols="30" rows="10"></textarea>
-                <script>
-                        // Replace the <textarea id="editor1"> with a CKEditor
-                        // instance, using default configuration.
-                        CKEDITOR.replace( 'description_real' );
-                    </script>
             </div>
             
             <br>

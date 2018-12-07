@@ -1,10 +1,10 @@
 <?php require 'inc/connexion.php';
     // gestion mise à jour d'une information
     if(isset($_POST['titre_real'])){
-        $titre = addslashes($_POST['titre_real']);
-        $stitre = addslashes($_POST['stitre_real']);
-        $dates = addslashes($_POST['dates_real']);
-        $description = addslashes($_POST['description_real']);
+        $titre_real = addslashes($_POST['titre_real']);
+        $stitre_real = addslashes($_POST['stitre_real']);
+        $dates_real = addslashes($_POST['dates_real']);
+        $description_real = addslashes($_POST['description_real']);
         $id_realisation = $_POST['id_realisation'];
 
         $pdoCV->exec(" UPDATE t_realisations SET titre_real='$titre_real', stitre_real='$stitre_real', dates_real='$dates_real', description_real='$description_real' WHERE id_realisation='$id_realisation' ");
@@ -43,7 +43,7 @@
                 <!-- mise à jour formulaire -->
                 <form action="modif_realisation.php" method="post" class="col-auto">
                     <div class="form-group">
-                        <div class="form-row">
+                        <div class="form-row pr-1">
                             <div class="col-sm-12 col-md-4 col-lg-4">
                                 <div>
                                     <label for="titre" class="text-white">Titre</label>
@@ -63,22 +63,22 @@
                                 </div>
                             </div>
                         </div> <!-- fin div form-row -->
-                        <div>
-                            <div>
-                                <label for="description" class="text-white">Description</label>
-                            </div>
-                            <div>
-                                <textarea type="text" class="form-control" name="description_real" id="description_real" cols="25" rows="10"><?php echo $ligne_realisation['description_real']; ?></textarea>
-                                <script>
-                                    // Replace the <textarea id="editor1"> with a CKEditor
-                                    // instance, using default configuration.
-                                    CKEDITOR.replace( 'description_real' );
-                                </script>
-                            </div>
+                        <div class="form-group">
+                                <div>
+                                    <label for="description" class="text-white">Description</label>
+                                </div>
+                                <div>
+                                    <textarea type="text" class="form-control" name="description_real" id="description_real" cols="22"  rows="10"><?php echo $ligne_realisation['description_real']; ?></textarea>
+                                </div>
                         </div>
                 </div>
-                <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
-                <button type="submit" class="btn btn-info marge-real">Modification d'une réalisation</button>
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-4">
+                        <input type="hidden" name="id_realisation" value="<?php echo $ligne_realisation['id_realisation']; ?>">
+                        <button type="submit" class="btn btn-info">Modification d'une réalisation</button>
+                    </div>
+                    <div class="col-sm-0 col-md-8 col-lg-8"></div>
+                </div>
             </form>
             </div>
         </div> <!-- fin div row -->

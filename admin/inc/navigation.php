@@ -13,7 +13,7 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Modification Qualités
+            Modification Qualifications
           </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item text-white bg-dark" href="competences.php">Compétences</a>

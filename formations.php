@@ -38,7 +38,6 @@
 
 	//     $users = $queryUsers ->fetchAll(PDO::FETCH_ASSOC);   
     // }
-
     
 ?>
 
@@ -72,7 +71,6 @@
             $sql->execute();
             $nbr_formations = $sql->rowCount();
         ?>
-
         <div class="table-responsive">
             <table class="table">
             <caption class="text-white">La liste des formations : <?php echo $nbr_formations; ?></caption>
@@ -88,8 +86,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($ligne_formation=$sql->fetch())
-                        {
+                    <?php
+                        while($ligne_formation=$sql->fetch())
+                        { 
                     ?>
                     <tr class="table-warning text-info">
                         <td><?php echo $ligne_formation['titre_form']; ?></td>
@@ -100,6 +99,7 @@
                     <?php
                         }
                     ?>
+                    
                 </tbody>
             </table>
         </div>

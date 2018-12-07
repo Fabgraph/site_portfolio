@@ -42,37 +42,44 @@
             <form action="modif_experience.php" method="post" class="col-auto">
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
-                        <div class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <div>
                                 <label for="titre_exp" class="text-white">Titre</label>
                                 <input type="text" name="titre_exp" value="<?php echo $ligne_experience['titre_exp']; ?>" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <div>
                                 <label for="stitre_exp" class="text-white">Sous-titre</label>
                                 <input type="text" name="stitre_exp" value="<?php echo $ligne_experience['stitre_exp']; ?>" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-2 col-lg-2">
+                        <div class="col-sm-12 col-md-4 col-lg-4">
                                 <label for="dates_exp" class="text-white">Dates</label>
                                 <input type="text" name="dates_exp" value="<?php echo $ligne_experience['dates_exp']; ?>" class="form-control" required>
                         </div>
-                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
                     </div>
+                    <br>
                     <div class="form-row">
-                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
-                        <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
+                        <div class="col-sm-12 col-md-10 col-lg-10">
                             <label for="description_exp" class="text-white">Description</label>
-                            <textarea name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" cols="35" rows="10"></textarea>
+                            <textarea name="description_exp" value="<?php echo $ligne_experience['description_exp']; ?>" cols="63" rows="10"></textarea>
                         </div>
-                        <div class="col-sm-0 col-md-3 col-lg-3"></div>
+                        <div class="col-sm-0 col-md-1 col-lg-1"></div>
                     </div>
                     
                 </div> <!-- fin div form-group -->
-                <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
-                <button type="submit" class="btn btn-info marge-exp">Modification d'une expérience</button>
+                <div class="row">
+                    <div class="col-sm-0 col-md-0 col-lg-0"></div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <input type="hidden" name="id_experience" value="<?php echo $ligne_experience['id_experience']; ?>">
+                        <button type="submit" class="btn btn-info marge-exp">Modification d'une expérience</button>
+                    </div>
+                    <div class="col-sm-0 col-md-6 col-log-6"></div>
+                </div>
             </form>
             
         </div> <!-- fin de la div row 2 -->

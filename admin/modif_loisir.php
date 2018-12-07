@@ -44,12 +44,20 @@
                             <input type="text" name="loisir" value="<?php echo $ligne_loisir['loisir']; ?>" class="form-control" required>
                         </div>
                     </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 col-lg-6">
+                            <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
+                            <button type="submit" class="btn btn-info">Modification d'un loisir</button>
+                        </div>
+                        <div class="col-sm-0 col-md-4 col-lg-4"></div>
+                    </div>
                 </form>
             </div>
             <div class="col-sm-0 col-md-1 col-lg-1"></div>
         </div> <!-- fin de la div row -->
-        <input type="hidden" name="id_loisir" value="<?php echo $ligne_loisir['id_loisir']; ?>">
-        <button type="submit" class="btn btn-info marge-loisir">Modification d'un loisir</button>
+        <br>
+        
     </div>
 
 <?php require 'inc/footer.php'; ?>

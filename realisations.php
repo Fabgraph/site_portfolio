@@ -68,7 +68,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php 
         // requête pour une seule info
-        $sql = $pdoCV->query(" SELECT * FROM t_utilisateurs WHERE id_utilisateur = '1' ");
+        $sql = $pdoCV->query(" SELECT * FROM t_realisations WHERE id_utilisateur = '1' ");
         $ligne_utilisateur = $sql->fetch();
     ?>
     <title>Les  réalisations <?php echo $ligne_utilisateur['prenom'] ?></title>
