@@ -10,33 +10,33 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item espace-haut">
-        <a class="dropdown-item text-info" href="profil.php">Mon profil</a>
+        <a class="nav-link text-info" href="profil.php">Mon profil</a>
       </li>
       <li class="nav-item espace-haut">
-        <a class="dropdown-item text-info" href="competences.php">Compétences</a>
+        <a class="nav-link text-info" href="competences.php">Compétences</a>
       </li>
       <li class="nav-item espace-haut">
-        <a class="dropdown-item text-info" href="experiences.php">Experience</a>
+        <a class="nav-link text-info" href="experiences.php">Experience</a>
       </li>
       <li class="nav-item espace-haut">
-        <a class="dropdown-item text-info" href="formations.php">Formations</a>
+        <a class="nav-link text-info" href="formations.php">Formations</a>
       </li>
       <li class="nav-item espace-haut">
-        <a class="dropdown-item text-info" href="loisirs.php">loisirs</a>
+        <a class="nav-link text-info" href="realisations.php">Réalisations</a>
       </li>
       <li class="nav-item espace-haut">
-        <a class="dropdown-item text-info" href="realisations.php">Réalisations</a>
+        <a class="nav-link text-info" href="loisirs.php">Loisirs</a>
       </li>
-      <li class="nav-item espace-haut">
+      <!-- <li class="nav-item espace-haut">
         <a class="dropdown-item text-info" href="titres.php">Titres</a>
-      </li>
-      <li class="nav-item espace-haut">
+      </li> -->
+      <!-- <li class="nav-item espace-haut">
         <a class="dropdown-item text-info" href="messages.php">Messages</a>
-      </li>
+      </li> -->
       <!-- <li class="nav-item">
         <a class="nav-link text-info" href="inscription.php">Inscription <span class="sr-only">(current)</span></a>
       </li> -->
-      <li class="nav-item pt-2">
+      <li class="nav-item espace-haut">
         <a class="nav-link text-info" href="contact.php">Contactez-moi</a>
       </li>
     </ul>

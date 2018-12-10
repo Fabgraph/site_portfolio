@@ -63,7 +63,7 @@
 	        <img src="img/loisirs.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container bg pt-4">
+    <div class="container bg pt-6">
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

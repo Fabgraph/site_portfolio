@@ -63,11 +63,11 @@
 	        <img src="img/formations.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container bg pt-4">
+    <div class="container bg pt-6">
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
-            $sql = $pdoCV->prepare(" SELECT * FROM t_formations WHERE id_utilisateur = '1' ");
+            $sql = $pdoCV->prepare(" SELECT * FROM t_formations WHERE id_utilisateur = '1' $order ");
             $sql->execute();
             $nbr_formations = $sql->rowCount();
         ?>
@@ -76,12 +76,15 @@
             <caption class="text-white">La liste des formations : <?php echo $nbr_formations; ?></caption>
                 <thead>
                     <tr> 
-                        <th class="table-dark text-info">Titre
+                        <th class="table-dark text-info">Postes
                         <a href="formations.php?column=titre&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                         <a href="formations.php?column=titre&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                         </th>
-                        <th class="table-dark text-info">Sous-titre</th>
-                        <th class="table-dark text-info">Dates</th>
+                        <th class="table-dark text-info">Missions et tâches</th>
+                        <th class="table-dark text-info mx-auto">Dates
+                        <a href="formations.php?column=dates_form&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                        <a href="formations.php?column=dates_form&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                        </th>
                         <th class="table-dark text-info">Description</th>
                     </tr>
                 </thead>

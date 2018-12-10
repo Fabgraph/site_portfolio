@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="container bg pt-4">
+    <div class="container bg pt-6">
 
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -68,10 +68,8 @@
             $sql->execute();
             $nbr_competences = $sql->rowCount();
         ?>
-        <div class="table-responsive">
-            <div class="row ml-2">
         
-                    <table class="table">
+                    <table class="table-responsive">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
                         <thead>
                             <tr> 
@@ -83,9 +81,9 @@
                                 <a href="competences.php?column=niveau&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                                 <a href="competences.php?column=niveau&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
-                                <th class="table-dark text-info">Catégorie
-                                <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
-                                <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                                <th class="table-dark text-info">Catégories
+                                <a href="competences.php?column=categorie&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                                <a href="competences.php?column=categorie&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                                 </th>
                             </tr>
                         </thead>
@@ -104,8 +102,6 @@
                         </tbody>
                     </table>
         
-            </div>
-        </div>
     <hr class="bg-dark">
     
 </div> <!-- fin container -->

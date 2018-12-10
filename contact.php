@@ -41,8 +41,10 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
+<?php require 'inc/navigation.php'; ?>
+<div class="container">
   <section id="contact" class="content-section text-center">
-    <?php require 'inc/navigation.php'; ?>
+  
         <div class="contact-section">
             <div class="container">
               <h2 class="">Contact Us</h2>
@@ -78,6 +80,7 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
             </div>
         </div>
   </section>
+</div>
 <?php require 'inc/footer.php'; ?>
 
 <!-- liens js Bootstrap -->

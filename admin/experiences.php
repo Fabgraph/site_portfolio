@@ -139,8 +139,8 @@
                     <thead>
                         <tr> 
                             <th class="table-dark text-primary">Titre
-                            <a href="experiences.php?column=dates&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
-                            <a href="experiences.php?column=dates&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                            <a href="experiences.php?column=titre_exp&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                            <a href="experiences.php?column=titre_exp&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                             </th>
                             <th class="table-dark text-primary">Sous-titre</th>
                             <th class="table-dark text-primary">Dates</th>

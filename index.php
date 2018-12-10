@@ -21,7 +21,7 @@
 
 
     <div class="jumbo">
-        <div class="jumbotron jumbotron-fluid pb-5">
+        <div class="jumbotron jumbotron-fluid">
             <h1 class="text-center text-warning titre">Fabrice Domoison alias FabgrapH</h1>
             <?php
                 // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

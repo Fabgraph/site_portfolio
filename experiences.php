@@ -62,10 +62,10 @@
     <div class="container-fluid">
         <div class="row">
             <h1 class="text-center text-warning titre">Les expériences</h1>
-	        <img src="img/experiences.jpg" class="img-responsive">
+            <img src="img/experiences.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container bg pt-4">
+    <div class="container bg pt-6">
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare
@@ -79,12 +79,15 @@
                 <caption class="text-white">La liste des expériences : <?php echo $nbr_experiences; ?></caption>
                     <thead>
                         <tr> 
-                            <th class="table-dark text-info">Titre
+                            <th class="table-dark text-info">Postes
+                            <a href="experiences.php?column=titre_exp&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
+                            <a href="experiences.php?column=titre_exp&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
+                            </th>
+                            <th class="table-dark text-info">Missions et tâches</th>
+                            <th class="table-dark text-info">Dates
                             <a href="experiences.php?column=dates&order=asc"><i class="fas fa-arrow-alt-circle-up"></i></a> |
                             <a href="experiences.php?column=dates&order=desc"><i class="fas fa-arrow-alt-circle-down"></i></a>
                             </th>
-                            <th class="table-dark text-info">Sous-titre</th>
-                            <th class="table-dark text-info">Dates</th>
                             <th class="table-dark text-info">Description</th>
                         </tr>
                     </thead>
