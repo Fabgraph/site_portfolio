@@ -211,9 +211,14 @@
         <?php 
             }
         ?>
-    </div>
-    
+    </div>  
+    <br>
+    <form method="get" action="CV_DOMOISON-2018-compressed.pdf"> <!-- ici le fichier que tu veux télécharger -->
+        <h1 class="text-center text-warning bg-dark">Mon CV :</h1>
+	    <button type="submit">Download!</button>
+    </form>
 </div> <!-- fin div container -->
+
 
 
 

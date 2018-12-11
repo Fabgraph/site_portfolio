@@ -117,7 +117,7 @@
 </head>
 <body>
     <?php require 'inc/navigation.php'; ?>
-    <div class="container">
+    <div class="container fond-container">
         <h1 class="text-center text-white">Admin : les formations</h1>
         <div class="container2">
         <?php

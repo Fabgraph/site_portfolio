@@ -58,12 +58,12 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     <div class="container-fluid">
-        <div class="row">
-            <h1 class="text-center text-warning titre">Les formations</h1>
+        <div class="row margin-top">
+            <h1 class="text-warning titre mx-auto pt-5">Les formations</h1>
 	        <img src="img/formations.jpg" class="img-responsive">
         </div>
     </div>
-    <div class="container bg pt-6">
+    <div class="container bg">
   
         <?php
             // requête pour compter et chercher plusieurs enregistrements on ne peut compter que si on a prépare

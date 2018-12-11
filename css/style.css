@@ -7,7 +7,7 @@ body{
     background: url(../img/fond5.jpg);
     background-attachment: fixed;
     margin-bottom: 8%;
-    
+    margin-top: 0 auto;
 } 
 
 h5 {
@@ -39,6 +39,7 @@ h5 {
     height: 42em;
     background-color: rgba(3, 55, 75, 0.747);
     padding-bottom: 5%;
+    margin-top: 10%;
 }
 
 
@@ -84,11 +85,11 @@ h5 {
     background: url(../img/fond5.jpg);
     background-attachment: fixed;
     color:#f4f4f4;
-    margin-top: -15%;
 }
 
-#contact .contact-section .container {
-   margin-top: 20%;
+.container #contact .contact-section {
+   margin-top: 8%;
+   margin-bottom: 8%;
    background:#333333;
 }
 
@@ -120,7 +121,6 @@ textarea.form-control{
 /* Titres des pages */
 .titre {
     font-family: 'Rubik', sans-serif;
-    margin: 0 auto;
 } 
 
 p.text-info.centre {
@@ -148,5 +148,3 @@ section .contact-section .container {
 .container .row form {
     padding-bottom: 10%;
 }
-
-

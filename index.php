@@ -20,7 +20,7 @@
 <?php require 'inc/navigation.php'; ?>
 
 
-    <div class="jumbo">
+    <div class="jumbo mt-2">
         <div class="jumbotron jumbotron-fluid">
             <h1 class="text-center text-warning titre">Fabrice Domoison alias FabgrapH</h1>
             <?php
