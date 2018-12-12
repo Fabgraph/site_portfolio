@@ -68,7 +68,7 @@
             $sql->execute();
             $nbr_competences = $sql->rowCount();
         ?>
-        
+                <div style="overflow-x:auto;">
                     <table class="table">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>
                         <thead>
@@ -101,6 +101,7 @@
                             ?>
                         </tbody>
                     </table>
+                </div>
         
     <hr class="bg-dark">
     

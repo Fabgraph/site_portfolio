@@ -112,7 +112,7 @@
             $sql->execute();
             $nbr_titres = $sql->rowCount();
         ?>
-            <div class="table-responsive">
+            <div style="overflow-x:auto;">
                 <table class="table">
                 <caption class="text-white">La liste des titres : <?php echo $nbr_titres; ?></caption>
                     <thead>

@@ -124,7 +124,7 @@
             $nbr_competences = $sql->rowCount();
         ?>
 
-            <div class="table-responsive">
+            <div style="overflow-x:auto;">
         
                     <table class="table">
                     <caption class="text-white">La liste des compétences : <?php echo $nbr_competences; ?></caption>

@@ -127,7 +127,7 @@
             $nbr_formations = $sql->rowCount();
         ?>
 
-        <div class="table-responsive">
+        <div style="overflow-x:auto;">
             <table class="table">
             <caption class="text-white">La liste des formations : <?php echo $nbr_formations; ?></caption>
                 <thead>

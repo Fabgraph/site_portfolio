@@ -111,7 +111,7 @@
 <body>
     <?php require 'inc/navigation.php'; ?>
     
-    <div class="container">
+    <div class="container fond-container">
         <h1 class="text-center text-white">Admin : les messages</h1>
         <div class="container2">
         <?php
@@ -121,7 +121,7 @@
             $nbr_messages = $sql->rowCount();
         ?>
 
-            <div class="table-responsive">
+            <div style="overflow-x:auto;">
         
                     <table class="table">
                     <caption class="text-white">La liste des messages: <?php echo $nbr_messages; ?></caption>

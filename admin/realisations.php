@@ -131,7 +131,7 @@
             $nbr_realisations = $sql->rowCount();
         ?>
 
-            <div class="table-responsive">
+            <div style="overflow-x:auto;">
                 <table class="table">
                 <caption class="text-white">La liste des réalisations : <?php echo $nbr_realisations; ?></caption>
                     <thead>

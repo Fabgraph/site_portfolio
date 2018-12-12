@@ -110,7 +110,7 @@
             $sql->execute();
             $nbr_loisirs = $sql->rowCount();
         ?>
-            <div class="table-responsive">
+            <div style="overflow-x:auto;">
                 <table class="table">
                 <caption class="text-white">La liste des loisirs : <?php echo $nbr_loisirs; ?></caption>
                     <thead>

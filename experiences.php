@@ -73,8 +73,8 @@
             $sql->execute();
             $nbr_experiences = $sql->rowCount();
         ?>
-
-            <div class="table-responsive">
+        
+            <div style="overflow-x:auto;">
                 <table class="table">
                 <caption class="text-white">La liste des expériences : <?php echo $nbr_experiences; ?></caption>
                     <thead>

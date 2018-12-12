@@ -86,7 +86,7 @@
 
 <div class="container bg">
     <br>
-    <div class="row pl-3 pb-3">
+    <div class="row pl-3 pb-3 pr-3">
 
         <!-- debut CARD image -->
         <div class="card col-sm-12 col-md-4 col-lg-4" style="width:400px" id="CardPhoto">
