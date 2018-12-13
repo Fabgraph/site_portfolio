@@ -156,10 +156,10 @@
         <?php while($ligne_formation=$une_formation->fetch())
             {
         ?>
-        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_formation['dates_form']; ?></div>
-        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white "><?php echo $ligne_formation['titre_form']; ?></div>
-        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_formation['stitre_form']; ?></div>
-        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><p><?php echo $ligne_formation['description_form']; ?></p></div>
+        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_formation['dates_form']; ?></div><br>
+        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white "><?php echo $ligne_formation['titre_form']; ?></div><br>
+        <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_formation['stitre_form']; ?></div><br>
+        <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_formation['description_form']; ?></div>
         <?php 
             }
         ?>
@@ -182,10 +182,10 @@
         <?php while($ligne_experience=$sql3->fetch())
             {
         ?>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_experience['dates_exp']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_experience['titre_exp']; ?></div>
-       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_experience['stitre_exp']; ?></div>
-       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><p><?php echo $ligne_experience['description_exp']; ?></p></div>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-success"><?php echo $ligne_experience['dates_exp']; ?></div><br>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_experience['titre_exp']; ?></div><br>
+       <div class="col-sm-12 col-md-2 col-lg-2 text-center text-white"><?php echo $ligne_experience['stitre_exp']; ?></div><br>
+       <div class="col-sm-12 col-md-6 col-lg-6 text-center text-white"><?php echo $ligne_experience['description_exp']; ?></div>
         <?php 
             }
         ?>
@@ -207,15 +207,20 @@
         <?php while($ligne_loisir=$un_loisir->fetch())
             {
         ?>
-        <div class="col-sm-12 col-md-6 col-lg-6 text-center"><p><?php echo $ligne_loisir['loisir']; ?></p></div>
+        <div class="col-sm-12 col-md-12 col-lg-12 text-center"><?php echo $ligne_loisir['loisir']; ?></div><br>
         <?php 
             }
         ?>
     </div>  
     <br>
-    <form method="get" action="CV_DOMOISON-2018-compressed.pdf"> <!-- ici le fichier que tu veux télécharger -->
-        <h1 class="text-center text-warning bg-dark">Mon CV :</h1>
-	    <button type="submit">Download</button>
+    <form method="get" action="img/CV_Fabrice_DOMOISON-2018-compressed.pdf"> <!-- ici le fichier que tu veux télécharger -->
+        <div class="card titre">
+            <div class="card-body bg-dark">
+                <h1 class="text-center text-warning">Mon CV :</h1>
+            </div>
+        </div>
+        <br>
+        <button type="submit" style="margin-left: 42%;">Télécharger mon CV</button>
     </form>
 </div> <!-- fin div container -->
 

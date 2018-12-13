@@ -16,7 +16,7 @@
         <a class="nav-link text-info" href="competences.php">Compétences</a>
       </li>
       <li class="nav-item espace-haut">
-        <a class="nav-link text-info" href="experiences.php">Experience</a>
+        <a class="nav-link text-info" href="experiences.php">Expériences</a>
       </li>
       <li class="nav-item espace-haut">
         <a class="nav-link text-info" href="formations.php">Formations</a>

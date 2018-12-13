@@ -75,13 +75,22 @@ if(isset($_GET['quitter'])){
                                 <!-- The slideshow -->
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="img/img_code.jpg" alt="Los Angeles" class="taille_img">
+                                        <img src="img/capture_code_def.png" alt="Los Angeles" class="taille_img">
+                                        <div class="carousel-caption text-success">
+                                        <h5>Web</h5>
+                                        </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="img/img_resultat.jpg" alt="Chicago" class="taille_img">
+                                        <img src="img/capture_logo_def.png" alt="Chicago" class="taille_img">
+                                        <div class="carousel-caption text-success">
+                                        <h5>Print</h5>
+                                        </div>
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="img/oeil.jpg" alt="New York" class="taille_img">
+                                        <img src="img/capture_dessin_def.png" alt="New York" class="taille_img">
+                                        <div class="carousel-caption text-success">
+                                        <h5>Dessin</h5>
+                                        </div>
                                     </div>
                                 </div>
                                 
@@ -108,8 +117,8 @@ if(isset($_GET['quitter'])){
     <br>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-6">
-            <h2 class="text-center text-success">Bienvenue sur l'administration du site</h2>
-            <p class="text-center text-success">Ici, vous pouvez modifier les différentes catégories. Pour pouvoir rentrer des informations sur votre savoir faire en intégration, développement et en graphisme print.</p>
+            <h2 class="text-center text-white">Bienvenue sur l'administration du site</h2>
+            <p class="text-center text-white">Ici, vous pouvez modifier les différentes catégories. Pour pouvoir rentrer des informations sur votre savoir faire en intégration, développement et en graphisme print.</p>
         </div>
 
 

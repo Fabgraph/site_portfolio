@@ -46,20 +46,20 @@
                                 <!-- The slideshow -->
                                 <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="img/img_code.jpg" alt="Code" class="taille_img">
-                                    <div class="carousel-caption">
+                                    <img src="img/capture_code_def.png" alt="Code" class="taille_img">
+                                    <div class="carousel-caption text-success">
                                         <h5>Web</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/img_resultat.jpg" alt="Affiche" class="taille_img">
-                                    <div class="carousel-caption">
+                                    <img src="img/capture_logo_def.png" alt="Affiche" class="taille_img">
+                                    <div class="carousel-caption text-success">
                                         <h5>Print</h5>
                                     </div>
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="img/oeil.jpg" alt="Dessin" class="taille_img">
-                                    <div class="carousel-caption">
+                                    <img src="img/capture_dessin_def.png" alt="Dessin" class="taille_img">
+                                    <div class="carousel-caption text-success">
                                         <h5>Dessin</h5>
                                     </div>
                                 </div>
@@ -90,10 +90,11 @@
 
         <!-- debut CARD image -->
         <div class="card col-sm-12 col-md-4 col-lg-4" style="width:400px" id="CardPhoto">
-            <img class="card-img-top" src="img_avatar1.png" alt="Fabrice DOMOISON">
+            <img class="card-img-top pt-3" src="img/ma_photo.jpg" alt="Fabrice DOMOISON">
             <div class="card-body">
                 <h4 class="card-title">Fabrice Domoison</h4>
                 <h5 class="card-text text-primary">Jeune graphiste print et développeur-intégrateur web.</h5>
+                <h6>Adresse mail : fabricedomoison@gmail.com</h6>
                 <a href="profil.php" class="btn btn-primary">Voir Mon Profile</a>
             </div>
         </div>

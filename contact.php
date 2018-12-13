@@ -47,8 +47,8 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
   
         <div class="contact-section">
             <div class="container">
-              <h2 class="">Contact Us</h2>
-              <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p>
+              <h2 class="">Contactez-moi</h2>
+             <!--  <p>Feel free to shout us by feeling the contact form or visiting our social network sites like Fackebook,Whatsapp,Twitter.</p> -->
               <div class="row">
                 <div class="col-md-8 col-md-offset-2">
 
@@ -69,11 +69,11 @@ if(isset($_POST['nom'])){// si on a reçu un nouvelle compétence
                   </form>
 
                   <hr>
-                    <h3 class="">Vos sites sociaux</h3>
+                    <h3 class="">Mes sites sociaux</h3>
                   <ul class="list-inline banner-social-buttons">
-                    <li><a href="https://twitter.com/?lang=fr" class="btn btn-default btn-lg"><i class="fa fa-twitter"> <span class="network-name">Twitter</span></i></a></li>
-                    <li><a href="https://fr-fr.facebook.com/" class="btn btn-default btn-lg"><i class="fa fa-facebook"> <span class="network-name">Facebook</span></i></a></li>
-                    <li><a href="https://www.youtube.com/" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li>
+                    <li><a href="https://github.com/Fabgraph" class="btn btn-default btn-lg"><i class="fab fa-github"></i> <span class="network-name">Github</span></i></a></li>
+                    <li><a href="https://fr.linkedin.com/in/fabrice-domoison-042127141" class="btn btn-default btn-lg"><i class="fab fa-linkedin-in"></i> <span class="network-name">Linkedin</span></i></a></li>
+                    <!-- <li><a href="https://www.youtube.com/" class="btn btn-default btn-lg"><i class="fa fa-youtube-play"> <span class="network-name">Youtube</span></i></a></li> -->
                   </ul>
                 </div>
               </div>

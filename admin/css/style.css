@@ -16,6 +16,10 @@ body {
     background:  rgba(64, 12, 112, 0.568);
 }
 
+h5 {
+    margin-bottom: 5%;
+}
+
 /* button des pages */
 .button-competences {
     margin-top: 19%;
