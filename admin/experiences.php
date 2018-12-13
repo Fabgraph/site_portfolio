@@ -199,7 +199,7 @@
                     <div class="form-group">
                         <label for="description" class="text-white">Description</label>
                         <div>
-                            <textarea name="description_exp" cols="109" rows="10"></textarea>
+                            <textarea name="description_exp" class="form-control" cols="109" rows="10"></textarea>
                         </div>
                     </div>
                 </div>

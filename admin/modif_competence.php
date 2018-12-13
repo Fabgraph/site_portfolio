@@ -30,26 +30,25 @@
     <?php require 'inc/navigation.php'; ?>
     <div class="container fond-container ">
         <div class="row">
-            <div class="col">
+            <div class="col-sm-12 col-md-12 col-lg12">
                 <h1 class="text-center">Mise à jour d'une compétence</h1>
             </div>
         </div> <!-- fin de la row 1 -->
-        <div class="row">
-            <div class="col-2"><i class="fas fa-highlighter"></i></div>
-            <div class="col-8">
+        <div class="row mx-2">
+            <div class="col-sm-0 col-md-3 col-lg-3"></div>
                 <!-- mise à jour formulaire -->
                 <form action="modif_competence.php" method="post" class="col-auto">
                     <div class="form-row">
                 
-                        <div class="col">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <label for="competence" class="">Compétence</label>
                             <input type="text" name="competence" value="<?php echo $ligne_competence['competence']; ?>" class="form-control" required>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <label for="niveau" class="">Niveau</label>
                             <input type="text" name="niveau" value="<?php echo $ligne_competence['niveau']; ?>" class="form-control" required>
                         </div>
-                        <div class="col">
+                        <div class="col-sm-12 col-md-3 col-lg-3">
                             <div class="form-group">
                                 <label for="categorie" class="">Catégorie</label>
                                 <select name="categorie" class="form-control">
@@ -70,8 +69,7 @@
                     <input type="hidden" name="id_competence" value="<?php echo $ligne_competence['id_competence']; ?>">
                     <button type="submit" class="btn btn-info">Modification d'une conpétence</button>
                 </form>
-            </div>
-            <div class="col fond-col-vide"></div>
+            <div class="col-sm-0 col-md-0 col-lg-0"></div>
         </div> <!-- fin row 2 -->
     </div> <!-- fin div container -->
 

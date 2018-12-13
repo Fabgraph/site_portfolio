@@ -160,7 +160,7 @@
                             <div class="form-group">
                                 <label for="accroche" class="text-white">Accroche</label>
                                 <div>
-                                    <textarea name="accroche" cols="30" rows="10"></textarea>
+                                    <textarea name="accroche" class="form-control" cols="30" rows="10"></textarea>
                                 </div>
                             </div>
                             <div class="">
