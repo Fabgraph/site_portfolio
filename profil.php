@@ -213,7 +213,7 @@
         ?>
     </div>  
     <br>
-    <form method="get" action="img/CV_Fabrice_DOMOISON-2018-compressed.pdf"> <!-- ici le fichier que tu veux télécharger -->
+    <form method="get" action="img/CV_Fabrice_DOMOISON-2018(2).pdf"> <!-- ici le fichier que tu veux télécharger -->
         <div class="card titre">
             <div class="card-body bg-dark">
                 <h1 class="text-center text-warning">Mon CV :</h1>
