@@ -95,6 +95,7 @@
                 <h4 class="card-title">Fabrice Domoison</h4>
                 <h5 class="card-text text-primary">Jeune graphiste print et développeur-intégrateur web.</h5>
                 <h6>Adresse mail : fabricedomoison@gmail.com</h6>
+                <h6>téléphone: 06 03 28 34 36</h6>
                 <a href="profil.php" class="btn btn-primary">Voir Mon Profil</a>
             </div>
         </div>
